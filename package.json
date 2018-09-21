@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "test:coverage": "react-scripts test --env=jsdom --coverage | coveralls",
     "storybook": "start-storybook -p 9009 -s public",
     "lint": "eslint src",
     "build-storybook": "build-storybook -s public",
@@ -16,8 +16,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
-    "react-masonry-component": "^6.2.1",
-    "react-masonry-css": "^1.0.11",
     "react-scripts": "1.1.5",
     "timeago-react": "^2.0.0"
   },
@@ -33,6 +31,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^9.0.0",
     "babel-runtime": "^6.26.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
