@@ -1,0 +1,30 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "import"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "rules": {
+        "max-len": [2, 180],
+        "react/jsx-filename-extension": 0,
+        "react/prefer-stateless-function": 0,
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+              "devDependencies": [
+                "./src/stories/**/*",
+                "./src/**/*.story.js"
+              ]
+            }
+          ]
+    },
+    "env": {
+        "browser": true,
+        "jest": true
+    }
+}

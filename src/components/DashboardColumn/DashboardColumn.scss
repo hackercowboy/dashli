@@ -1,0 +1,10 @@
+.dashboard-column {
+  display: flex;
+  flex-direction: column;
+  width: 0;  
+
+  .dashboard-widget {
+    height: 0;
+    width: auto;
+  }
+}

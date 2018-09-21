@@ -1,0 +1,8 @@
+.dashboard-row {
+  display: flex;
+  width: 100%;
+
+  .dashboard-widget {
+    width: 0;
+  }
+}
