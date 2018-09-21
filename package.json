@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --env=jsdom --coverage | coveralls",
+    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "coveralls": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "storybook": "start-storybook -p 9009 -s public",
     "lint": "eslint src",
     "build-storybook": "build-storybook -s public",
