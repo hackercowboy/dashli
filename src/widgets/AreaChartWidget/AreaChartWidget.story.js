@@ -8,14 +8,14 @@ import {
   DashboardWidget,
 } from '../../components';
 
-import AreaChart from './AreaChart';
+import AreaChartWidget from './AreaChartWidget';
 
 export default () => (
   <Story>
     <Dashboard theme="light" locale="de_DE">
       <DashboardRow height="calc(100vh - 10px)">
         <DashboardColumn weight={2}>
-          <DashboardWidget component={AreaChart} title="Neutral" status="neutral" updated={new Date()} />
+          <DashboardWidget component={AreaChartWidget} title="Neutral" status="neutral" updated={new Date()} />
         </DashboardColumn>
         <DashboardColumn weight={2}>
           <DashboardWidget title="Success" status="success" updated={new Date()} />

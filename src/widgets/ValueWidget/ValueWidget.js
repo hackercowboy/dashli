@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 
-import './AreaChart.css';
+import './ValueWidget.css';
 
-class AreaChart extends PureComponent {
+class ValueWidget extends PureComponent {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ class AreaChart extends PureComponent {
   }
 }
 
-export default AreaChart;
+export default ValueWidget;

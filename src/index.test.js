@@ -6,6 +6,6 @@ it('should export all relevant components', () => {
   expect(dashli.DashboardColumn).toBeDefined();
   expect(dashli.DashboardLayout).toBeDefined();
   expect(dashli.DashboardWidget).toBeDefined();
-  expect(dashli.AreaChart).toBeDefined();
-  expect(dashli.Value).toBeDefined();
+  expect(dashli.AreaChartWidget).toBeDefined();
+  expect(dashli.ValueWidget).toBeDefined();
 });

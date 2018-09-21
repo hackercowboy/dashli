@@ -4,5 +4,5 @@ export { DashboardColumn } from './components';
 export { DashboardLayout } from './components';
 export { DashboardWidget } from './components';
 
-export { AreaChart } from './widgets';
-export { Value } from './widgets';
+export { AreaChartWidget } from './widgets';
+export { ValueWidget } from './widgets';

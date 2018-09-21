@@ -1,7 +1,9 @@
 
 import { storiesOf } from '@storybook/react';
 
-import AreaChart from '../widgets/AreaChart/AreaChart.story';
+import AreaChartWidget from '../widgets/AreaChartWidget/AreaChartWidget.story';
+import ValueWidget from '../widgets/ValueWidget/ValueWidget.story';
 
 storiesOf('Widgets', module)
-  .add('AreaChart', AreaChart);
+  .add('AreaChartWidget', AreaChartWidget)
+  .add('ValueWidget', ValueWidget);
