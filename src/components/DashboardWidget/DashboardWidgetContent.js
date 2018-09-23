@@ -32,11 +32,12 @@ class DashboardWidgetContent extends PureComponent {
       <DashboardContext.Consumer>
         { (context = {}) => {
           const { locale, screenResizing } = context;
+          /* eslint-disable react/destructuring-assignment */
           const status = screenResizing ? undefined : this.props.status;
           return (
             <div className={`dashboard-widget dashboard-widget-${status}`}>
               { title ? <div className="dashboard-widget-title">{title}</div> : undefined }
-              <div className="dashboard-widget-content">{ component && status ? React.createElement(component) : null}</div>
+              <div className="dashboard-widget-content">{ component && status ? React.createElement(component, this.props) : null}</div>
               { updated && status ? <div className="dashboard-widget-updated"><TimeAgo datetime={updated} locale={locale} /></div> : undefined }
             </div>
           );
