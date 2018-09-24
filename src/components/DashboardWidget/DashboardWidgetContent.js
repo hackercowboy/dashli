@@ -37,7 +37,7 @@ class DashboardWidgetContent extends PureComponent {
           return (
             <div className={`dashboard-widget dashboard-widget-${status}`}>
               { title ? <div className="dashboard-widget-title">{title}</div> : undefined }
-              <div className="dashboard-widget-content">{ component && status ? React.createElement(component, this.props) : null}</div>
+              { component && status ? <div className="dashboard-widget-content">{ React.createElement(component, this.props)}</div> : undefined }
               { updated && status ? <div className="dashboard-widget-updated"><TimeAgo datetime={updated} locale={locale} /></div> : undefined }
             </div>
           );

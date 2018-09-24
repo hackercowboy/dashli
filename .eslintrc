@@ -20,6 +20,7 @@
               "devDependencies": [
                 "./src/stories/**/*",
                 "./src/**/*.story.js",
+                "./src/**/*.test.js",
                 "./src/setupTests.js"
               ]
             }

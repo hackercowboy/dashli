@@ -19,29 +19,37 @@ class ValueWidget extends PureComponent {
   constructor() {
     super();
     this.state = {
-      containerWidth: undefined,
-      containerHeight: undefined,
+      referenceWidth: undefined,
+      referenceHeight: undefined,
       fontSize: '0px',
       secondFontSize: '0px',
     };
     this.updateFontSize = this.updateFontSize.bind(this);
   }
 
+  componentDidUpdate() {
+    this.updateFontSize(this.container);
+  }
+
   updateFontSize(container) {
-    const { containerWidth, containerHeight } = this.state;
-
-    if (container && (container.offsetWidth !== containerWidth || container.offsetHeight !== containerHeight)) {
+    if (container) {
+      const { referenceWidth, referenceHeight } = this.state;
       const reference = container.querySelector('.dashboard-value-widget-reference');
-      const heightFactor = container.offsetHeight / reference.offsetHeight;
-      const widthFactor = container.offsetWidth / reference.offsetWidth;
-      const factor = Math.min(heightFactor, widthFactor);
 
-      this.setState({
-        containerWidth: container.offsetWidth,
-        containerHeight: container.offsetHeight,
-        fontSize: `${factor * 40}px`,
-        secondFontSize: `${factor * 25}px`,
-      });
+      this.container = container;
+
+      if (container && (reference.offsetWidth !== referenceWidth || reference.offsetHeight !== referenceHeight)) {
+        const heightFactor = container.offsetHeight / reference.offsetHeight;
+        const widthFactor = container.offsetWidth / reference.offsetWidth;
+        const factor = Math.min(heightFactor, widthFactor);
+
+        this.setState({
+          referenceWidth: reference.offsetWidth,
+          referenceHeight: reference.offsetHeight,
+          fontSize: `${factor * 40}px`,
+          secondFontSize: `${factor * 25}px`,
+        });
+      }
     }
   }
 
