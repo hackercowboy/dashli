@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import Value from '../Value';
+import FlexText from '../../components/FlexText';
 
 import './AreaChart.css';
 
@@ -8,7 +8,7 @@ import './AreaChart.css';
 class AreaChart extends PureComponent {
   render() {
     return (
-      <Value {...this.props} />
+      <FlexText {...this.props} />
     );
   }
 }
