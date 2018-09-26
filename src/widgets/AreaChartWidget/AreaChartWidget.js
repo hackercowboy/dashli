@@ -1,13 +1,14 @@
 import React, { PureComponent } from 'react';
 
+import ValueWidget from '../ValueWidget';
+
 import './AreaChartWidget.css';
+
 
 class AreaChartWidget extends PureComponent {
   render() {
     return (
-      <div>
-        <span>8</span>
-      </div>
+      <ValueWidget {...this.props} />
     );
   }
 }
