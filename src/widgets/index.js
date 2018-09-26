@@ -1,2 +1,2 @@
-export { default as AreaChartWidget } from './AreaChartWidget';
-export { default as ValueWidget } from './ValueWidget';
+export { default as AreaChart } from './AreaChart';
+export { default as Value } from './Value';

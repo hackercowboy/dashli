@@ -6,35 +6,35 @@
   100% {
     background-color: rgba(165, 165, 165, 0.1); } }
 
-.dashboard-widget {
+.dashli-widget {
   margin: 5px;
   padding: 15px; }
 
-.dashboard-widget-title {
+.dashli-widget-title {
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 800; }
 
-.dashboard-widget-neutral {
+.dashli-widget-neutral {
   background-color: #e9ecef;
   color: #212529; }
 
-.dashboard-widget-success {
+.dashli-widget-success {
   background-color: #28a745;
   color: #f8f9fa; }
 
-.dashboard-widget-info {
+.dashli-widget-info {
   background-color: #17a2b8;
   color: #f8f9fa; }
 
-.dashboard-widget-warning {
+.dashli-widget-warning {
   background-color: #ffc107;
   color: #f8f9fa; }
 
-.dashboard-widget-danger {
+.dashli-widget-danger {
   background-color: #dc3545;
   color: #f8f9fa; }
 
-.dashboard-widget-undefined {
+.dashli-widget-undefined {
   color: #212529;
   animation: pulse 1.5s infinite ease-in-out; }

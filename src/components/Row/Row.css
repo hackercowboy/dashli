@@ -1,0 +1,5 @@
+.dashli-row {
+  display: flex;
+  width: 100%; }
+  .dashli-row .dashli-widget {
+    width: 0; }

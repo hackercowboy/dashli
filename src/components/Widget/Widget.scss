@@ -1,0 +1,16 @@
+.dashli-widget {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashli-widget-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashli-widget-updated {
+  white-space: nowrap;
+  width: 100%;
+}

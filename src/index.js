@@ -1,12 +1,12 @@
 export {
   Dashboard,
-  DashboardRow,
-  DashboardColumn,
-  DashboardLayout,
-  DashboardWidget,
+  Row,
+  Column,
+  Layout,
+  Widget,
 } from './components';
 
 export {
-  AreaChartWidget,
-  ValueWidget,
+  AreaChart,
+  Value,
 } from './widgets';

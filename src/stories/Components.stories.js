@@ -1,9 +1,9 @@
 
 import { storiesOf } from '@storybook/react';
 
-import DashboardLayout from '../components/DashboardLayout/DashboardLayout.story';
-import DashboardWidget from '../components/DashboardWidget/DashboardWidget.story';
+import Layout from '../components/Layout/Layout.story';
+import Widget from '../components/Widget/Widget.story';
 
 storiesOf('Components', module)
-  .add('DashboardLayout', DashboardLayout)
-  .add('DashboardWidget', DashboardWidget);
+  .add('Layout', Layout)
+  .add('Widget', Widget);
