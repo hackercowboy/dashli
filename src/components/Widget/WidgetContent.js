@@ -12,6 +12,7 @@ class WidgetContent extends PureComponent {
     title: PropTypes.string,
     component: PropTypes.func,
     updated: PropTypes.instanceOf(Date),
+    weight: PropTypes.number,
   }
 
   static defaultProps = {
@@ -19,6 +20,7 @@ class WidgetContent extends PureComponent {
     title: undefined,
     updated: undefined,
     component: undefined,
+    weight: 1,
   }
 
   render() {
@@ -26,6 +28,7 @@ class WidgetContent extends PureComponent {
       title,
       component,
       updated,
+      weight
     } = this.props;
 
     return (
@@ -35,7 +38,7 @@ class WidgetContent extends PureComponent {
           /* eslint-disable react/destructuring-assignment */
           const status = screenResizing ? undefined : this.props.status;
           return (
-            <div className={`dashli-widget dashli-widget-${status}`}>
+            <div className={`dashli-widget dashli-widget-${status}`} style={{ flexGrow: weight }}>
               { title ? <div className="dashli-widget-title">{title}</div> : undefined }
               { component && status ? <div className="dashli-widget-content">{ React.createElement(component, this.props)}</div> : undefined }
               { updated && status ? <div className="dashli-widget-updated"><TimeAgo datetime={updated} locale={locale} /></div> : undefined }

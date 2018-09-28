@@ -1,0 +1,29 @@
+.dashli-area-chart {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .dashli-flex-text {
+    flex-grow: 1;
+    height: 0;
+  }
+
+  .dashli-area-chart-chart {
+    flex-grow: 2;
+    height: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -33px;
+
+    .dashli-area-chart-line {
+      fill: none;
+      stroke: white;
+      stroke-width: 2px;
+    }
+
+    .dashli-area-chart-area {
+      fill: white;
+      opacity: 0.3;
+    }
+  }
+}

@@ -13,41 +13,43 @@ import AreaChart from './AreaChart';
 class AreaChartStory extends Component {
   constructor() {
     super();
-    this.state = { dangerValue: 5 };
-    this.updateDangerValue = this.updateDangerValue.bind(this);
+    this.updateValue = this.updateValue.bind(this);
+
+    const values = [100];
+    for (let i = 0; i < 29; i += 1) {
+      const value = values[i];
+      values.push(Math.max(value + (Math.random() - 0.5) * 20, 10));
+    }
+    this.state = { values, value: values[29] };
   }
 
   componentDidMount() {
-    setInterval(this.updateDangerValue, 500);
+    setInterval(this.updateValue, 500);
   }
 
-  updateDangerValue() {
-    const { dangerValue } = this.state;
-    if (dangerValue === 5000000) {
-      this.setState({ dangerValue: 5 });
-    } else {
-      this.setState({ dangerValue: dangerValue * 10 });
-    }
+  updateValue() {
+    const { values } = this.state;
+    const value = Math.max(values[values.length - 1] + (Math.random() - 0.5) * 20, 10);
+    this.setState({ values: [...values.slice(1), value], value });
   }
 
   render() {
-    const { dangerValue } = this.state;
+    const { value, values } = this.state;
 
     return (
       <Story>
         <Dashboard theme="light" locale="de_DE">
           <Row height="calc(100vh - 10px)">
-            <Column weight={2}>
-              <Widget component={AreaChart} title="Neutral" status="neutral" value="8000" unit="/ms" updated={new Date()} />
-            </Column>
-            <Column weight={2}>
-              <Widget component={AreaChart} title="Success" status="success" value="3.55" unit="/unit" updated={new Date()} />
-              <Widget component={AreaChart} title="Info" status="info" value="Value" updated={new Date()} />
+            <Column weight={3}>
+              <Widget component={AreaChart} title="Neutral" status="neutral" value={value.toFixed(2)} values={values} unit="/ms" updated={new Date()} />
+              <Widget weight={2} component={AreaChart} title="Success" status="success" value={value.toFixed(2)} values={values} unit="/unit" updated={new Date()} />
+              <Widget weight={3} component={AreaChart} title="Info" status="info" value={value.toFixed(2)} values={values} additionalValue="Additional Value" updated={new Date()} />
             </Column>
             <Column weight={1}>
-              <Widget component={AreaChart} title="Warning" status="warning" value="ExampleValue" updated={new Date()} />
-              <Widget component={AreaChart} title="Danger" status="danger" value={dangerValue.toString()} updated={new Date()} />
-              <Widget title="Undefined" updated={new Date()} />
+              <Widget component={AreaChart} title="Warning" status="warning" value={value.toFixed(2)} values={values} updated={new Date()} />
+              <Widget component={AreaChart} title="success" status="success" value={value.toFixed(2)} values={values} updated={new Date()} />
+              <Widget component={AreaChart} title="Danger" status="danger" value={value.toFixed(2)} values={values} updated={new Date()} />
+              <Widget weight={2} component={AreaChart} title="neutral" status="neutral" value={value.toFixed(2)} values={values} updated={new Date()} />
             </Column>
           </Row>
         </Dashboard>
