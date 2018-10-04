@@ -3,25 +3,27 @@ import React, { PureComponent } from 'react';
 
 import './Row.css';
 
-class Column extends PureComponent {
+class Row extends PureComponent {
   static propTypes = {
     height: PropTypes.string,
     children: PropTypes.node,
+    weight: PropTypes.number,
   }
 
   static defaultProps = {
-    height: 'auto',
+    height: '0',
     children: undefined,
+    weight: 1,
   }
 
   render() {
-    const { height, children } = this.props;
+    const { height, children, weight } = this.props;
     return (
-      <div className="dashli-row" style={{ height }}>
+      <div className="dashli-row" style={{ height, flexGrow: weight }}>
         {children}
       </div>
     );
   }
 }
 
-export default Column;
+export default Row;

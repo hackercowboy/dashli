@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Story from '../../stories/Story';
+import { Story, StoryContext } from '../../stories';
 
 import {
   Dashboard,
@@ -13,12 +13,16 @@ import Value from './Value';
 class ValueStory extends Component {
   constructor() {
     super();
-    this.state = { dangerValue: 5 };
+    this.state = { dangerValue: 5, updated: new Date() };
     this.updateDangerValue = this.updateDangerValue.bind(this);
   }
 
   componentDidMount() {
-    setInterval(this.updateDangerValue, 500);
+    this.interval = setInterval(this.updateDangerValue, 500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   updateDangerValue() {
@@ -31,26 +35,30 @@ class ValueStory extends Component {
   }
 
   render() {
-    const { dangerValue } = this.state;
+    const { dangerValue, updated } = this.state;
 
     return (
-      <Story>
-        <Dashboard theme="light" locale="de_DE">
-          <Row height="calc(100vh - 10px)">
-            <Column weight={2}>
-              <Widget component={Value} title="Neutral" status="neutral" value="8000" unit="/ms" additionalValue="Test" updated={new Date()} />
-            </Column>
-            <Column weight={2}>
-              <Widget component={Value} title="Success" status="success" value="3.55" unit="/unit" updated={new Date()} />
-              <Widget component={Value} title="Info" status="info" value="Value" additionalValue="AdditionalValue" updated={new Date()} />
-            </Column>
-            <Column weight={1}>
-              <Widget component={Value} title="Warning" status="warning" value="ExampleValue" updated={new Date()} />
-              <Widget component={Value} title="Danger" status="danger" value={dangerValue.toString()} updated={new Date()} />
-              <Widget title="Undefined" updated={new Date()} />
-            </Column>
-          </Row>
-        </Dashboard>
+      <Story title="Value">
+        <StoryContext.Consumer>
+          { context => (
+            <Dashboard theme={context.theme}>
+              <Row height="calc(100vh - 10px)">
+                <Column weight={2}>
+                  <Widget component={Value} title="Neutral" status="neutral" value="8000" unit="/ms" additionalValue="Test" updated={updated} />
+                </Column>
+                <Column weight={2}>
+                  <Widget component={Value} title="Success" status="success" value="3.55" unit="/unit" updated={updated} />
+                  <Widget component={Value} title="Info" status="info" value="Value" additionalValue="AdditionalValue" updated={updated} />
+                </Column>
+                <Column weight={1}>
+                  <Widget component={Value} title="Warning" status="warning" value="ExampleValue" updated={updated} />
+                  <Widget component={Value} title="Danger" status="danger" value={dangerValue.toString()} updated={updated} />
+                  <Widget title="Undefined" updated={updated} />
+                </Column>
+              </Row>
+            </Dashboard>
+          )}
+        </StoryContext.Consumer>
       </Story>
     );
   }

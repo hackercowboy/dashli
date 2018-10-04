@@ -81,7 +81,7 @@ class Dashboard extends PureComponent {
       screenResizing,
     };
     return (
-      <div className={`dashboard theme-${theme}`}>
+      <div className={`dashli-dashboard dashli-theme-${theme}`}>
         <DashboardContext.Provider value={context}>
           {children}
         </DashboardContext.Provider>

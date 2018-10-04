@@ -1,8 +1,9 @@
 .dashli-row {
   display: flex;
   width: 100%;
+  flex-grow: 1;
+}
 
-  .dashli-widget {
-    width: 0;
-  }
+.dashli-column > .dashli-row > .dashli-widget {
+  height: auto;
 }

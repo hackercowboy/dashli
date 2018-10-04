@@ -1,68 +1,131 @@
+.dashli-dashboard.dashli-theme-light {
+  $dark-color: #212529;
+  $light-color: #f8f9fa;
 
-$light-text-color: #f8f9fa;
-$dark-text-color: #212529; 
+  $bg-neutral: #d1d5da;
+  $bg-success: #28a745;
+  $bg-info: #17a2b8;
+  $bg-warning: #ffc107;
+  $bg-danger: #dc3545;
 
-$bg-neutral: #d1d5da;
-$bg-success: #28a745;
-$bg-info: #17a2b8;
-$bg-warning: #ffc107;
-$bg-danger: #dc3545;
+  $light-text-color: $light-color;
+  $dark-text-color: $dark-color;
 
-$bg-neutral-text-color: $dark-text-color;
-$bg-success-text-color: $light-text-color;
-$bg-info-text-color: $light-text-color;
-$bg-warning-text-color: $light-text-color;
-$bg-danger-text-color: $light-text-color;
+  $bg-neutral-text-color: $dark-text-color;
+  $bg-success-text-color: $light-text-color;
+  $bg-info-text-color: $light-text-color;
+  $bg-warning-text-color: $light-text-color;
+  $bg-danger-text-color: $light-text-color;
 
-@keyframes pulse {
-  0% {
-      background-color: rgba(165, 165, 165, 0.1)
+  @keyframes dashli-pulse {
+    0% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+    50% {
+        background-color: rgba(165, 165, 165, 0.3)
+    }
+    100% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
   }
-  50% {
-      background-color: rgba(165, 165, 165, 0.3)
+
+  .dashli-widget {
+    margin: 5px;
+    padding: 15px;
   }
-  100% {
-      background-color: rgba(165, 165, 165, 0.1)
+
+  .dashli-widget-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
   }
-}
 
-.dashli-widget {
-  margin: 5px;
-  padding: 15px;
-}
+  .dashli-widget-neutral {
+    background-color: $bg-neutral;
+    color: $bg-neutral-text-color;
 
-.dashli-widget-title {
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 800;
-}
+    .dashli-bubble-world-map-dot {
+      fill: $dark-color;
+    }
+  }
 
-.dashli-widget-neutral {
-  background-color: $bg-neutral;
-  color: $bg-neutral-text-color;
-}
+  .dashli-widget-success {
+    background-color: $bg-success;
+    color: $bg-success-text-color;
 
-.dashli-widget-success {
-  background-color: $bg-success;
-  color: $bg-success-text-color;
-}
+    .dashli-bubble-world-map-dot {
+      fill: $light-color;
+    }
+  }
 
-.dashli-widget-info {
-  background-color: $bg-info;
-  color: $bg-info-text-color;
-}
+  .dashli-widget-info {
+    background-color: $bg-info;
+    color: $bg-info-text-color;
 
-.dashli-widget-warning {
-  background-color: $bg-warning;
-  color: $bg-warning-text-color;
-}
+    .dashli-bubble-world-map-dot {
+      fill: $light-color;
+    }
+  }
 
-.dashli-widget-danger {
-  background-color: $bg-danger;
-  color: $bg-danger-text-color;
-}
+  .dashli-widget-warning {
+    background-color: $bg-warning;
+    color: $bg-warning-text-color;
 
-.dashli-widget-undefined {
-  color: $dark-text-color;
-  animation: pulse 1.5s infinite ease-in-out;
+    .dashli-bubble-world-map-dot {
+      fill: $light-color;
+    }
+  }
+
+  .dashli-widget-danger {
+    background-color: $bg-danger;
+    color: $bg-danger-text-color;
+
+    .dashli-bubble-world-map-dot {
+      fill: $light-color;
+    }
+  }
+
+  .dashli-widget-undefined {
+    color: $dark-text-color;
+    animation: dashli-pulse 1.5s infinite ease-in-out;
+  }
+
+  .dashli-area-chart-line {
+    stroke: $light-color;
+  }
+
+  .dashli-area-chart-area {
+    fill: $light-color;
+    opacity: 0.3;
+  }
+
+  .dashli-bubble-world-map-active-circle {
+    stroke-width: 1;
+    fill-opacity: 0.4;
+  }
+
+  .dashli-bubble-world-map-active-dot-neutral, .dashli-bubble-world-map-active-circle-neutral {
+    fill: $dark-color;
+    stroke: $dark-color;
+  }
+
+  .dashli-bubble-world-map-active-dot-danger, .dashli-bubble-world-map-active-circle-danger {
+    fill: $bg-danger;
+    stroke: $bg-danger;
+  }
+
+  .dashli-bubble-world-map-active-dot-warning, .dashli-bubble-world-map-active-circle-warning {
+    fill: $bg-warning;
+    stroke: $bg-warning;
+  }
+
+  .dashli-bubble-world-map-active-dot-info, .dashli-bubble-world-map-active-circle-info {
+    fill: $bg-info;
+    stroke: $bg-info;
+  }
+
+  .dashli-bubble-world-map-active-dot-success, .dashli-bubble-world-map-active-circle-success {
+    fill: $bg-success;
+    stroke: $bg-success;
+  }
 }

@@ -8,7 +8,7 @@
     height: 0;
   }
 
-  .dashli-area-chart-chart {
+  .dashli-area-chart-visual {
     flex-grow: 2;
     height: 0;
     margin-left: -15px;
@@ -17,13 +17,7 @@
 
     .dashli-area-chart-line {
       fill: none;
-      stroke: white;
-      stroke-width: 2px;
-    }
-
-    .dashli-area-chart-area {
-      fill: white;
-      opacity: 0.3;
+      stroke-width: 1.5px;
     }
   }
 }

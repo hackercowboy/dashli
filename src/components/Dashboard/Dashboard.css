@@ -1,9 +1,4 @@
-html, body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  margin: 0;
-  padding: 0; }
-
-.dashboard {
+.dashli-dashboard {
   display: flex;
   width: 100%;
   padding: 5px;

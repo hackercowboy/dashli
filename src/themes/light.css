@@ -1,4 +1,4 @@
-@keyframes pulse {
+@keyframes dashli-pulse {
   0% {
     background-color: rgba(165, 165, 165, 0.1); }
   50% {
@@ -6,35 +6,76 @@
   100% {
     background-color: rgba(165, 165, 165, 0.1); } }
 
-.dashli-widget {
+.dashli-dashboard.dashli-theme-light .dashli-widget {
   margin: 5px;
   padding: 15px; }
 
-.dashli-widget-title {
+.dashli-dashboard.dashli-theme-light .dashli-widget-title {
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 800; }
 
-.dashli-widget-neutral {
+.dashli-dashboard.dashli-theme-light .dashli-widget-neutral {
   background-color: #d1d5da;
   color: #212529; }
+  .dashli-dashboard.dashli-theme-light .dashli-widget-neutral .dashli-bubble-world-map-dot {
+    fill: #212529; }
 
-.dashli-widget-success {
+.dashli-dashboard.dashli-theme-light .dashli-widget-success {
   background-color: #28a745;
   color: #f8f9fa; }
+  .dashli-dashboard.dashli-theme-light .dashli-widget-success .dashli-bubble-world-map-dot {
+    fill: #f8f9fa; }
 
-.dashli-widget-info {
+.dashli-dashboard.dashli-theme-light .dashli-widget-info {
   background-color: #17a2b8;
   color: #f8f9fa; }
+  .dashli-dashboard.dashli-theme-light .dashli-widget-info .dashli-bubble-world-map-dot {
+    fill: #f8f9fa; }
 
-.dashli-widget-warning {
+.dashli-dashboard.dashli-theme-light .dashli-widget-warning {
   background-color: #ffc107;
   color: #f8f9fa; }
+  .dashli-dashboard.dashli-theme-light .dashli-widget-warning .dashli-bubble-world-map-dot {
+    fill: #f8f9fa; }
 
-.dashli-widget-danger {
+.dashli-dashboard.dashli-theme-light .dashli-widget-danger {
   background-color: #dc3545;
   color: #f8f9fa; }
+  .dashli-dashboard.dashli-theme-light .dashli-widget-danger .dashli-bubble-world-map-dot {
+    fill: #f8f9fa; }
 
-.dashli-widget-undefined {
+.dashli-dashboard.dashli-theme-light .dashli-widget-undefined {
   color: #212529;
-  animation: pulse 1.5s infinite ease-in-out; }
+  animation: dashli-pulse 1.5s infinite ease-in-out; }
+
+.dashli-dashboard.dashli-theme-light .dashli-area-chart-line {
+  stroke: #f8f9fa; }
+
+.dashli-dashboard.dashli-theme-light .dashli-area-chart-area {
+  fill: #f8f9fa;
+  opacity: 0.3; }
+
+.dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle {
+  stroke-width: 1;
+  fill-opacity: 0.4; }
+
+.dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-dot-neutral, .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle-neutral {
+  fill: #212529;
+  stroke: #212529; }
+
+.dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-dot-danger, .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle-danger {
+  fill: #dc3545;
+  stroke: #dc3545; }
+
+.dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-dot-warning, .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle-warning {
+  fill: #ffc107;
+  stroke: #ffc107; }
+
+.dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-dot-info, .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle-info {
+  fill: #17a2b8;
+  stroke: #17a2b8; }
+
+.dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-dot-success, .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle-success {
+  fill: #28a745;
+  stroke: #28a745; }

@@ -1,0 +1,87 @@
+.dashli-dashboard.dashli-theme-dark {
+  background: #212529;
+
+  $dark-color: #212529;
+  $light-color: #f8f9fa;
+
+  $bg-neutral: #d1d5da;
+  $bg-success: #28a745;
+  $bg-info: #17a2b8;
+  $bg-warning: #ffc107;
+  $bg-danger: #dc3545;
+
+  $light-text-color: $light-color;
+  $dark-text-color: $dark-color;
+
+  $bg-neutral-text-color: $light-text-color;
+  $bg-success-text-color: $light-text-color;
+  $bg-info-text-color: $light-text-color;
+  $bg-warning-text-color: $light-text-color;
+  $bg-danger-text-color: $light-text-color;
+
+  @keyframes dashli-pulse {
+    0% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+    50% {
+        background-color: rgba(165, 165, 165, 0.3)
+    }
+    100% {
+        background-color: rgba(165, 165, 165, 0.1)
+    }
+  }
+
+  .dashli-widget {
+    margin: 5px;
+    padding: 15px;
+  }
+
+  .dashli-widget-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .dashli-widget-neutral {
+    background-color: rgba($bg-neutral, 0.1);
+    color: $bg-neutral-text-color;
+  }
+
+  .dashli-widget-success {
+    background-color: rgba($bg-success, 0.3);
+    color: $bg-success-text-color;
+  }
+
+  .dashli-widget-info {
+    background-color: rgba($bg-info, 0.3);
+    color: $bg-info-text-color;
+  }
+
+  .dashli-widget-warning {
+    background-color: rgba($bg-warning, 0.4);
+    color: $bg-warning-text-color;
+  }
+
+  .dashli-widget-danger {
+    background-color: rgba($bg-danger, 0.4);
+    color: $bg-danger-text-color;
+  }
+
+  .dashli-widget-undefined {
+    color: $dark-text-color;
+    animation: dashli-pulse 1.5s infinite ease-in-out;
+  }
+
+  .dashli-bubble-world-map-dot {
+    fill: $light-color;
+  }
+
+  .dashli-area-chart-line {
+    stroke: $light-color;
+  }
+
+  .dashli-area-chart-area {
+    fill: $light-color;
+    opacity: 0.3;
+  }
+}

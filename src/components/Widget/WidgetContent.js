@@ -28,7 +28,7 @@ class WidgetContent extends PureComponent {
       title,
       component,
       updated,
-      weight
+      weight,
     } = this.props;
 
     return (
