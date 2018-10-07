@@ -4,7 +4,8 @@
   flex-grow: 1; }
   .dashli-area-chart .dashli-flex-text {
     flex-grow: 1;
-    height: 0; }
+    height: 0;
+    margin-bottom: 10px; }
   .dashli-area-chart .dashli-area-chart-visual {
     flex-grow: 2;
     height: 0;

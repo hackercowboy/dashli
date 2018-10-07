@@ -1,4 +1,5 @@
 .dashli-dashboard.dashli-theme-light {
+
   $dark-color: #212529;
   $light-color: #f8f9fa;
 
@@ -128,4 +129,6 @@
     fill: $bg-success;
     stroke: $bg-success;
   }
+
+  @import 'styles';
 }

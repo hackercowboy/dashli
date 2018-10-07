@@ -81,7 +81,7 @@ class AreaChart extends PureComponent {
   render() {
     return (
       <div className="dashli-area-chart">
-        <FlexText {...this.props} />
+        <FlexText {...this.props} verticalAlign="bottom" horizontalAlign="right" />
         <div className="dashli-area-chart-visual" ref={this.createAreaChart} />
       </div>
     );

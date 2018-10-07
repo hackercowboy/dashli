@@ -8,7 +8,7 @@ class Value extends PureComponent {
   render() {
     return (
       <div className="dashli-value">
-        <FlexText {...this.props} />
+        <FlexText {...this.props} horizontalAlign="right" verticalAlign="bottom" />
       </div>
     );
   }

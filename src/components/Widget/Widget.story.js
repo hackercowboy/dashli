@@ -9,9 +9,9 @@ import {
 } from '..';
 
 export default () => (
-  <Story>
+  <Story title="Widget">
     <Dashboard theme="light" locale="de_DE">
-      <Row height="calc(100vh - 10px)">
+      <Row height="calc(100vh - 50px)">
         <Column weight={2}>
           <Widget title="Neutral" status="neutral" updated={new Date()} />
         </Column>

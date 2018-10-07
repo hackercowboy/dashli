@@ -79,3 +79,28 @@
 .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-dot-success, .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle-success {
   fill: #28a745;
   stroke: #28a745; }
+
+.dashli-dashboard.dashli-theme-light .dashli-gauge-chart {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; }
+  .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual {
+    flex-grow: 1; }
+    .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-background {
+      fill: #f8f9fa;
+      opacity: 0.3; }
+    .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-foreground {
+      fill: #f8f9fa;
+      opacity: 1; }
+  .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-info {
+    position: absolute;
+    margin: auto;
+    flex-grow: 1; }
+    .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-info .dashli-flex-text-value {
+      height: 0;
+      flex-grow: 1;
+      justify-content: center; }
+    .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-info .dashli-flex-text-additional-value {
+      height: 0;
+      flex-grow: 1;
+      justify-content: center; }

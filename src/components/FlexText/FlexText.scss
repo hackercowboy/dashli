@@ -2,22 +2,20 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin-bottom: 10px;
 
   .dashli-flex-text-value {
     display: flex;
     font-size: 0px;
-    flex-grow: 1;
-    align-items: flex-end;  
-    justify-content: flex-end;
     font-weight: bold;
+    flex-grow: 1;
+    white-space: nowrap;
   }
 
   .dashli-flex-text-additional-value {
     display: flex;
     font-size: 0px;
-    align-items: top;  
-    justify-content: flex-end;
+    flex-grow: 1;
+    white-space: nowrap;
   }
 
   .dashli-flex-text-reference {
@@ -28,14 +26,14 @@
       font-size: 40px;
       line-height: 40px;
       .dashli-flex-text-unit {
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 20px;
       }
     }
 
     .dashli-flex-text-additional-value {
-      font-size: 30px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 20px;
     }
   }
 }

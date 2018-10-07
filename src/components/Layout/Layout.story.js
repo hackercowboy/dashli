@@ -9,7 +9,7 @@ import {
 import Layout from '.';
 
 export default () => (
-  <Story>
+  <Story title="Layout">
     <Dashboard theme="light">
       <Layout target="tv">
         <Row height="300px">
@@ -24,13 +24,13 @@ export default () => (
         </Row>
       </Layout>
       <Layout target="desktop">
-        <Row height="calc(50vh - 5px)">
+        <Row height="calc(50vh - 30px)">
           <Widget title="Desktop" status="neutral" />
           <Widget title="Desktop" status="neutral" />
           <Widget title="Desktop" status="neutral" />
           <Widget title="Desktop" status="neutral" />
         </Row>
-        <Row height="calc(50vh - 5px)">
+        <Row height="calc(50vh - 30px)">
           <Widget title="Desktop" status="neutral" />
           <Widget title="Desktop" status="neutral" />
           <Widget title="Desktop" status="neutral" />
@@ -38,17 +38,17 @@ export default () => (
         </Row>
       </Layout>
       <Layout target="tablet">
-        <Row height="calc(33vh - 3px)">
+        <Row height="calc(33vh - 19px)">
           <Widget title="Tablet" status="neutral" />
           <Widget title="Tablet" status="neutral" />
           <Widget title="Tablet" status="neutral" />
         </Row>
-        <Row height="calc(33vh - 3px)">
+        <Row height="calc(33vh - 19px)">
           <Widget title="Tablet" status="neutral" />
           <Widget title="Tablet" status="neutral" />
           <Widget title="Tablet" status="neutral" />
         </Row>
-        <Row height="calc(34vh - 4px)">
+        <Row height="calc(34vh - 20px)">
           <Widget title="Tablet" status="neutral" />
           <Widget title="Tablet" status="neutral" />
           <Widget title="Tablet" status="neutral" />

@@ -22,20 +22,27 @@ describe('<FlexText/>', () => {
 
     wrapper.update();
 
-    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({ fontSize: '16px', lineHeight: '16px' });
+    let expectedStyle = {
+      alignItems: 'center', fontSize: '15px', justifyContent: 'center', lineHeight: '15px',
+    };
+
+    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual(expectedStyle);
 
     wrapper.instance().updateFontSize({
       querySelector: () => ({
-        offsetWidth: 50,
-        offsetHeight: 20,
+        offsetWidth: 500,
+        offsetHeight: 202,
       }),
-      offsetWidth: 200,
-      offsetHeight: 100,
+      offsetWidth: 300,
+      offsetHeight: 200,
     });
 
     wrapper.update();
 
-    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({ fontSize: '160px', lineHeight: '160px' });
+    expectedStyle = {
+      alignItems: 'center', fontSize: '22px', justifyContent: 'center', lineHeight: '22px',
+    };
+    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual(expectedStyle);
   });
 
   it('should not render additional value if not set', () => {

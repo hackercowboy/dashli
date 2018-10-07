@@ -1,20 +1,18 @@
 .dashli-flex-text {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  margin-bottom: 10px; }
+  flex-grow: 1; }
   .dashli-flex-text .dashli-flex-text-value {
     display: flex;
     font-size: 0px;
+    font-weight: bold;
     flex-grow: 1;
-    align-items: flex-end;
-    justify-content: flex-end;
-    font-weight: bold; }
+    white-space: nowrap; }
   .dashli-flex-text .dashli-flex-text-additional-value {
     display: flex;
     font-size: 0px;
-    align-items: top;
-    justify-content: flex-end; }
+    flex-grow: 1;
+    white-space: nowrap; }
   .dashli-flex-text .dashli-flex-text-reference {
     position: absolute;
     top: 0;
@@ -23,8 +21,8 @@
       font-size: 40px;
       line-height: 40px; }
       .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value .dashli-flex-text-unit {
-        font-size: 30px;
-        line-height: 30px; }
+        font-size: 20px;
+        line-height: 20px; }
     .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-additional-value {
-      font-size: 30px;
-      line-height: 30px; }
+      font-size: 20px;
+      line-height: 20px; }

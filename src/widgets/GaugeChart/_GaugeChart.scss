@@ -1,0 +1,39 @@
+.dashli-gauge-chart {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .dashli-gauge-chart-visual {
+    flex-grow: 1; 
+
+    .dashli-gauge-chart-background {
+      fill: $light-color;
+      opacity: 0.3;
+    }
+
+    .dashli-gauge-chart-foreground {
+      fill: $light-color;
+      opacity: 1;
+    }
+  }
+
+  .dashli-gauge-chart-info {
+    position: absolute;
+    margin: auto;
+    flex-grow: 1;
+
+    .dashli-flex-text-value {
+      height: 0;
+      flex-grow: 1;
+      justify-content: center;
+    }
+    
+    .dashli-flex-text-additional-value {
+      height: 0;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+  }
+}
+

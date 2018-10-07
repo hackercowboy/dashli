@@ -45,7 +45,7 @@ class AreaChartStory extends Component {
         <StoryContext.Consumer>
           { context => (
             <Dashboard theme={context.theme}>
-              <Row height="calc(100vh - 10px)">
+              <Row height="calc(100vh - 50px)">
                 <Column weight={1}>
                   <Widget component={AreaChart} title="Warning" status="warning" value={value.toFixed(2)} values={values} updated={updated} />
                   <Widget component={AreaChart} title="success" status="success" value={value.toFixed(2)} values={values} updated={updated} />

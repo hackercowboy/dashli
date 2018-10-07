@@ -21,7 +21,7 @@ describe('<Widget/>', () => {
   it('should not render content or updated if status is undefined', () => {
     const wrapper = mount(<Widget component={Value} title="Test" updated={new Date()} />);
     expect(wrapper.find('.dashli-widget-title').length).toBe(1);
-    expect(wrapper.find('.dashli-widget-content').length).toBe(0);
+    expect(wrapper.find('.dashli-widget-content').length).toBe(1);
     expect(wrapper.find('.dashli-widget-updated').length).toBe(0);
 
     wrapper.setProps({ status: 'danger' });
@@ -39,7 +39,7 @@ describe('<Widget/>', () => {
     );
 
     expect(wrapper.find('.dashli-widget-title').length).toBe(1);
-    expect(wrapper.find('.dashli-widget-content').length).toBe(0);
+    expect(wrapper.find('.dashli-widget-content').length).toBe(1);
     expect(wrapper.find('.dashli-widget-updated').length).toBe(0);
   });
 });

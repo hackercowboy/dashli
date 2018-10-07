@@ -40,7 +40,7 @@ class WidgetContent extends PureComponent {
           return (
             <div className={`dashli-widget dashli-widget-${status}`} style={{ flexGrow: weight }}>
               { title ? <div className="dashli-widget-title">{title}</div> : undefined }
-              { component && status ? <div className="dashli-widget-content">{ React.createElement(component, this.props)}</div> : undefined }
+              <div className="dashli-widget-content">{ component && status ? React.createElement(component, this.props) : undefined }</div>
               { updated && status ? <div className="dashli-widget-updated"><TimeAgo datetime={updated} locale={locale} /></div> : undefined }
             </div>
           );
