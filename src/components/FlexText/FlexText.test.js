@@ -23,7 +23,7 @@ describe('<FlexText/>', () => {
     wrapper.update();
 
     let expectedStyle = {
-      alignItems: 'center', fontSize: '15px', justifyContent: 'center', lineHeight: '15px',
+      alignItems: 'center', fontSize: '16px', justifyContent: 'center', lineHeight: '16px',
     };
 
     expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual(expectedStyle);
@@ -40,7 +40,7 @@ describe('<FlexText/>', () => {
     wrapper.update();
 
     expectedStyle = {
-      alignItems: 'center', fontSize: '22px', justifyContent: 'center', lineHeight: '22px',
+      alignItems: 'center', fontSize: '24px', justifyContent: 'center', lineHeight: '24px',
     };
     expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual(expectedStyle);
   });
@@ -53,5 +53,39 @@ describe('<FlexText/>', () => {
   it('should render additional value if set', () => {
     const wrapper = mount(<FlexText value="5000" additionalValue="Test" />);
     expect(wrapper.find('.dashli-flex-text-additional-value').length).toBe(2);
+  });
+
+  it('should vertical align top', () => {
+    const wrapper = mount(<FlexText value="5000" additionalValue="Test" verticalAlign="top" />);
+    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({
+      fontSize: 'NaNpx',
+      lineHeight: 'NaNpx',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+      flexGrow: 0,
+    });
+
+    expect(wrapper.find('.dashli-flex-text-additional-value').at(0).props().style).toEqual({
+      fontSize: 'NaNpx',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+    });
+  });
+
+  it('should vertical align top', () => {
+    const wrapper = mount(<FlexText value="5000" additionalValue="Test" verticalAlign="bottom" />);
+    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({
+      fontSize: 'NaNpx',
+      lineHeight: 'NaNpx',
+      justifyContent: 'center',
+      alignItems: 'flex-end',
+    });
+
+    expect(wrapper.find('.dashli-flex-text-additional-value').at(0).props().style).toEqual({
+      fontSize: 'NaNpx',
+      flexGrow: 0,
+      justifyContent: 'center',
+      alignItems: 'flex-end',
+    });
   });
 });

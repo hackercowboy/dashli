@@ -23,6 +23,7 @@ class GaugeChart extends PureComponent {
     const { percentage } = this.props;
 
     /* eslint-disable arrow-body-style */
+    /* istanbul ignore next */
     const arcTween = (angle) => {
       return (d) => {
         const interpolate = d3.interpolate(d.endAngle, angle);

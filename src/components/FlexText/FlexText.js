@@ -52,16 +52,14 @@ class FlexText extends PureComponent {
       const { additionalValue } = this.props;
       const reference = container.querySelector('.dashli-flex-text-reference');
       this.container = container;
-      if (container) {
-        const heightFactor = container.offsetHeight / (additionalValue ? 60 : 40);
-        const widthFactor = container.offsetWidth / reference.offsetWidth * 0.95;
+      const heightFactor = container.offsetHeight / (additionalValue ? 60 : 40);
+      const widthFactor = container.offsetWidth / reference.offsetWidth;
 
-        const factor = Math.min(heightFactor, widthFactor);
-        this.setState({
-          fontSize: `${Math.floor(40 * factor)}px`,
-          secondFontSize: `${Math.floor(20 * factor)}px`,
-        });
-      }
+      const factor = Math.min(heightFactor, widthFactor);
+      this.setState({
+        fontSize: `${Math.floor(40 * factor)}px`,
+        secondFontSize: `${Math.floor(20 * factor)}px`,
+      });
     }
   }
 
