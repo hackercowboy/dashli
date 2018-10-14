@@ -42,7 +42,7 @@ class ValueStory extends Component {
         <StoryContext.Consumer>
           { context => (
             <Dashboard theme={context.theme}>
-              <Row height="calc(100vh - 10px)">
+              <Row height="calc(100vh - 50px)">
                 <Column weight={2}>
                   <Widget component={Value} title="Neutral" status="neutral" value="8000" unit="/ms" additionalValue="Test" updated={updated} />
                 </Column>

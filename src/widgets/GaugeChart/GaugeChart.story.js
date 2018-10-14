@@ -14,7 +14,7 @@ class GaugeChartStory extends Component {
   constructor() {
     super();
     this.updateValue = this.updateValue.bind(this);
-    this.state = { value: 75, percentage: 0.75 };
+    this.state = { value: 75, percentage: 0.75, updated: new Date() };
   }
 
   componentDidMount() {
@@ -27,7 +27,7 @@ class GaugeChartStory extends Component {
 
   updateValue() {
     const value = Math.floor(Math.random() * 100);
-    this.setState({ value, percentage: value / 100 });
+    this.setState({ value, percentage: value / 100, updated: new Date() });
   }
 
   render() {

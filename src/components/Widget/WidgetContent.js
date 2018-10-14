@@ -23,6 +23,21 @@ class WidgetContent extends PureComponent {
     weight: 1,
   }
 
+  constructor() {
+    super();
+    this.state = { initialized: false };
+    this.handleContentRef = this.handleContentRef.bind(this);
+  }
+
+  handleContentRef(element) {
+    // FIXME: hack to fix resizing problems
+    if (element) {
+      setTimeout(() => {
+        this.setState({ initialized: true });
+      }, 10);
+    }
+  }
+
   render() {
     const {
       title,
@@ -30,6 +45,8 @@ class WidgetContent extends PureComponent {
       updated,
       weight,
     } = this.props;
+
+    const { initialized } = this.state;
 
     return (
       <DashboardContext.Consumer>
@@ -40,7 +57,9 @@ class WidgetContent extends PureComponent {
           return (
             <div className={`dashli-widget dashli-widget-${status}`} style={{ flexGrow: weight }}>
               { title ? <div className="dashli-widget-title">{title}</div> : undefined }
-              <div className="dashli-widget-content">{ component && status ? React.createElement(component, this.props) : undefined }</div>
+              <div className="dashli-widget-content" ref={this.handleContentRef}>
+                { component && status && initialized ? React.createElement(component, this.props) : undefined }
+              </div>
               { updated && status ? <div className="dashli-widget-updated"><TimeAgo datetime={updated} locale={locale} /></div> : undefined }
             </div>
           );

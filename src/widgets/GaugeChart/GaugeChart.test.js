@@ -10,7 +10,7 @@ describe('<GaugeChart/>', () => {
     wrapper.instance().componentWillUnmount();
   });
 
-  it('should render a nice area chart', () => {
+  it('should render a nice gauge chart', () => {
     const wrapper = mount(<GaugeChart value="20" percentage={0.2} />);
     wrapper.setProps({ value: '75', percentage: 0.75 });
     wrapper.setProps({ value: '65', percentage: 0.65 });

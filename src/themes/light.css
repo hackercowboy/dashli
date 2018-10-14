@@ -16,44 +16,44 @@
   font-weight: 800; }
 
 .dashli-dashboard.dashli-theme-light .dashli-widget-neutral {
-  background-color: #d1d5da;
-  color: #212529; }
+  background-color: #bbb;
+  color: white; }
   .dashli-dashboard.dashli-theme-light .dashli-widget-neutral .dashli-bubble-world-map-dot {
     fill: #212529; }
 
 .dashli-dashboard.dashli-theme-light .dashli-widget-success {
   background-color: #28a745;
-  color: #f8f9fa; }
+  color: white; }
   .dashli-dashboard.dashli-theme-light .dashli-widget-success .dashli-bubble-world-map-dot {
-    fill: #f8f9fa; }
+    fill: white; }
 
 .dashli-dashboard.dashli-theme-light .dashli-widget-info {
   background-color: #17a2b8;
-  color: #f8f9fa; }
+  color: white; }
   .dashli-dashboard.dashli-theme-light .dashli-widget-info .dashli-bubble-world-map-dot {
-    fill: #f8f9fa; }
+    fill: white; }
 
 .dashli-dashboard.dashli-theme-light .dashli-widget-warning {
   background-color: #ffc107;
-  color: #f8f9fa; }
+  color: white; }
   .dashli-dashboard.dashli-theme-light .dashli-widget-warning .dashli-bubble-world-map-dot {
-    fill: #f8f9fa; }
+    fill: white; }
 
 .dashli-dashboard.dashli-theme-light .dashli-widget-danger {
   background-color: #dc3545;
-  color: #f8f9fa; }
+  color: white; }
   .dashli-dashboard.dashli-theme-light .dashli-widget-danger .dashli-bubble-world-map-dot {
-    fill: #f8f9fa; }
+    fill: white; }
 
 .dashli-dashboard.dashli-theme-light .dashli-widget-undefined {
-  color: #212529;
+  color: white;
   animation: dashli-pulse 1.5s infinite ease-in-out; }
 
 .dashli-dashboard.dashli-theme-light .dashli-area-chart-line {
-  stroke: #f8f9fa; }
+  stroke: white; }
 
 .dashli-dashboard.dashli-theme-light .dashli-area-chart-area {
-  fill: #f8f9fa;
+  fill: white;
   opacity: 0.3; }
 
 .dashli-dashboard.dashli-theme-light .dashli-bubble-world-map-active-circle {
@@ -80,6 +80,63 @@
   fill: #28a745;
   stroke: #28a745; }
 
+.dashli-dashboard.dashli-theme-light .dashli-donut-chart {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 0; }
+  .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual {
+    flex-grow: 1;
+    height: 0; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value {
+      fill: white; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-0 {
+      opacity: 1; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-1 {
+      opacity: 0.7; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-2 {
+      opacity: 0.4; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-3 {
+      opacity: 0.25; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-4 {
+      opacity: 0.15; }
+  .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend {
+    position: absolute;
+    margin: auto;
+    flex-grow: 1;
+    align-items: center;
+    display: flex; }
+    .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul li {
+        display: flex;
+        align-items: center;
+        width: 100%; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color {
+        background: white;
+        border-radius: 50%;
+        margin: 2%;
+        margin-right: 3%; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-text {
+        flex-grow: 1;
+        width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-0 {
+        opacity: 1; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-1 {
+        opacity: 0.7; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-2 {
+        opacity: 0.4; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-3 {
+        opacity: 0.25; }
+      .dashli-dashboard.dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-4 {
+        opacity: 0.15; }
+
 .dashli-dashboard.dashli-theme-light .dashli-gauge-chart {
   display: flex;
   flex-direction: column;
@@ -87,10 +144,10 @@
   .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual {
     flex-grow: 1; }
     .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-background {
-      fill: #f8f9fa;
+      fill: white;
       opacity: 0.3; }
     .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-foreground {
-      fill: #f8f9fa;
+      fill: white;
       opacity: 1; }
   .dashli-dashboard.dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-info {
     position: absolute;

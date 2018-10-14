@@ -1,22 +1,28 @@
 .dashli-dashboard.dashli-theme-light {
 
   $dark-color: #212529;
-  $light-color: #f8f9fa;
+  $light-color: white;
 
-  $bg-neutral: #d1d5da;
+  $bg-neutral: #bbb;
   $bg-success: #28a745;
   $bg-info: #17a2b8;
   $bg-warning: #ffc107;
   $bg-danger: #dc3545;
 
   $light-text-color: $light-color;
-  $dark-text-color: $dark-color;
+  $dark-text-color: $light-color;
 
   $bg-neutral-text-color: $dark-text-color;
   $bg-success-text-color: $light-text-color;
   $bg-info-text-color: $light-text-color;
   $bg-warning-text-color: $light-text-color;
   $bg-danger-text-color: $light-text-color;
+
+  $chart_color_0: $bg-success;
+  $chart_color_1: $bg-info;
+  $chart_color_2: $bg-warning;
+  $chart_color_3: $bg-danger;
+  $chart_color_4: $dark-color;
 
   @keyframes dashli-pulse {
     0% {

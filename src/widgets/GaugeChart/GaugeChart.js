@@ -22,20 +22,22 @@ class GaugeChart extends PureComponent {
   componentDidUpdate() {
     const { percentage } = this.props;
 
-    /* eslint-disable arrow-body-style */
     /* istanbul ignore next */
-    const arcTween = (angle) => {
-      return (d) => {
-        const interpolate = d3.interpolate(d.endAngle, angle);
-        return (t) => {
-          /* eslint-disable no-param-reassign */
-          d.endAngle = interpolate(t);
-          return this.arc(d);
+    if (this.foreground) {
+      /* eslint-disable arrow-body-style */
+      /* istanbul ignore next */
+      const arcTween = (angle) => {
+        return (d) => {
+          const interpolate = d3.interpolate(d.endAngle, angle);
+          return (t) => {
+            /* eslint-disable no-param-reassign */
+            d.endAngle = interpolate(t);
+            return this.arc(d);
+          };
         };
       };
-    };
-
-    this.foreground.transition().duration(750).attrTween('d', arcTween(percentage * 2 * Math.PI));
+      this.foreground.transition().duration(750).attrTween('d', arcTween(percentage * 2 * Math.PI));
+    }
   }
 
   componentWillUnmount() {
