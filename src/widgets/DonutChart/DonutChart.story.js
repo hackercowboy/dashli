@@ -21,7 +21,7 @@ class DonutChartStory extends Component {
 
   componentDidMount() {
     this.updateValues();
-    this.interval = setInterval(this.updateValues, 5000);
+    this.interval = setInterval(this.updateValues, 1000);
   }
 
   componentWillUnmount() {
@@ -29,7 +29,7 @@ class DonutChartStory extends Component {
   }
 
   createValues() {
-    const numberOfValues = Math.max(2, Math.floor(Math.random() * 5));
+    const numberOfValues = Math.max(3, Math.floor(Math.random() * 5));
     const values = [];
     for (let i = 1; i <= numberOfValues; i += 1) {
       values.push({

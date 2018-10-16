@@ -161,3 +161,10 @@
       height: 0;
       flex-grow: 1;
       justify-content: center; }
+
+.dashli-dashboard.dashli-theme-light .dashli-image {
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: -35px -15px -31px -15px;
+  border-radius: 5px; }
