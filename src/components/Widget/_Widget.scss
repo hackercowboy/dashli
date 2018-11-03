@@ -1,0 +1,57 @@
+.dashli-widget {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: $widget-border-radius;
+  margin: 5px;
+  padding: 15px;
+
+  .dashli-widget-title {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  .dashli-widget-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashli-widget-updated {
+    white-space: nowrap;
+    width: 100%;
+    height: 16px;
+  }
+}
+
+.dashli-widget-neutral {
+  background-color: $bg-neutral;
+  color: $bg-neutral-text-color;
+}
+
+.dashli-widget-success {
+  background-color: $bg-success;
+  color: $bg-success-text-color;
+}
+
+.dashli-widget-info {
+  background-color: $bg-info;
+  color: $bg-info-text-color;
+}
+
+.dashli-widget-warning {
+  background-color: $bg-warning;
+  color: $bg-warning-text-color;
+}
+
+.dashli-widget-danger {
+  background-color: $bg-danger;
+  color: $bg-danger-text-color;
+}
+
+.dashli-widget-undefined {
+  background-color: $bg-undefined;
+  color: $bg-undefined-text-color;
+}
+

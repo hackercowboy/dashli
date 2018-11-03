@@ -1,0 +1,51 @@
+.dashli-bubble-world-map {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .dashli-flex-text {
+    flex-grow: 1;
+    height: 0;
+  }
+
+  .dashli-bubble-world-map-visual {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.dashli-bubble-world-map-dot {
+  fill: $bg-neutral-text-color;
+}
+
+.dashli-bubble-world-map-active-circle {
+  stroke-width: 1;
+  fill-opacity: 0.4;
+}
+
+.dashli-bubble-world-map-active-dot-neutral, .dashli-bubble-world-map-active-circle-neutral {
+  fill: $bg-neutral;
+  stroke: $bg-neutral;
+}
+
+.dashli-bubble-world-map-active-dot-danger, .dashli-bubble-world-map-active-circle-danger {
+  fill: $bg-danger;
+  stroke: $bg-danger;
+}
+
+.dashli-bubble-world-map-active-dot-warning, .dashli-bubble-world-map-active-circle-warning {
+  fill: $bg-warning;
+  stroke: $bg-warning;
+}
+
+.dashli-bubble-world-map-active-dot-info, .dashli-bubble-world-map-active-circle-info {
+  fill: $bg-info;
+  stroke: $bg-info;
+}
+
+.dashli-bubble-world-map-active-dot-success, .dashli-bubble-world-map-active-circle-success {
+  fill: $bg-success;
+  stroke: $bg-success;
+}

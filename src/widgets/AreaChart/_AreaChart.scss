@@ -1,0 +1,85 @@
+.dashli-area-chart {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .dashli-flex-text {
+    flex-grow: 1;
+    height: 0;
+    margin-bottom: 10px;
+  }
+
+  .dashli-area-chart-visual {
+    flex-grow: 2;
+    height: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -33px;
+
+    .dashli-area-chart-line {
+      fill: none;
+      stroke-width: 1.5px;
+    }
+  }
+}
+
+
+.dashli-widget-neutral {
+  .dashli-area-chart-line {
+    stroke: $bg-neutral-text-color;
+    opacity: 0.5;
+  }
+
+  .dashli-area-chart-area {
+    fill: $bg-neutral-text-color;
+    opacity: 0.3;
+  }
+}
+
+.dashli-widget-success {
+  .dashli-area-chart-line {
+    stroke: $bg-success-text-color;
+    opacity: 0.5;
+  }
+
+  .dashli-area-chart-area {
+    fill: $bg-success-text-color;
+    opacity: 0.3;
+  }
+}
+
+.dashli-widget-info {
+  .dashli-area-chart-line {
+    stroke: $bg-info-text-color;
+    opacity: 0.5;
+  }
+
+  .dashli-area-chart-area {
+    fill: $bg-info-text-color;
+    opacity: 0.3;
+  }
+}
+
+.dashli-widget-warning {
+  .dashli-area-chart-line {
+    stroke: $bg-warning-text-color;
+    opacity: 0.5;
+  }
+
+  .dashli-area-chart-area {
+    fill: $bg-warning-text-color;
+    opacity: 0.3;
+  }
+}
+
+.dashli-widget-danger {
+  .dashli-area-chart-line {
+    stroke: $bg-danger-text-color;
+    opacity: 0.5;
+  }
+
+  .dashli-area-chart-area {
+    fill: $bg-danger-text-color;
+    opacity: 0.3;
+  }
+}

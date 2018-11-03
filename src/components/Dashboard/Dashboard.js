@@ -3,8 +3,6 @@ import React, { PureComponent } from 'react';
 
 import DashboardContext from './DashboardContext';
 
-import './Dashboard.css';
-
 class Dashboard extends PureComponent {
   static propTypes = {
     theme: PropTypes.string,

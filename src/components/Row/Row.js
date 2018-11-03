@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
-import './Row.css';
-
 class Row extends PureComponent {
   static propTypes = {
     height: PropTypes.string,

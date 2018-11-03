@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
-import './FlexText.css';
-
 const ALIGN_MAPPING = {
   center: 'center',
   top: 'flex-start',

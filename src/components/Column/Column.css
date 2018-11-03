@@ -1,7 +1,0 @@
-.dashli-column {
-  display: flex;
-  flex-direction: column;
-  width: 0; }
-  .dashli-column .dashli-widget {
-    height: 0;
-    width: auto; }

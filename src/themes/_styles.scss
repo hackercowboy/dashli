@@ -1,3 +1,13 @@
+@import '../components/Column/Column';
+@import '../components/Dashboard/Dashboard';
+@import '../components/FlexText/FlexText';
+@import '../components/Row/Row';
+@import '../components/Widget/Widget';
+
+@import '../widgets/AreaChart/AreaChart';
+@import '../widgets/BarChart/BarChart';
+@import '../widgets/BubbleWorldMap/BubbleWorldMap';
 @import '../widgets/DonutChart/DonutChart';
 @import '../widgets/GaugeChart/GaugeChart';
 @import '../widgets/Image/Image';
+@import '../widgets/Value/Value';

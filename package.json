@@ -2,9 +2,11 @@
   "name": "dashli",
   "version": "0.0.1",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest --env=jsdom --watch",
     "test:coverage": "jest --env=jsdom --coverage",
+    "build": "babel src --out-dir dist",
     "coveralls": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
     "start": "start-storybook -p 9009 -s public",
     "storybook": "start-storybook -p 9009 -s public",
@@ -25,6 +27,7 @@
     "timeago-react": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-syntax-export-default-from": "^7.0.0",

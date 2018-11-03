@@ -4,8 +4,6 @@ import TimeAgo from 'timeago-react';
 
 import DashboardContext from '../Dashboard/DashboardContext';
 
-import './Widget.css';
-
 class WidgetContent extends PureComponent {
   static propTypes = {
     status: PropTypes.string,

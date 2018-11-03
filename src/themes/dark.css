@@ -1,42 +1,286 @@
-.dashli-dashboard.dashli-theme-dark {
-  background: #212529; }
+.dashli-theme-dark {
+  background: #1f1f1f; }
 
-@keyframes dashli-pulse {
+@keyframes pulse-dark {
   0% {
-    background-color: rgba(165, 165, 165, 0.1); }
+    background-color: rgba(18, 18, 18, 0.1); }
+  25% {
+    background-color: rgba(18, 18, 18, 0.6); }
   50% {
-    background-color: rgba(165, 165, 165, 0.3); }
+    background-color: #121212; }
+  75% {
+    background-color: rgba(18, 18, 18, 0.6); }
   100% {
-    background-color: rgba(165, 165, 165, 0.1); } }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget {
+    background-color: rgba(18, 18, 18, 0.1); } }
+  .dashli-theme-dark .dashli-widget-undefined {
+    color: #f8f9fa;
+    animation: pulse-dark 1.5s infinite ease-in-out; }
+  .dashli-theme-dark .dashli-column {
+    display: flex;
+    flex-direction: column;
+    width: 0; }
+    .dashli-theme-dark .dashli-column .dashli-widget {
+      height: 0;
+      width: auto; }
+  .dashli-theme-dark .dashli-dashboard {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    flex-direction: column; }
+  .dashli-theme-dark .dashli-flex-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-value {
+      display: flex;
+      font-size: 0px;
+      font-weight: bold;
+      flex-grow: 1;
+      white-space: nowrap; }
+    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-additional-value {
+      display: flex;
+      font-size: 0px;
+      flex-grow: 1;
+      white-space: nowrap; }
+    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference {
+      position: absolute;
+      top: 0;
+      left: -10000px; }
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value {
+        font-size: 40px;
+        line-height: 40px; }
+        .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value .dashli-flex-text-unit {
+          font-size: 20px;
+          line-height: 20px; }
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-additional-value {
+        font-size: 20px;
+        line-height: 20px; }
+  .dashli-theme-dark .dashli-row {
+    display: flex;
+    width: 100%;
+    flex-grow: 1; }
+  .dashli-theme-dark .dashli-column > .dashli-row > .dashli-widget {
+    height: auto; }
+  .dashli-theme-dark .dashli-widget {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
     margin: 5px;
     padding: 15px; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-title {
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: 800; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-neutral {
-    background-color: rgba(209, 213, 218, 0.1);
+    .dashli-theme-dark .dashli-widget .dashli-widget-title {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 800; }
+    .dashli-theme-dark .dashli-widget .dashli-widget-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column; }
+    .dashli-theme-dark .dashli-widget .dashli-widget-updated {
+      white-space: nowrap;
+      width: 100%;
+      height: 16px; }
+  .dashli-theme-dark .dashli-widget-neutral {
+    background-color: #121212;
     color: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-success {
-    background-color: rgba(40, 167, 69, 0.3);
+  .dashli-theme-dark .dashli-widget-success {
+    background-color: #008b7d;
     color: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-info {
-    background-color: rgba(23, 162, 184, 0.3);
+  .dashli-theme-dark .dashli-widget-info {
+    background-color: #3748ac;
     color: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-warning {
-    background-color: rgba(255, 193, 7, 0.4);
+  .dashli-theme-dark .dashli-widget-warning {
+    background-color: #ff8d02;
     color: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-danger {
-    background-color: rgba(220, 53, 69, 0.4);
+  .dashli-theme-dark .dashli-widget-danger {
+    background-color: #e61a58;
     color: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-widget-undefined {
-    color: #212529;
-    animation: dashli-pulse 1.5s infinite ease-in-out; }
-  .dashli-dashboard.dashli-theme-dark .dashli-bubble-world-map-dot {
-    fill: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-area-chart-line {
-    stroke: #f8f9fa; }
-  .dashli-dashboard.dashli-theme-dark .dashli-area-chart-area {
+  .dashli-theme-dark .dashli-widget-undefined {
+    background-color: #121212;
+    color: #f8f9fa; }
+  .dashli-theme-dark .dashli-area-chart {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+    .dashli-theme-dark .dashli-area-chart .dashli-flex-text {
+      flex-grow: 1;
+      height: 0;
+      margin-bottom: 10px; }
+    .dashli-theme-dark .dashli-area-chart .dashli-area-chart-visual {
+      flex-grow: 2;
+      height: 0;
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-bottom: -33px; }
+      .dashli-theme-dark .dashli-area-chart .dashli-area-chart-visual .dashli-area-chart-line {
+        fill: none;
+        stroke-width: 1.5px; }
+  .dashli-theme-dark .dashli-widget-neutral .dashli-area-chart-line {
+    stroke: #f8f9fa;
+    opacity: 0.5; }
+  .dashli-theme-dark .dashli-widget-neutral .dashli-area-chart-area {
     fill: #f8f9fa;
     opacity: 0.3; }
+  .dashli-theme-dark .dashli-widget-success .dashli-area-chart-line {
+    stroke: #f8f9fa;
+    opacity: 0.5; }
+  .dashli-theme-dark .dashli-widget-success .dashli-area-chart-area {
+    fill: #f8f9fa;
+    opacity: 0.3; }
+  .dashli-theme-dark .dashli-widget-info .dashli-area-chart-line {
+    stroke: #f8f9fa;
+    opacity: 0.5; }
+  .dashli-theme-dark .dashli-widget-info .dashli-area-chart-area {
+    fill: #f8f9fa;
+    opacity: 0.3; }
+  .dashli-theme-dark .dashli-widget-warning .dashli-area-chart-line {
+    stroke: #f8f9fa;
+    opacity: 0.5; }
+  .dashli-theme-dark .dashli-widget-warning .dashli-area-chart-area {
+    fill: #f8f9fa;
+    opacity: 0.3; }
+  .dashli-theme-dark .dashli-widget-danger .dashli-area-chart-line {
+    stroke: #f8f9fa;
+    opacity: 0.5; }
+  .dashli-theme-dark .dashli-widget-danger .dashli-area-chart-area {
+    fill: #f8f9fa;
+    opacity: 0.3; }
+  .dashli-theme-dark .dashli-bar-chart {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 0;
+    padding: 10px 0; }
+    .dashli-theme-dark .dashli-bar-chart .dashli-bar-chart-item {
+      display: flex;
+      flex-direction: row;
+      background: rgba(255, 255, 255, 0.3);
+      align-items: center; }
+      .dashli-theme-dark .dashli-bar-chart .dashli-bar-chart-item .dashli-bar-chart-item-label {
+        white-space: nowrap;
+        flex-grow: 1;
+        padding-right: 20px; }
+  .dashli-theme-dark .dashli-bubble-world-map {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+    .dashli-theme-dark .dashli-bubble-world-map .dashli-flex-text {
+      flex-grow: 1;
+      height: 0; }
+    .dashli-theme-dark .dashli-bubble-world-map .dashli-bubble-world-map-visual {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .dashli-theme-dark .dashli-bubble-world-map-dot {
+    fill: #f8f9fa; }
+  .dashli-theme-dark .dashli-bubble-world-map-active-circle {
+    stroke-width: 1;
+    fill-opacity: 0.4; }
+  .dashli-theme-dark .dashli-bubble-world-map-active-dot-neutral, .dashli-theme-dark .dashli-bubble-world-map-active-circle-neutral {
+    fill: #121212;
+    stroke: #121212; }
+  .dashli-theme-dark .dashli-bubble-world-map-active-dot-danger, .dashli-theme-dark .dashli-bubble-world-map-active-circle-danger {
+    fill: #e61a58;
+    stroke: #e61a58; }
+  .dashli-theme-dark .dashli-bubble-world-map-active-dot-warning, .dashli-theme-dark .dashli-bubble-world-map-active-circle-warning {
+    fill: #ff8d02;
+    stroke: #ff8d02; }
+  .dashli-theme-dark .dashli-bubble-world-map-active-dot-info, .dashli-theme-dark .dashli-bubble-world-map-active-circle-info {
+    fill: #3748ac;
+    stroke: #3748ac; }
+  .dashli-theme-dark .dashli-bubble-world-map-active-dot-success, .dashli-theme-dark .dashli-bubble-world-map-active-circle-success {
+    fill: #008b7d;
+    stroke: #008b7d; }
+  .dashli-theme-dark .dashli-donut-chart {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 0; }
+    .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual {
+      flex-grow: 1;
+      height: 0; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value {
+        fill: #f8f9fa; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-0 {
+        opacity: 1; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-1 {
+        opacity: 0.7; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-2 {
+        opacity: 0.4; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-3 {
+        opacity: 0.25; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-4 {
+        opacity: 0.15; }
+    .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend {
+      position: absolute;
+      margin: auto;
+      flex-grow: 1;
+      align-items: center;
+      display: flex; }
+      .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul li {
+          display: flex;
+          align-items: center;
+          width: 100%; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color {
+          background: #f8f9fa;
+          border-radius: 50%;
+          margin: 2%;
+          margin-right: 3%; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-text {
+          flex-grow: 1;
+          width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-0 {
+          opacity: 1; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-1 {
+          opacity: 0.7; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-2 {
+          opacity: 0.4; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-3 {
+          opacity: 0.25; }
+        .dashli-theme-dark .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-4 {
+          opacity: 0.15; }
+  .dashli-theme-dark .dashli-gauge-chart {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+    .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-visual {
+      flex-grow: 1; }
+      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-background {
+        fill: #f8f9fa;
+        opacity: 0.3; }
+      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-foreground {
+        fill: #f8f9fa;
+        opacity: 1; }
+    .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info {
+      position: absolute;
+      margin: auto;
+      flex-grow: 1; }
+      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info .dashli-flex-text-value {
+        height: 0;
+        flex-grow: 1;
+        justify-content: center; }
+      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info .dashli-flex-text-additional-value {
+        height: 0;
+        flex-grow: 1;
+        justify-content: center; }
+  .dashli-theme-dark .dashli-image {
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: -35px -15px -31px -15px;
+    border-radius: 5px; }
+  .dashli-theme-dark .dashli-value {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 10px; }

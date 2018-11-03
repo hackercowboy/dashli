@@ -4,8 +4,6 @@ import * as d3 from 'd3';
 
 import FlexText from '../../components/FlexText';
 
-import './AreaChart.css';
-
 class AreaChart extends PureComponent {
   static propTypes = {
     values: PropTypes.arrayOf(PropTypes.number),

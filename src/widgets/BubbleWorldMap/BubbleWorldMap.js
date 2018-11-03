@@ -6,8 +6,6 @@ import insidePolygon from 'point-in-polygon';
 
 import worldMapShapes from './worldMapShapes';
 
-import './BubbleWorldMap.css';
-
 const statuses = [
   'danger',
   'warning',
