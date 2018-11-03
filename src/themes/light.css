@@ -76,7 +76,8 @@
   .dashli-theme-light .dashli-widget .dashli-widget-title {
     text-transform: uppercase;
     font-size: 18px;
-    font-weight: 800; }
+    font-weight: 800;
+    z-index: 2; }
   .dashli-theme-light .dashli-widget .dashli-widget-content {
     flex-grow: 1;
     display: flex;
@@ -84,7 +85,8 @@
   .dashli-theme-light .dashli-widget .dashli-widget-updated {
     white-space: nowrap;
     width: 100%;
-    height: 16px; }
+    height: 16px;
+    z-index: 2; }
 
 .dashli-theme-light .dashli-widget-neutral {
   background-color: #f0f3f5;
@@ -311,7 +313,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin: -35px -15px -31px -15px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  z-index: 1; }
 
 .dashli-theme-light .dashli-value {
   display: flex;
