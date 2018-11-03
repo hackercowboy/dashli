@@ -19,7 +19,7 @@ class Image extends PureComponent {
 
 
     return (
-      <div className="dashli-image" style={style}/>
+      <div className="dashli-image" style={style} />
     );
   }
 }

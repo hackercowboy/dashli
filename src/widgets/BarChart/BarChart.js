@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import * as d3 from 'd3';
 
 class BarChart extends PureComponent {
   static propTypes = {
@@ -51,7 +50,9 @@ class BarChart extends PureComponent {
       <div className="dashli-bar-chart" ref={this.handleContainer}>
         { height ? values.map((value, index) => (
           <div
-            key={index} className={`dashli-bar-chart-item dashli-bar-chart-item-${index}`}
+            /* eslint-disable react/no-array-index-key */
+            key={index}
+            className={`dashli-bar-chart-item dashli-bar-chart-item-${index}`}
             style={{ ...style, width: `${(value.value / total * factor * width) - itemPadding * 2}px` }}
           >
             <div className="dashli-bar-chart-item-label">{value.label}</div>
