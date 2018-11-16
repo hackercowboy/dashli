@@ -107,9 +107,11 @@ function (_PureComponent) {
       };
       return _react.default.createElement("div", {
         className: "dashli-dashboard dashli-theme-".concat(theme)
+      }, _react.default.createElement("div", {
+        className: "dashli-dashboard-wrapper"
       }, _react.default.createElement(_DashboardContext.default.Provider, {
         value: context
-      }, children));
+      }, children)));
     }
   }]);
 

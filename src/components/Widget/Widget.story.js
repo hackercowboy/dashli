@@ -11,7 +11,7 @@ import {
 export default () => (
   <Story title="Widget">
     <Dashboard theme="light" locale="de_DE">
-      <Row height="calc(100vh - 50px)">
+      <Row height="calc(80vh - 50px)">
         <Column weight={2}>
           <Widget title="Neutral" status="neutral" updated={new Date()} />
         </Column>
@@ -24,6 +24,11 @@ export default () => (
           <Widget title="Danger" status="danger" updated={new Date()} />
           <Widget title="Undefined" updated={new Date()} />
         </Column>
+      </Row>
+      <Row height="calc(20vh)">
+        <Widget weight={1} title="Warning" status="warning" updated={new Date()} />
+        <Widget weight={2} title="Danger" status="danger" updated={new Date()} />
+        <Widget weight={1} title="Undefined" updated={new Date()} />
       </Row>
     </Dashboard>
   </Story>

@@ -90,7 +90,7 @@ function (_PureComponent) {
         return _react.default.createElement("div", {
           className: "dashli-widget dashli-widget-".concat(status),
           style: {
-            flexGrow: weight
+            flex: weight
           }
         }, title ? _react.default.createElement("div", {
           className: "dashli-widget-title"

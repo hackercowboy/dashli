@@ -4,16 +4,17 @@ html, body {
   padding: 0;
   color: #212529; }
 
-.dashli-story .dashli-story-header {
-  display: flex; }
-  .dashli-story .dashli-story-header h1 {
-    padding: 5px 0 0 12px;
-    margin: 0;
-    flex-grow: 1;
-    text-transform: uppercase; }
-  .dashli-story .dashli-story-header .dashli-story-theme-selection {
-    margin-top: 15px;
-    margin-right: 10px; }
+.dashli-story {
+  padding: 10px; }
+  .dashli-story .dashli-story-header {
+    display: flex; }
+    .dashli-story .dashli-story-header h1 {
+      padding: 0 0 0 4px;
+      margin: 0;
+      flex-grow: 1;
+      text-transform: uppercase; }
+    .dashli-story .dashli-story-header .dashli-story-theme-selection {
+      margin-top: 5px; }
 
 .dashli-story.dashli-theme-dark {
   background: #212529;

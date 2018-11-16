@@ -193,7 +193,7 @@ function (_PureComponent) {
 
       var values = this.props.values;
 
-      if (values && element) {
+      if (element) {
         var ratio = Math.min(element.offsetWidth / 1.9, element.offsetHeight);
         this.dotDiameter = Math.max(Math.floor(Math.sqrt(element.offsetWidth) / 5), 2);
         this.dotDiameter = Math.max(Math.floor(ratio / 100), 3);

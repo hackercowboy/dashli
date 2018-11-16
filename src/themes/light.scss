@@ -17,13 +17,24 @@
   $bg-danger-text-color: $light-color;
   $bg-undefined-text-color: $dark-color;
 
+  $chart_neutral_line_color: rgba($dark-color, 0.5);
+  $chart_neutral_fill_color: rgba($dark-color, 0.3);
+  $chart_success_line_color: rgba($light-color, 0.5);
+  $chart_success_fill_color: rgba($light-color, 0.3);
+  $chart_info_line_color: rgba($light-color, 0.5);
+  $chart_info_fill_color: rgba($light-color, 0.3);
+  $chart_warning_line_color: rgba($light-color, 0.5);
+  $chart_warning_fill_color: rgba($light-color, 0.3);
+  $chart_danger_line_color: rgba($light-color, 0.5);
+  $chart_danger_fill_color: rgba($light-color, 0.3);
+
   $chart_color_0: $bg-success;
   $chart_color_1: $bg-info;
   $chart_color_2: $bg-warning;
   $chart_color_3: $bg-danger;
   $chart_color_4: $dark-color;
 
-  $widget-border-radius: 5px;
+  $widget-border-radius: 10px;
 
   @keyframes pulse-light {
     0% {

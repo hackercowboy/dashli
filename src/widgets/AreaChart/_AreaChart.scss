@@ -7,15 +7,12 @@
     flex-grow: 1;
     height: 0;
     margin-bottom: 10px;
+    margin: 30px 15px 15px;
   }
 
   .dashli-area-chart-visual {
     flex-grow: 2;
     height: 0;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: -33px;
-
     .dashli-area-chart-line {
       fill: none;
       stroke-width: 1.5px;
@@ -23,63 +20,52 @@
   }
 }
 
-
 .dashli-widget-neutral {
   .dashli-area-chart-line {
-    stroke: $bg-neutral-text-color;
-    opacity: 0.5;
+    stroke: $chart_neutral_line_color;
   }
 
   .dashli-area-chart-area {
-    fill: $bg-neutral-text-color;
-    opacity: 0.3;
+    fill: $chart_neutral_fill_color;
   }
 }
 
 .dashli-widget-success {
   .dashli-area-chart-line {
-    stroke: $bg-success-text-color;
-    opacity: 0.5;
+    stroke: $chart_success_line_color;
   }
 
   .dashli-area-chart-area {
-    fill: $bg-success-text-color;
-    opacity: 0.3;
+    fill: $chart_success_fill_color;
   }
 }
 
 .dashli-widget-info {
   .dashli-area-chart-line {
-    stroke: $bg-info-text-color;
-    opacity: 0.5;
+    stroke: $chart_info_line_color;
   }
 
   .dashli-area-chart-area {
-    fill: $bg-info-text-color;
-    opacity: 0.3;
+    fill: $chart_info_fill_color;
   }
 }
 
 .dashli-widget-warning {
   .dashli-area-chart-line {
-    stroke: $bg-warning-text-color;
-    opacity: 0.5;
+    stroke: $chart_warning_line_color;
   }
 
   .dashli-area-chart-area {
-    fill: $bg-warning-text-color;
-    opacity: 0.3;
+    fill: $chart_warning_fill_color;
   }
 }
 
 .dashli-widget-danger {
   .dashli-area-chart-line {
-    stroke: $bg-danger-text-color;
-    opacity: 0.5;
+    stroke: $chart_danger_line_color;
   }
 
   .dashli-area-chart-area {
-    fill: $bg-danger-text-color;
-    opacity: 0.3;
+    fill: $chart_danger_fill_color;
   }
 }

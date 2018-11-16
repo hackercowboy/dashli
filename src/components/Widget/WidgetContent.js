@@ -53,7 +53,7 @@ class WidgetContent extends PureComponent {
           /* eslint-disable react/destructuring-assignment */
           const status = screenResizing ? undefined : this.props.status;
           return (
-            <div className={`dashli-widget dashli-widget-${status}`} style={{ flexGrow: weight }}>
+            <div className={`dashli-widget dashli-widget-${status}`} style={{ flex: weight }}>
               { title ? <div className="dashli-widget-title">{title}</div> : undefined }
               <div className="dashli-widget-content" ref={this.handleContentRef}>
                 { component && status && initialized ? React.createElement(component, this.props) : undefined }

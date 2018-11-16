@@ -17,6 +17,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "dependencies": {
+    "@babel/runtime": "^7.1.5",
     "d3": "^5.7.0",
     "normalize.css": "^8.0.0",
     "point-in-polygon": "^1.0.1",

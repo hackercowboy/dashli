@@ -6,19 +6,18 @@ html, body {
 }
 
 .dashli-story {
+   padding: 10px;
   .dashli-story-header {
     display: flex;
-
     h1 {
-      padding: 5px 0 0 12px;
+      padding: 0 0 0 4px;
       margin: 0;
       flex-grow: 1;
       text-transform: uppercase;
     }
 
     .dashli-story-theme-selection {
-      margin-top: 15px;
-      margin-right: 10px;
+      margin-top: 5px;
     }
   }
   

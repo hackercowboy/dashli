@@ -80,9 +80,11 @@ class Dashboard extends PureComponent {
     };
     return (
       <div className={`dashli-dashboard dashli-theme-${theme}`}>
-        <DashboardContext.Provider value={context}>
-          {children}
-        </DashboardContext.Provider>
+        <div className="dashli-dashboard-wrapper">
+          <DashboardContext.Provider value={context}>
+            {children}
+          </DashboardContext.Provider>
+        </div>
       </div>
     );
   }

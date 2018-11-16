@@ -39,6 +39,30 @@ Object.defineProperty(exports, "AreaChart", {
     return _widgets.AreaChart;
   }
 });
+Object.defineProperty(exports, "BubbleWorldMap", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.BubbleWorldMap;
+  }
+});
+Object.defineProperty(exports, "DonutChart", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.DonutChart;
+  }
+});
+Object.defineProperty(exports, "GaugeChart", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.GaugeChart;
+  }
+});
+Object.defineProperty(exports, "Image", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.Image;
+  }
+});
 Object.defineProperty(exports, "Value", {
   enumerable: true,
   get: function get() {

@@ -22,12 +22,14 @@
     height: 0;
     width: auto; }
 
-.dashli-theme-light .dashli-dashboard {
+.dashli-theme-light .dashli-dashboard, .dashli-theme-light .dashli-dashboard-wrapper {
   display: flex;
-  width: 100%;
-  padding: 5px;
   box-sizing: border-box;
   flex-direction: column; }
+
+.dashli-theme-light .dashli-dashboard-wrapper {
+  width: decimal-floor(calc(100% + 10px));
+  margin-left: -5px; }
 
 .dashli-theme-light .dashli-flex-text {
   display: flex;
@@ -67,17 +69,22 @@
   height: auto; }
 
 .dashli-theme-light .dashli-widget {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 5px;
-  padding: 15px; }
+  padding: 0;
+  position: relative;
+  overflow: hidden; }
   .dashli-theme-light .dashli-widget .dashli-widget-title {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 800;
-    z-index: 2; }
+    z-index: 2;
+    position: absolute;
+    top: 15px;
+    left: 15px; }
   .dashli-theme-light .dashli-widget .dashli-widget-content {
     flex-grow: 1;
     display: flex;
@@ -86,7 +93,10 @@
     white-space: nowrap;
     width: 100%;
     height: 16px;
-    z-index: 2; }
+    z-index: 2;
+    position: absolute;
+    bottom: 15px;
+    left: 15px; }
 
 .dashli-theme-light .dashli-widget-neutral {
   background-color: #f0f3f5;
@@ -119,62 +129,51 @@
   .dashli-theme-light .dashli-area-chart .dashli-flex-text {
     flex-grow: 1;
     height: 0;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    margin: 30px 15px 15px; }
   .dashli-theme-light .dashli-area-chart .dashli-area-chart-visual {
     flex-grow: 2;
-    height: 0;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: -33px; }
+    height: 0; }
     .dashli-theme-light .dashli-area-chart .dashli-area-chart-visual .dashli-area-chart-line {
       fill: none;
       stroke-width: 1.5px; }
 
 .dashli-theme-light .dashli-widget-neutral .dashli-area-chart-line {
-  stroke: #222;
-  opacity: 0.5; }
+  stroke: rgba(34, 34, 34, 0.5); }
 
 .dashli-theme-light .dashli-widget-neutral .dashli-area-chart-area {
-  fill: #222;
-  opacity: 0.3; }
+  fill: rgba(34, 34, 34, 0.3); }
 
 .dashli-theme-light .dashli-widget-success .dashli-area-chart-line {
-  stroke: white;
-  opacity: 0.5; }
+  stroke: rgba(255, 255, 255, 0.5); }
 
 .dashli-theme-light .dashli-widget-success .dashli-area-chart-area {
-  fill: white;
-  opacity: 0.3; }
+  fill: rgba(255, 255, 255, 0.3); }
 
 .dashli-theme-light .dashli-widget-info .dashli-area-chart-line {
-  stroke: white;
-  opacity: 0.5; }
+  stroke: rgba(255, 255, 255, 0.5); }
 
 .dashli-theme-light .dashli-widget-info .dashli-area-chart-area {
-  fill: white;
-  opacity: 0.3; }
+  fill: rgba(255, 255, 255, 0.3); }
 
 .dashli-theme-light .dashli-widget-warning .dashli-area-chart-line {
-  stroke: white;
-  opacity: 0.5; }
+  stroke: rgba(255, 255, 255, 0.5); }
 
 .dashli-theme-light .dashli-widget-warning .dashli-area-chart-area {
-  fill: white;
-  opacity: 0.3; }
+  fill: rgba(255, 255, 255, 0.3); }
 
 .dashli-theme-light .dashli-widget-danger .dashli-area-chart-line {
-  stroke: white;
-  opacity: 0.5; }
+  stroke: rgba(255, 255, 255, 0.5); }
 
 .dashli-theme-light .dashli-widget-danger .dashli-area-chart-area {
-  fill: white;
-  opacity: 0.3; }
+  fill: rgba(255, 255, 255, 0.3); }
 
 .dashli-theme-light .dashli-bar-chart {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   height: 0;
+  margin: 30px 15px;
   padding: 10px 0; }
   .dashli-theme-light .dashli-bar-chart .dashli-bar-chart-item {
     display: flex;
@@ -189,7 +188,8 @@
 .dashli-theme-light .dashli-bubble-world-map {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; }
+  flex-grow: 1;
+  margin: 15px; }
   .dashli-theme-light .dashli-bubble-world-map .dashli-flex-text {
     flex-grow: 1;
     height: 0; }
@@ -230,7 +230,8 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 0; }
+  height: 0;
+  margin: 30px 15px; }
   .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual {
     flex-grow: 1;
     height: 0; }
@@ -286,7 +287,8 @@
 .dashli-theme-light .dashli-gauge-chart {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; }
+  flex-grow: 1;
+  margin: 30px 15px; }
   .dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual {
     flex-grow: 1; }
     .dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-background {
@@ -312,12 +314,10 @@
   flex-grow: 1;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: -35px -15px -31px -15px;
-  border-radius: 5px;
   z-index: 1; }
 
 .dashli-theme-light .dashli-value {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin-bottom: 10px; }
+  margin: 30px 15px; }

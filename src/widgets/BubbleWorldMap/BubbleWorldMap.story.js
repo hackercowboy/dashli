@@ -66,7 +66,7 @@ class BubbleWorldMapStory extends Component {
                 <Column weight={1}>
                   <Widget component={BubbleWorldMap} title="Warning" status="warning" values={[{ lon: -73.94, lat: 40.67, count: 100 }]} updated={new Date()} />
                   <Widget component={BubbleWorldMap} title="success" status="success" values={(values.map(v => ({ ...v, status: 'neutral' })))} updated={new Date()} />
-                  <Widget weight={2.5} component={BubbleWorldMap} title="Danger" status="danger" values={(values.map(v => ({ ...v, status: 'neutral' })))} updated={new Date()} />
+                  <Widget weight={2.5} component={BubbleWorldMap} title="Danger" status="danger" updated={new Date()} />
                 </Column>
                 <Column weight={2}>
                   <Row weight={5}>
