@@ -15,7 +15,7 @@ export default () => (
     <Dashboard theme="light" locale="de_DE">
       <Row height="calc(100vh - 50px)">
         <Column weight={2}>
-          <Widget component={FlexText} value="Center" additionalValue="Center Center" status="neutral" icon="far fa-smile"/>
+          <Widget component={FlexText} value="Center" additionalValue="Center Center" status="neutral" icon="far fa-smile" />
         </Column>
         <Column weight={2}>
           <Widget

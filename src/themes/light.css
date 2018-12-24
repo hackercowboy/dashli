@@ -317,22 +317,30 @@
   flex-direction: column;
   flex-grow: 1;
   height: 0;
-  margin: 30px 15px; }
+  margin: 50px 15px 40px; }
   .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual {
     flex-grow: 1;
     height: 0; }
-    .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value {
-      fill: white; }
     .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-0 {
-      opacity: 1; }
+      fill: #70C250; }
     .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-1 {
-      opacity: 0.7; }
+      fill: #17a8f1; }
     .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-2 {
-      opacity: 0.4; }
+      fill: #fec22e; }
     .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-3 {
-      opacity: 0.25; }
+      fill: #f2483f; }
     .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-4 {
-      opacity: 0.15; }
+      fill: #222; }
+    .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-5 {
+      fill: #f2483f; }
+    .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-6 {
+      fill: #f2483f; }
+    .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-7 {
+      fill: #f2483f; }
+    .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-8 {
+      fill: #f2483f; }
+    .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-visual .dashli-donut-chart-value-9 {
+      fill: #f2483f; }
   .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend {
     position: absolute;
     margin: auto;
@@ -352,7 +360,7 @@
         background: white;
         border-radius: 50%;
         margin: 2%;
-        margin-right: 3%; }
+        margin-right: 5%; }
       .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-text {
         flex-grow: 1;
         width: 0;
@@ -360,15 +368,25 @@
         overflow: hidden;
         text-overflow: ellipsis; }
       .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-0 {
-        opacity: 1; }
+        background: #70C250; }
       .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-1 {
-        opacity: 0.7; }
+        background: #17a8f1; }
       .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-2 {
-        opacity: 0.4; }
+        background: #fec22e; }
       .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-3 {
-        opacity: 0.25; }
+        background: #f2483f; }
       .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-4 {
-        opacity: 0.15; }
+        background: #222; }
+      .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-5 {
+        background: #f2483f; }
+      .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-6 {
+        background: #f2483f; }
+      .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-7 {
+        background: #f2483f; }
+      .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-8 {
+        background: #f2483f; }
+      .dashli-theme-light .dashli-donut-chart .dashli-donut-chart-legend ul .dashli-donut-chart-legend-color-9 {
+        background: #f2483f; }
 
 .dashli-theme-light .dashli-gauge-chart {
   display: flex;
