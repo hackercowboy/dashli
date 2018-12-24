@@ -7,7 +7,7 @@
     "test": "jest --env=jsdom --watch",
     "test:coverage": "jest --env=jsdom --coverage",
     "build": "rimraf dist && babel src --ignore **/stories,**/*.test.js,**/*.story.js --out-dir dist",
-    "coveralls": "nyc report --temp-directory=coverage --reporter=text-lcov | coveralls",
+    "coveralls": "jest --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
     "start": "foreman start",
     "storybook": "start-storybook -p 9009 -s public",
     "lint": "eslint src",
