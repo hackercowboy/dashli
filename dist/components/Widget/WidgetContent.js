@@ -13,6 +13,8 @@ var _timeagoReact = _interopRequireDefault(require("timeago-react"));
 
 var _DashboardContext = _interopRequireDefault(require("../Dashboard/DashboardContext"));
 
+var _Tooltip = _interopRequireDefault(require("../Tooltip"));
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -48,14 +50,39 @@ function (_PureComponent) {
     _classCallCheck(this, WidgetContent);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(WidgetContent).call(this));
-    _this.state = {
-      initialized: false
-    };
     _this.handleContentRef = _this.handleContentRef.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleScreenResizing = _this.handleScreenResizing.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleScreenResized = _this.handleScreenResized.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    window.addEventListener('resize', _this.handleScreenResizing);
+    _this.state = {
+      initialized: false,
+      resizing: false
+    };
     return _this;
   }
 
   _createClass(WidgetContent, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.handleScreenResizing);
+    }
+  }, {
+    key: "handleScreenResized",
+    value: function handleScreenResized() {
+      this.setState({
+        resizing: false
+      });
+    }
+  }, {
+    key: "handleScreenResizing",
+    value: function handleScreenResizing() {
+      this.setState({
+        resizing: true
+      });
+      clearTimeout(this.screenResizeTimeout);
+      this.screenResizeTimeout = setTimeout(this.handleScreenResized, 500);
+    }
+  }, {
     key: "handleContentRef",
     value: function handleContentRef(element) {
       var _this2 = this;
@@ -76,17 +103,19 @@ function (_PureComponent) {
 
       var _this$props = this.props,
           title = _this$props.title,
+          tooltip = _this$props.tooltip,
           component = _this$props.component,
           updated = _this$props.updated,
           weight = _this$props.weight;
-      var initialized = this.state.initialized;
+      var _this$state = this.state,
+          initialized = _this$state.initialized,
+          resizing = _this$state.resizing;
       return _react.default.createElement(_DashboardContext.default.Consumer, null, function () {
         var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        var locale = context.locale,
-            screenResizing = context.screenResizing;
+        var locale = context.locale;
         /* eslint-disable react/destructuring-assignment */
 
-        var status = screenResizing ? undefined : _this3.props.status;
+        var status = resizing ? undefined : _this3.props.status;
         return _react.default.createElement("div", {
           className: "dashli-widget dashli-widget-".concat(status),
           style: {
@@ -102,7 +131,9 @@ function (_PureComponent) {
         }, _react.default.createElement(_timeagoReact.default, {
           datetime: updated,
           locale: locale
-        })) : undefined);
+        })) : undefined, tooltip ? _react.default.createElement("div", {
+          className: "dashli-widget-tooltip"
+        }, _react.default.createElement(_Tooltip.default, null, tooltip)) : undefined);
       });
     }
   }]);
@@ -113,6 +144,7 @@ function (_PureComponent) {
 _defineProperty(WidgetContent, "propTypes", {
   status: _propTypes.default.string,
   title: _propTypes.default.string,
+  tooltip: _propTypes.default.node,
   component: _propTypes.default.func,
   updated: _propTypes.default.instanceOf(Date),
   weight: _propTypes.default.number
@@ -121,6 +153,7 @@ _defineProperty(WidgetContent, "propTypes", {
 _defineProperty(WidgetContent, "defaultProps", {
   status: undefined,
   title: undefined,
+  tooltip: undefined,
   updated: undefined,
   component: undefined,
   weight: 1

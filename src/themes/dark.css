@@ -27,36 +27,104 @@
     box-sizing: border-box;
     flex-direction: column; }
   .dashli-theme-dark .dashli-dashboard-wrapper {
-    width: decimal-floor(calc(100% + 10px));
+    width: calc(100% + 10px);
     margin-left: -5px; }
   .dashli-theme-dark .dashli-flex-text {
     display: flex;
-    flex-direction: column;
     flex-grow: 1; }
-    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-value {
+    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-icon {
       display: flex;
-      font-size: 0px;
-      font-weight: bold;
-      flex-grow: 1;
-      white-space: nowrap; }
-    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-additional-value {
+      margin-right: 10px; }
+    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-values {
       display: flex;
-      font-size: 0px;
-      flex-grow: 1;
-      white-space: nowrap; }
+      flex-direction: column;
+      flex-grow: 1; }
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-values .dashli-flex-text-value {
+        display: flex;
+        font-size: 0px;
+        font-weight: bold;
+        flex-grow: 1;
+        white-space: nowrap; }
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-values .dashli-flex-text-additional-value {
+        display: flex;
+        font-size: 0px;
+        flex-grow: 1;
+        white-space: nowrap; }
     .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference {
       position: absolute;
       top: 0;
-      left: -10000px; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value {
+      left: -10000px;
+      display: flex; }
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-icon {
         font-size: 40px;
         line-height: 40px; }
-        .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value .dashli-flex-text-unit {
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-value {
+        font-size: 40px;
+        line-height: 40px;
+        align-items: flex-end; }
+        .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-value .dashli-flex-text-unit {
           font-size: 20px;
           line-height: 20px; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-additional-value {
+      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-additional-value {
         font-size: 20px;
         line-height: 20px; }
+  .dashli-theme-dark .dashli-tooltip {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: flex-end; }
+    .dashli-theme-dark .dashli-tooltip button {
+      width: 21px;
+      height: 21px;
+      display: block;
+      text-align: center;
+      border: none;
+      outline: none;
+      border-radius: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 18px; }
+    .dashli-theme-dark .dashli-tooltip button:active {
+      outline: none;
+      border: none; }
+    .dashli-theme-dark .dashli-tooltip .dashli-tooltip-arrow {
+      padding-top: 5px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+      z-index: 4; }
+    .dashli-theme-dark .dashli-tooltip .dashli-tooltip-content {
+      position: fixed;
+      display: block;
+      width: 100px;
+      background: #f8f9fa;
+      color: #1f1f1f;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 1px 1px 25px 0px rgba(0, 0, 0, 0.32);
+      z-index: 3; }
+      .dashli-theme-dark .dashli-tooltip .dashli-tooltip-content h1:first-child, .dashli-theme-dark .dashli-tooltip .dashli-tooltip-content h2:first-child, .dashli-theme-dark .dashli-tooltip .dashli-tooltip-content h3:first-child, .dashli-theme-dark .dashli-tooltip .dashli-tooltip-content h4:first-child {
+        margin-top: 0; }
+      .dashli-theme-dark .dashli-tooltip .dashli-tooltip-content p:last-child {
+        margin-bottom: 0; }
+  .dashli-theme-dark .dashli-widget-neutral .dashli-tooltip button {
+    color: #121212;
+    background-color: #f8f9fa; }
+  .dashli-theme-dark .dashli-widget-success .dashli-tooltip button {
+    color: #008b7d;
+    background-color: #f8f9fa; }
+  .dashli-theme-dark .dashli-widget-info .dashli-tooltip button {
+    color: #3748ac;
+    background-color: #f8f9fa; }
+  .dashli-theme-dark .dashli-widget-warning .dashli-tooltip button {
+    color: #ff8d02;
+    background-color: #f8f9fa; }
+  .dashli-theme-dark .dashli-widget-danger .dashli-tooltip button {
+    color: #e61a58;
+    background-color: #f8f9fa; }
   .dashli-theme-dark .dashli-row {
     display: flex;
     width: 100%;
@@ -71,6 +139,8 @@
     margin: 5px;
     padding: 0;
     position: relative;
+    width: 0;
+    min-height: 60px;
     overflow: hidden; }
     .dashli-theme-dark .dashli-widget .dashli-widget-title {
       text-transform: uppercase;
@@ -78,12 +148,22 @@
       font-weight: 800;
       z-index: 2;
       position: absolute;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       top: 15px;
-      left: 15px; }
+      left: 15px;
+      right: 40px; }
+    .dashli-theme-dark .dashli-widget .dashli-widget-tooltip {
+      position: absolute;
+      top: 15px;
+      right: 15px; }
     .dashli-theme-dark .dashli-widget .dashli-widget-content {
       flex-grow: 1;
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 5px; }
     .dashli-theme-dark .dashli-widget .dashli-widget-updated {
       white-space: nowrap;
       width: 100%;
@@ -118,7 +198,7 @@
       flex-grow: 1;
       height: 0;
       margin-bottom: 10px;
-      margin: 30px 15px 15px; }
+      margin: 50px 15px 15px; }
     .dashli-theme-dark .dashli-area-chart .dashli-area-chart-visual {
       flex-grow: 2;
       height: 0; }
@@ -255,7 +335,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: 30px 15px; }
+    margin: 50px 15px 40px; }
     .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-visual {
       flex-grow: 1; }
       .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-background {
@@ -285,4 +365,4 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: 30px 15px; }
+    margin: 45px 15px 35px 15px; }

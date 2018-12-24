@@ -9,6 +9,12 @@ Object.defineProperty(exports, "AreaChart", {
     return _AreaChart.default;
   }
 });
+Object.defineProperty(exports, "BarChart", {
+  enumerable: true,
+  get: function get() {
+    return _BarChart.default;
+  }
+});
 Object.defineProperty(exports, "BubbleWorldMap", {
   enumerable: true,
   get: function get() {
@@ -41,6 +47,8 @@ Object.defineProperty(exports, "Value", {
 });
 
 var _AreaChart = _interopRequireDefault(require("./AreaChart"));
+
+var _BarChart = _interopRequireDefault(require("./BarChart"));
 
 var _BubbleWorldMap = _interopRequireDefault(require("./BubbleWorldMap"));
 

@@ -6,8 +6,7 @@ import BarChart from '.';
 describe('<BarChart/>', () => {
   it('renders without crashing', () => {
     const wrapper = mount(<BarChart />);
-    wrapper.instance().createBarChart();
-    wrapper.instance().componentWillUnmount();
+    expect(wrapper.find('.dashli-bar-chart').length).toEqual(1);
   });
 
   it('should render a nice donut chart', () => {
@@ -23,6 +22,6 @@ describe('<BarChart/>', () => {
         { label: 'Bar', value: 8943 },
       ],
     });
-    wrapper.instance().componentWillUnmount();
+    expect(wrapper.find('.dashli-bar-chart').length).toEqual(1);
   });
 });

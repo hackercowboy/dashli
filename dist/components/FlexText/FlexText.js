@@ -55,10 +55,12 @@ function (_PureComponent) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(FlexText).call(this));
     _this.state = {
+      iconSize: undefined,
       fontSize: undefined,
       secondFontSize: undefined
     };
     _this.updateFontSize = _this.updateFontSize.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.iconStyle = _this.iconStyle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.valueStyle = _this.valueStyle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.additionalValueStyle = _this.additionalValueStyle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
@@ -80,21 +82,55 @@ function (_PureComponent) {
         var widthFactor = container.offsetWidth / reference.offsetWidth;
         var factor = Math.min(heightFactor, widthFactor);
         this.setState({
+          iconSize: "".concat(Math.floor(40 * factor), "px"),
           fontSize: "".concat(Math.floor(40 * factor), "px"),
           secondFontSize: "".concat(Math.floor(20 * factor), "px")
         });
       }
     }
   }, {
-    key: "valueStyle",
-    value: function valueStyle() {
+    key: "iconStyle",
+    value: function iconStyle() {
       var _this$props = this.props,
           additionalValue = _this$props.additionalValue,
           verticalAlign = _this$props.verticalAlign,
           horizontalAlign = _this$props.horizontalAlign;
       var _this$state = this.state,
-          fontSize = _this$state.fontSize,
+          iconSize = _this$state.iconSize,
           secondFontSize = _this$state.secondFontSize;
+      var style = {
+        fontSize: iconSize,
+        lineHeight: iconSize,
+        justifyContent: ALIGN_MAPPING[horizontalAlign],
+        alignItems: ALIGN_MAPPING[verticalAlign],
+        marginBottom: additionalValue ? secondFontSize : 0
+      };
+
+      if (verticalAlign === 'center' && additionalValue) {
+        style = _objectSpread({}, style, {
+          alignItems: ALIGN_MAPPING.center,
+          paddingTop: secondFontSize
+        });
+      }
+
+      if (verticalAlign === 'top' && additionalValue) {
+        style = _objectSpread({}, style, {
+          flexGrow: 0
+        });
+      }
+
+      return style;
+    }
+  }, {
+    key: "valueStyle",
+    value: function valueStyle() {
+      var _this$props2 = this.props,
+          additionalValue = _this$props2.additionalValue,
+          verticalAlign = _this$props2.verticalAlign,
+          horizontalAlign = _this$props2.horizontalAlign;
+      var _this$state2 = this.state,
+          fontSize = _this$state2.fontSize,
+          secondFontSize = _this$state2.secondFontSize;
       var style = {
         fontSize: fontSize,
         lineHeight: fontSize,
@@ -120,9 +156,9 @@ function (_PureComponent) {
   }, {
     key: "additionalValueStyle",
     value: function additionalValueStyle() {
-      var _this$props2 = this.props,
-          verticalAlign = _this$props2.verticalAlign,
-          horizontalAlign = _this$props2.horizontalAlign;
+      var _this$props3 = this.props,
+          verticalAlign = _this$props3.verticalAlign,
+          horizontalAlign = _this$props3.horizontalAlign;
       var secondFontSize = this.state.secondFontSize;
       var style = {
         fontSize: secondFontSize,
@@ -147,18 +183,27 @@ function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-          value = _this$props3.value,
-          unit = _this$props3.unit,
-          additionalValue = _this$props3.additionalValue,
-          style = _this$props3.style;
-      var _this$state2 = this.state,
-          fontSize = _this$state2.fontSize,
-          secondFontSize = _this$state2.secondFontSize;
+      var _this$props4 = this.props,
+          value = _this$props4.value,
+          icon = _this$props4.icon,
+          unit = _this$props4.unit,
+          additionalValue = _this$props4.additionalValue,
+          style = _this$props4.style;
+      var _this$state3 = this.state,
+          iconSize = _this$state3.iconSize,
+          fontSize = _this$state3.fontSize,
+          secondFontSize = _this$state3.secondFontSize;
       return _react.default.createElement("div", {
         className: "dashli-flex-text",
         style: style,
         ref: this.updateFontSize
+      }, icon && iconSize ? _react.default.createElement("div", {
+        className: "dashli-flex-text-icon",
+        style: this.iconStyle()
+      }, _react.default.createElement("i", {
+        className: icon
+      })) : undefined, _react.default.createElement("div", {
+        className: "dashli-flex-text-values"
       }, fontSize ? _react.default.createElement("div", {
         className: "dashli-flex-text-value",
         style: this.valueStyle()
@@ -171,15 +216,21 @@ function (_PureComponent) {
       }, unit))) : undefined, additionalValue && secondFontSize ? _react.default.createElement("div", {
         className: "dashli-flex-text-additional-value",
         style: this.additionalValueStyle()
-      }, additionalValue) : undefined, _react.default.createElement("div", {
+      }, additionalValue) : undefined), _react.default.createElement("div", {
         className: "dashli-flex-text-reference"
+      }, icon ? _react.default.createElement("div", {
+        className: "dashli-flex-text-icon"
+      }, _react.default.createElement("i", {
+        className: icon
+      })) : undefined, _react.default.createElement("div", {
+        className: "dashli-flex-text-values"
       }, _react.default.createElement("div", {
         className: "dashli-flex-text-value"
       }, _react.default.createElement("div", null, _react.default.createElement("span", null, value), _react.default.createElement("span", {
         className: "dashli-flex-text-unit"
       }, unit))), additionalValue ? _react.default.createElement("div", {
         className: "dashli-flex-text-additional-value"
-      }, additionalValue) : undefined));
+      }, additionalValue) : undefined)));
     }
   }]);
 
@@ -188,6 +239,7 @@ function (_PureComponent) {
 
 _defineProperty(FlexText, "propTypes", {
   value: _propTypes.default.string,
+  icon: _propTypes.default.string,
   unit: _propTypes.default.string,
   additionalValue: _propTypes.default.string,
 
@@ -199,6 +251,7 @@ _defineProperty(FlexText, "propTypes", {
 
 _defineProperty(FlexText, "defaultProps", {
   value: undefined,
+  icon: undefined,
   unit: undefined,
   additionalValue: undefined,
   style: undefined,

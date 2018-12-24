@@ -134,7 +134,9 @@ function (_PureComponent) {
 
       if (values && size) {
         var valueHeight = Math.min(Math.floor(size * 0.5 / values.length * 0.8), Math.floor(size * 0.5 / 5 * 0.8));
-        return _react.default.createElement("ul", null, values.map(function (value, index) {
+        return _react.default.createElement("ul", null, values.sort(function (a, b) {
+          return b.value - a.value;
+        }).map(function (value, index) {
           return (
             /* eslint-disable react/no-array-index-key */
             _react.default.createElement("li", {
@@ -148,7 +150,7 @@ function (_PureComponent) {
             }), _react.default.createElement("div", {
               className: "dashli-donut-chart-legend-text",
               style: {
-                fontSize: Math.floor(valueHeight * 0.8),
+                fontSize: Math.floor(valueHeight * 0.75),
                 lineHeight: "".concat(valueHeight, "px")
               }
             }, value.label))

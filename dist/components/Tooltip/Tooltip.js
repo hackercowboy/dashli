@@ -15,8 +15,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -35,92 +33,135 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var BarChart =
+var Tooltip =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(BarChart, _PureComponent);
+  _inherits(Tooltip, _PureComponent);
 
-  function BarChart() {
+  function Tooltip() {
     var _this;
 
-    _classCallCheck(this, BarChart);
+    _classCallCheck(this, Tooltip);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(BarChart).call(this));
-    _this.handleContainer = _this.handleContainer.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tooltip).call(this));
+    _this.toggleTooltip = _this.toggleTooltip.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleButton = _this.handleButton.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleMouseDown = _this.handleMouseDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleScrollAndResize = _this.handleScrollAndResize.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.updatePosition = _this.updatePosition.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    document.addEventListener('mousedown', _this.handleMouseDown);
+    window.addEventListener('scroll', _this.handleScrollAndResize);
+    window.addEventListener('resize', _this.handleScrollAndResize);
     _this.state = {
-      height: undefined,
-      width: undefined
+      visible: false
     };
     return _this;
   }
 
-  _createClass(BarChart, [{
-    key: "handleContainer",
-    value: function handleContainer(element) {
-      if (element) {
+  _createClass(Tooltip, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.handleScrollAndResize);
+      window.removeEventListener('scroll', this.handleScrollAndResize);
+      document.removeEventListener('mousedown', this.handleMouseDown);
+    }
+  }, {
+    key: "toggleTooltip",
+    value: function toggleTooltip(e) {
+      var visible = this.state.visible;
+      e.stopPropagation();
+
+      if (visible) {
         this.setState({
-          height: element.offsetHeight,
-          width: element.offsetWidth
+          visible: false
+        });
+      } else {
+        this.updatePosition();
+      }
+    }
+  }, {
+    key: "handleButton",
+    value: function handleButton(button) {
+      this.button = button;
+    }
+  }, {
+    key: "handleContent",
+    value: function handleContent(content) {
+      this.content = content;
+    }
+  }, {
+    key: "handleMouseDown",
+    value: function handleMouseDown(e) {
+      var visible = this.state.visible;
+
+      if (visible && e.target !== this.button) {
+        this.setState({
+          visible: false
+        });
+      }
+    }
+  }, {
+    key: "handleScrollAndResize",
+    value: function handleScrollAndResize() {
+      var visible = this.state.visible;
+
+      if (visible) {
+        this.updatePosition();
+      }
+    }
+  }, {
+    key: "updatePosition",
+    value: function updatePosition() {
+      if (this.button) {
+        var top = this.button.getBoundingClientRect().top + 35;
+        var width = Math.min(window.innerWidth, 375) - 60;
+        var left = window.innerWidth < 376 ? 15 : Math.max(15, this.button.getBoundingClientRect().left - width);
+        this.setState({
+          top: top,
+          width: width,
+          left: left,
+          visible: true
         });
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var values = this.props.values;
+      var children = this.props.children;
       var _this$state = this.state,
-          height = _this$state.height,
+          visible = _this$state.visible,
+          top = _this$state.top,
+          left = _this$state.left,
           width = _this$state.width;
-      var total = values.reduce(function (count, value) {
-        return count + value.value;
-      }, 0);
-      var max = values.reduce(function (current, value) {
-        return Math.max(current, value.value);
-      }, 0);
-      var factor = 1 / (max / total);
-      var itemHeight = height / values.length;
-      var itemPadding = Math.floor(itemHeight / 3);
-      var fontSize = Math.min(height / values.length * 0.4, 30);
-      var style = {
-        height: height / values.length,
-        fontSize: fontSize,
-        lineHeight: fontSize,
-        margin: "".concat(Math.floor(itemHeight * 0.1), "px 0"),
-        padding: "0 ".concat(itemPadding, "px")
-      };
       return _react.default.createElement("div", {
-        className: "dashli-bar-chart",
-        ref: this.handleContainer
-      }, height ? values.map(function (value, index) {
-        return _react.default.createElement("div", {
-          /* eslint-disable react/no-array-index-key */
-          key: index,
-          className: "dashli-bar-chart-item dashli-bar-chart-item-".concat(index),
-          style: _objectSpread({}, style, {
-            width: "".concat(value.value / total * factor * width - itemPadding * 2, "px")
-          })
-        }, _react.default.createElement("div", {
-          className: "dashli-bar-chart-item-label"
-        }, value.label), _react.default.createElement("div", {
-          className: "dashli-bar-chart-item-value"
-        }, value.value));
-      }) : undefined);
+        className: "dashli-tooltip"
+      }, _react.default.createElement("button", {
+        type: "button",
+        onClick: this.toggleTooltip,
+        ref: this.handleButton
+      }, "i"), visible ? _react.default.createElement("div", {
+        className: "dashli-tooltip-content",
+        style: {
+          top: top,
+          left: left,
+          width: width
+        }
+      }, children) : null, visible ? _react.default.createElement("div", {
+        className: "dashli-tooltip-arrow"
+      }) : null);
     }
   }]);
 
-  return BarChart;
+  return Tooltip;
 }(_react.PureComponent);
 
-_defineProperty(BarChart, "propTypes", {
-  values: _propTypes.default.arrayOf(_propTypes.default.shape({
-    label: _propTypes.default.string,
-    value: _propTypes.default.number
-  }))
+_defineProperty(Tooltip, "propTypes", {
+  children: _propTypes.default.node
 });
 
-_defineProperty(BarChart, "defaultProps", {
-  values: undefined
+_defineProperty(Tooltip, "defaultProps", {
+  children: undefined
 });
 
-var _default = BarChart;
+var _default = Tooltip;
 exports.default = _default;

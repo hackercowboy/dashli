@@ -50,8 +50,8 @@ function (_PureComponent) {
       return _react.default.createElement("div", {
         className: "dashli-value"
       }, _react.default.createElement(_FlexText.default, _extends({}, this.props, {
-        horizontalAlign: "right",
-        verticalAlign: "bottom"
+        horizontalAlign: "center",
+        verticalAlign: "center"
       })));
     }
   }]);

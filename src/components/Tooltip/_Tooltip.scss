@@ -1,0 +1,90 @@
+.dashli-tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: flex-end;
+  button {
+    width: 21px;
+    height: 21px;
+    display: block;
+    text-align: center;
+    border: none;
+    outline: none;    
+    border-radius: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  button:active {
+    outline: none;
+    border: none;
+  }
+
+  .dashli-tooltip-arrow {
+    padding-top: 5px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    z-index: 4;
+  }
+
+  .dashli-tooltip-content {
+    position: fixed;
+    display: block;
+    width: 100px;
+    background: $light-color;
+    color: $dark-color;
+    padding: 15px;
+    border-radius: $widget-border-radius;
+    box-shadow: 1px 1px 25px 0px rgba(0,0,0,0.32);
+    z-index: 3;
+
+    h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+      margin-top: 0;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.dashli-widget-neutral {
+  .dashli-tooltip button {
+    color: $bg-neutral;
+    background-color: $bg-neutral-text-color;
+  }
+}
+
+.dashli-widget-success {
+  .dashli-tooltip button {
+    color: $bg-success;
+    background-color: $bg-success-text-color;
+  }
+}
+
+.dashli-widget-info {
+  .dashli-tooltip button {
+    color: $bg-info;
+    background-color: $bg-info-text-color;
+  }
+}
+
+.dashli-widget-warning {
+  .dashli-tooltip button {
+    color: $bg-warning;
+    background-color: $bg-warning-text-color;
+  }
+}
+
+.dashli-widget-danger {
+  .dashli-tooltip button {
+    color: $bg-danger;
+    background-color: $bg-danger-text-color;
+  }
+}

@@ -17,50 +17,12 @@ class Dashboard extends PureComponent {
     locale: 'en_GB',
     children: undefined,
     layouts: {
-      tv: 1920,
-      desktop: 1280,
-      tablet: 1024,
-      phone: 0,
+      xl: 1920,
+      lg: 1680,
+      md: 1280,
+      sm: 1024,
+      xs: 0,
     },
-  }
-
-  constructor() {
-    super();
-    this.state = {
-      screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight,
-      screenResizing: false,
-    };
-
-    this.handleScreenResizing = this.handleScreenResizing.bind(this);
-    this.handleScreenResized = this.handleScreenResized.bind(this);
-  }
-
-  componentWillMount() {
-    window.addEventListener('resize', this.handleScreenResizing);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleScreenResizing);
-  }
-
-  handleScreenResized() {
-    this.setState({
-      screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight,
-      screenResizing: false,
-    });
-  }
-
-  handleScreenResizing() {
-    this.setState({
-      screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight,
-      screenResizing: true,
-    });
-
-    clearTimeout(this.screenResizeTimeout);
-    this.screenResizeTimeout = setTimeout(this.handleScreenResized, 500);
   }
 
   render() {
@@ -70,14 +32,12 @@ class Dashboard extends PureComponent {
       locale,
       layouts,
     } = this.props;
-    const { screenWidth, screenHeight, screenResizing } = this.state;
+
     const context = {
       locale,
       layouts,
-      screenWidth,
-      screenHeight,
-      screenResizing,
     };
+
     return (
       <div className={`dashli-dashboard dashli-theme-${theme}`}>
         <div className="dashli-dashboard-wrapper">

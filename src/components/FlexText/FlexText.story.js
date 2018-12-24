@@ -15,7 +15,7 @@ export default () => (
     <Dashboard theme="light" locale="de_DE">
       <Row height="calc(100vh - 50px)">
         <Column weight={2}>
-          <Widget component={FlexText} value="Center" additionalValue="Center Center" title="Neutral" status="neutral" updated={new Date()} />
+          <Widget component={FlexText} value="Center" additionalValue="Center Center" status="neutral" icon="far fa-smile"/>
         </Column>
         <Column weight={2}>
           <Widget
@@ -24,9 +24,8 @@ export default () => (
             additionalValue="Top Left"
             verticalAlign="top"
             horizontalAlign="left"
-            title="Neutral"
             status="neutral"
-            updated={new Date()}
+            icon="far fa-smile"
           />
           <Widget
             component={FlexText}
@@ -34,15 +33,14 @@ export default () => (
             additionalValue="Bottom Right"
             verticalAlign="bottom"
             horizontalAlign="right"
-            title="Neutral"
             status="neutral"
-            updated={new Date()}
+            icon="far fa-smile"
           />
         </Column>
         <Column weight={1}>
-          <Widget component={FlexText} title="Warning" value="Center" status="warning" updated={new Date()} />
-          <Widget component={FlexText} title="Danger" value="Top" verticalAlign="top" status="danger" updated={new Date()} />
-          <Widget component={FlexText} title="Info" value="Bottom" status="info" verticalAlign="bottom" updated={new Date()} />
+          <Widget component={FlexText} value="Center" status="warning" />
+          <Widget component={FlexText} value="Top" verticalAlign="top" status="danger" />
+          <Widget component={FlexText} value="Bottom" status="info" verticalAlign="bottom" />
         </Column>
       </Row>
     </Dashboard>

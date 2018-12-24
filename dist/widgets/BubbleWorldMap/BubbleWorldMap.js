@@ -83,7 +83,7 @@ function (_PureComponent) {
       }).attr('cy', function (d) {
         return d.y;
       }).attr('r', function (d) {
-        return Math.max(_this2.dotDiameter, d.percent * (_this2.width / 10));
+        return Math.max(_this2.dotDiameter, d.percent * (_this2.width / 8));
       }).attr('class', function (d) {
         return "dashli-bubble-world-map-active-circle dashli-bubble-world-map-active-circle-".concat(d.status);
       });
@@ -167,10 +167,8 @@ function (_PureComponent) {
         if (existing) {
           var itemStatus = item.status || 'neutral';
           var status = statuses.indexOf(existing.status) > statuses.indexOf(itemStatus) ? itemStatus : existing.status;
-          result.push(_objectSpread({}, existing, {
-            count: existing.count + item.count,
-            status: status
-          }));
+          existing.count += item.count;
+          existing.status = status;
         } else {
           var _status = item.status || 'neutral';
 
@@ -184,6 +182,8 @@ function (_PureComponent) {
         return _objectSpread({}, item, {
           percent: item.count / totalCount
         });
+      }).sort(function (a, b) {
+        return b.count - a.count;
       });
     }
   }, {
@@ -193,7 +193,7 @@ function (_PureComponent) {
 
       var values = this.props.values;
 
-      if (element) {
+      if (values && element) {
         var ratio = Math.min(element.offsetWidth / 1.9, element.offsetHeight);
         this.dotDiameter = Math.max(Math.floor(Math.sqrt(element.offsetWidth) / 5), 2);
         this.dotDiameter = Math.max(Math.floor(ratio / 100), 3);
@@ -231,7 +231,7 @@ function (_PureComponent) {
         }).attr('cy', function (d) {
           return d.y;
         }).attr('r', function (d) {
-          return Math.max(_this5.dotDiameter, d.percent * (_this5.width / 10));
+          return Math.max(_this5.dotDiameter, d.percent * (_this5.width / 8));
         }).attr('class', function (d) {
           return "dashli-bubble-world-map-active-circle dashli-bubble-world-map-active-circle-".concat(d.status);
         });

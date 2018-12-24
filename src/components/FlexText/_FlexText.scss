@@ -1,39 +1,63 @@
 .dashli-flex-text {
   display: flex;
-  flex-direction: column;
   flex-grow: 1;
 
-  .dashli-flex-text-value {
+  .dashli-flex-text-icon {
     display: flex;
-    font-size: 0px;
-    font-weight: bold;
-    flex-grow: 1;
-    white-space: nowrap;
+    margin-right: 10px;
   }
 
-  .dashli-flex-text-additional-value {
+  .dashli-flex-text-values {
     display: flex;
-    font-size: 0px;
-    flex-grow: 1;
-    white-space: nowrap;
+    flex-direction: column;
+    flex-grow: 1;   
+
+    .dashli-flex-text-value {
+      display: flex;
+      font-size: 0px;
+      font-weight: bold;
+      flex-grow: 1;
+      white-space: nowrap;
+    }
+  
+    .dashli-flex-text-additional-value {
+      display: flex;
+      font-size: 0px;
+      flex-grow: 1;
+      white-space: nowrap;
+    }
   }
 
   .dashli-flex-text-reference {
     position: absolute;
     top: 0;
     left: -10000px;
-    .dashli-flex-text-value {
+    display: flex;
+
+    // left: 0;
+    // background: red;
+
+    .dashli-flex-text-icon {
       font-size: 40px;
       line-height: 40px;
-      .dashli-flex-text-unit {
+    }
+
+    .dashli-flex-text-values {
+      .dashli-flex-text-value {
+        font-size: 40px;
+        line-height: 40px;
+        align-items: flex-end;
+        
+        .dashli-flex-text-unit {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+
+      .dashli-flex-text-additional-value {
         font-size: 20px;
         line-height: 20px;
       }
-    }
-
-    .dashli-flex-text-additional-value {
-      font-size: 20px;
-      line-height: 20px;
     }
   }
 }

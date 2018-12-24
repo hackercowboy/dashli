@@ -39,6 +39,12 @@ Object.defineProperty(exports, "AreaChart", {
     return _widgets.AreaChart;
   }
 });
+Object.defineProperty(exports, "BarChart", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.BarChart;
+  }
+});
 Object.defineProperty(exports, "BubbleWorldMap", {
   enumerable: true,
   get: function get() {

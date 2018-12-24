@@ -47,10 +47,10 @@ class AreaChartStory extends Component {
             <Dashboard theme={context.theme}>
               <Row height="calc(100vh - 50px)">
                 <Column weight={1}>
-                  <Widget component={AreaChart} title="Warning" status="warning" value={value.toFixed(2)} values={values} updated={updated} />
+                  <Widget component={AreaChart} title="Warning" status="warning" icon="far fa-smile" value={value.toFixed(2)} values={values} updated={updated} />
                   <Widget component={AreaChart} title="success" status="success" value={value.toFixed(2)} values={values} updated={updated} />
                   <Widget component={AreaChart} title="Danger" status="danger" value={value.toFixed(2)} values={values} updated={updated} />
-                  <Widget weight={2} component={AreaChart} title="neutral" status="neutral" value={value.toFixed(2)} values={values} updated={updated} />
+                  <Widget weight={2} component={AreaChart} title="neutral" status="neutral" icon="far fa-smile" value={value.toFixed(2)} values={values} updated={updated} />
                 </Column>
                 <Column weight={2}>
                   <Widget component={AreaChart} title="Neutral" status="neutral" value={value.toFixed(2)} values={values} unit="/ms" updated={updated} />
@@ -60,6 +60,7 @@ class AreaChartStory extends Component {
                     component={AreaChart}
                     title="Info"
                     status="info"
+                    icon="far fa-smile"
                     value={value.toFixed(2)}
                     values={values}
                     additionalValue="Additional Value"
@@ -70,7 +71,7 @@ class AreaChartStory extends Component {
                   <Widget component={AreaChart} title="Warning" status="warning" value={value.toFixed(2)} values={values} updated={updated} />
                   <Widget component={AreaChart} title="success" status="success" value={value.toFixed(2)} values={values} updated={updated} />
                   <Widget component={AreaChart} title="Danger" status="danger" value={value.toFixed(2)} values={values} updated={updated} />
-                  <Widget weight={2} component={AreaChart} title="neutral" status="neutral" value={value.toFixed(2)} values={values} updated={updated} />
+                  <Widget weight={2} component={AreaChart} title="neutral" icon="far fa-smile" status="neutral" value={value.toFixed(2)} values={values} updated={updated} />
                 </Column>
               </Row>
             </Dashboard>

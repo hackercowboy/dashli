@@ -7,11 +7,7 @@ exports.default = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _react = _interopRequireWildcard(require("react"));
-
-var _DashboardContext = _interopRequireDefault(require("./DashboardContext"));
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+var _react = require("react");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25,73 +21,87 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Dashboard =
+var LayoutContent =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Dashboard, _PureComponent);
+  _inherits(LayoutContent, _PureComponent);
 
-  function Dashboard() {
-    _classCallCheck(this, Dashboard);
+  function LayoutContent() {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Dashboard).apply(this, arguments));
+    _classCallCheck(this, LayoutContent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LayoutContent).call(this));
+    _this.updateVisibility = _this.updateVisibility.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    window.addEventListener('resize', _this.updateVisibility);
+    _this.state = {
+      visible: false
+    };
+    return _this;
   }
 
-  _createClass(Dashboard, [{
+  _createClass(LayoutContent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.updateVisibility();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', this.updateVisibility);
+    }
+  }, {
+    key: "updateVisibility",
+    value: function updateVisibility() {
+      var _this$props = this.props,
+          layouts = _this$props.layouts,
+          target = _this$props.target;
+      var layout = layouts ? Object.keys(layouts).find(function (key) {
+        return window.innerWidth >= layouts[key];
+      }) : undefined;
+      var visible = target.split(',').map(function (t) {
+        return t.trim();
+      }).find(function (t) {
+        return t === layout;
+      });
+      this.setState({
+        visible: visible
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          theme = _this$props.theme,
-          children = _this$props.children,
-          locale = _this$props.locale,
-          layouts = _this$props.layouts;
-      var context = {
-        locale: locale,
-        layouts: layouts
-      };
-      return _react.default.createElement("div", {
-        className: "dashli-dashboard dashli-theme-".concat(theme)
-      }, _react.default.createElement("div", {
-        className: "dashli-dashboard-wrapper"
-      }, _react.default.createElement(_DashboardContext.default.Provider, {
-        value: context
-      }, children)));
+      var children = this.props.children;
+      var visible = this.state.visible;
+      return visible ? children : null;
     }
   }]);
 
-  return Dashboard;
+  return LayoutContent;
 }(_react.PureComponent);
 
-_defineProperty(Dashboard, "propTypes", {
-  theme: _propTypes.default.string,
-  locale: _propTypes.default.string,
-  children: _propTypes.default.node,
-
+_defineProperty(LayoutContent, "propTypes", {
   /* eslint-disable react/forbid-prop-types */
-  layouts: _propTypes.default.object
+  layouts: _propTypes.default.object,
+  target: _propTypes.default.string,
+  children: _propTypes.default.node
 });
 
-_defineProperty(Dashboard, "defaultProps", {
-  theme: 'light',
-  locale: 'en_GB',
-  children: undefined,
-  layouts: {
-    xl: 1920,
-    lg: 1680,
-    md: 1280,
-    sm: 1024,
-    xs: 0
-  }
+_defineProperty(LayoutContent, "defaultProps", {
+  layouts: undefined,
+  target: undefined,
+  children: undefined
 });
 
-var _default = Dashboard;
+var _default = LayoutContent;
 exports.default = _default;

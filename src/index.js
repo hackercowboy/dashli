@@ -8,6 +8,7 @@ export {
 
 export {
   AreaChart,
+  BarChart,
   BubbleWorldMap,
   DonutChart,
   GaugeChart,

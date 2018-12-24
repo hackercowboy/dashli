@@ -89,14 +89,14 @@ class DonutChart extends PureComponent {
       const valueHeight = Math.min(Math.floor(size * 0.5 / values.length * 0.8), Math.floor(size * 0.5 / 5 * 0.8));
       return (
         <ul>
-          {values.map((value, index) => (
+          {values.sort((a, b) => b.value - a.value).map((value, index) => (
             /* eslint-disable react/no-array-index-key */
             <li key={index}>
               <div
                 className={`dashli-donut-chart-legend-color dashli-donut-chart-legend-color-${index}`}
                 style={{ width: Math.floor(valueHeight * 0.9), height: Math.floor(valueHeight * 0.9) }}
               />
-              <div className="dashli-donut-chart-legend-text" style={{ fontSize: Math.floor(valueHeight * 0.8), lineHeight: `${valueHeight}px` }}>{value.label}</div>
+              <div className="dashli-donut-chart-legend-text" style={{ fontSize: Math.floor(valueHeight * 0.75), lineHeight: `${valueHeight}px` }}>{value.label}</div>
             </li>
           ))}
         </ul>

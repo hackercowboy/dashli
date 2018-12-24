@@ -28,37 +28,111 @@
   flex-direction: column; }
 
 .dashli-theme-light .dashli-dashboard-wrapper {
-  width: decimal-floor(calc(100% + 10px));
+  width: calc(100% + 10px);
   margin-left: -5px; }
 
 .dashli-theme-light .dashli-flex-text {
   display: flex;
-  flex-direction: column;
   flex-grow: 1; }
-  .dashli-theme-light .dashli-flex-text .dashli-flex-text-value {
+  .dashli-theme-light .dashli-flex-text .dashli-flex-text-icon {
     display: flex;
-    font-size: 0px;
-    font-weight: bold;
-    flex-grow: 1;
-    white-space: nowrap; }
-  .dashli-theme-light .dashli-flex-text .dashli-flex-text-additional-value {
+    margin-right: 10px; }
+  .dashli-theme-light .dashli-flex-text .dashli-flex-text-values {
     display: flex;
-    font-size: 0px;
-    flex-grow: 1;
-    white-space: nowrap; }
+    flex-direction: column;
+    flex-grow: 1; }
+    .dashli-theme-light .dashli-flex-text .dashli-flex-text-values .dashli-flex-text-value {
+      display: flex;
+      font-size: 0px;
+      font-weight: bold;
+      flex-grow: 1;
+      white-space: nowrap; }
+    .dashli-theme-light .dashli-flex-text .dashli-flex-text-values .dashli-flex-text-additional-value {
+      display: flex;
+      font-size: 0px;
+      flex-grow: 1;
+      white-space: nowrap; }
   .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference {
     position: absolute;
     top: 0;
-    left: -10000px; }
-    .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value {
+    left: -10000px;
+    display: flex; }
+    .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-icon {
       font-size: 40px;
       line-height: 40px; }
-      .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-value .dashli-flex-text-unit {
+    .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-value {
+      font-size: 40px;
+      line-height: 40px;
+      align-items: flex-end; }
+      .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-value .dashli-flex-text-unit {
         font-size: 20px;
         line-height: 20px; }
-    .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-additional-value {
+    .dashli-theme-light .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-additional-value {
       font-size: 20px;
       line-height: 20px; }
+
+.dashli-theme-light .dashli-tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: flex-end; }
+  .dashli-theme-light .dashli-tooltip button {
+    width: 21px;
+    height: 21px;
+    display: block;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 18px; }
+  .dashli-theme-light .dashli-tooltip button:active {
+    outline: none;
+    border: none; }
+  .dashli-theme-light .dashli-tooltip .dashli-tooltip-arrow {
+    padding-top: 5px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    z-index: 4; }
+  .dashli-theme-light .dashli-tooltip .dashli-tooltip-content {
+    position: fixed;
+    display: block;
+    width: 100px;
+    background: white;
+    color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 25px 0px rgba(0, 0, 0, 0.32);
+    z-index: 3; }
+    .dashli-theme-light .dashli-tooltip .dashli-tooltip-content h1:first-child, .dashli-theme-light .dashli-tooltip .dashli-tooltip-content h2:first-child, .dashli-theme-light .dashli-tooltip .dashli-tooltip-content h3:first-child, .dashli-theme-light .dashli-tooltip .dashli-tooltip-content h4:first-child {
+      margin-top: 0; }
+    .dashli-theme-light .dashli-tooltip .dashli-tooltip-content p:last-child {
+      margin-bottom: 0; }
+
+.dashli-theme-light .dashli-widget-neutral .dashli-tooltip button {
+  color: #f0f3f5;
+  background-color: #222; }
+
+.dashli-theme-light .dashli-widget-success .dashli-tooltip button {
+  color: #70C250;
+  background-color: white; }
+
+.dashli-theme-light .dashli-widget-info .dashli-tooltip button {
+  color: #17a8f1;
+  background-color: white; }
+
+.dashli-theme-light .dashli-widget-warning .dashli-tooltip button {
+  color: #fec22e;
+  background-color: white; }
+
+.dashli-theme-light .dashli-widget-danger .dashli-tooltip button {
+  color: #f2483f;
+  background-color: white; }
 
 .dashli-theme-light .dashli-row {
   display: flex;
@@ -76,6 +150,8 @@
   margin: 5px;
   padding: 0;
   position: relative;
+  width: 0;
+  min-height: 60px;
   overflow: hidden; }
   .dashli-theme-light .dashli-widget .dashli-widget-title {
     text-transform: uppercase;
@@ -83,12 +159,22 @@
     font-weight: 800;
     z-index: 2;
     position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     top: 15px;
-    left: 15px; }
+    left: 15px;
+    right: 40px; }
+  .dashli-theme-light .dashli-widget .dashli-widget-tooltip {
+    position: absolute;
+    top: 15px;
+    right: 15px; }
   .dashli-theme-light .dashli-widget .dashli-widget-content {
     flex-grow: 1;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px; }
   .dashli-theme-light .dashli-widget .dashli-widget-updated {
     white-space: nowrap;
     width: 100%;
@@ -130,7 +216,7 @@
     flex-grow: 1;
     height: 0;
     margin-bottom: 10px;
-    margin: 30px 15px 15px; }
+    margin: 50px 15px 15px; }
   .dashli-theme-light .dashli-area-chart .dashli-area-chart-visual {
     flex-grow: 2;
     height: 0; }
@@ -288,7 +374,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 30px 15px; }
+  margin: 50px 15px 40px; }
   .dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual {
     flex-grow: 1; }
     .dashli-theme-light .dashli-gauge-chart .dashli-gauge-chart-visual .dashli-gauge-chart-background {
@@ -320,4 +406,4 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 30px 15px; }
+  margin: 45px 15px 35px 15px; }

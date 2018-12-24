@@ -56,7 +56,7 @@ class BubbleWorldMap extends PureComponent {
       .append('circle')
       .attr('cx', d => d.x)
       .attr('cy', d => d.y)
-      .attr('r', d => Math.max(this.dotDiameter, d.percent * (this.width / 10)))
+      .attr('r', d => Math.max(this.dotDiameter, d.percent * (this.width / 8)))
       .attr('class', d => `dashli-bubble-world-map-active-circle dashli-bubble-world-map-active-circle-${d.status}`);
   }
 
@@ -105,18 +105,19 @@ class BubbleWorldMap extends PureComponent {
       if (existing) {
         const itemStatus = item.status || 'neutral';
         const status = statuses.indexOf(existing.status) > statuses.indexOf(itemStatus) ? itemStatus : existing.status;
-        result.push({ ...existing, count: existing.count + item.count, status });
+        existing.count += item.count;
+        existing.status = status;
       } else {
         const status = item.status || 'neutral';
         result.push({ ...item, status });
       }
       return result;
-    }, []).map(item => ({ ...item, percent: item.count / totalCount }));
+    }, []).map(item => ({ ...item, percent: item.count / totalCount })).sort((a, b) => b.count - a.count);
   }
 
   createBubbleWorldMap(element) {
     const { values } = this.props;
-    if (element) {
+    if (values && element) {
       const ratio = Math.min(element.offsetWidth / 1.9, element.offsetHeight);
       this.dotDiameter = Math.max(Math.floor(Math.sqrt(element.offsetWidth) / 5), 2);
       this.dotDiameter = Math.max(Math.floor(ratio / 100), 3);
@@ -163,7 +164,7 @@ class BubbleWorldMap extends PureComponent {
         .append('circle')
         .attr('cx', d => d.x)
         .attr('cy', d => d.y)
-        .attr('r', d => Math.max(this.dotDiameter, d.percent * (this.width / 10)))
+        .attr('r', d => Math.max(this.dotDiameter, d.percent * (this.width / 8)))
         .attr('class', d => `dashli-bubble-world-map-active-circle dashli-bubble-world-map-active-circle-${d.status}`);
     }
   }

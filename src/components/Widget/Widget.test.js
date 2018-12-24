@@ -44,10 +44,11 @@ describe('<Widget/>', () => {
 
   it('should not render content or updated if resizing', () => {
     const wrapper = mount(
-      <DashboardContext.Provider value={{ screenResizing: true }}>
+      <DashboardContext.Provider>
         <Widget component={Value} status="success" title="Test" updated={new Date()} />
       </DashboardContext.Provider>,
     );
+    wrapper.find('WidgetContent').setState({ resizing: true });
     expect(wrapper.find('.dashli-widget-title').length).toBe(1);
     expect(wrapper.find('.dashli-widget-content').length).toBe(1);
     expect(wrapper.find('.dashli-widget-updated').length).toBe(0);

@@ -10,7 +10,7 @@ class BarChart extends PureComponent {
   }
 
   static defaultProps = {
-    values: undefined,
+    values: [],
   }
 
   constructor() {
@@ -39,7 +39,6 @@ class BarChart extends PureComponent {
 
     const style = {
       height: height / values.length,
-      borderRadius: (height / values.length) / 2,
       fontSize,
       lineHeight: fontSize,
       margin: `${Math.floor(itemHeight * 0.1)}px 0`,

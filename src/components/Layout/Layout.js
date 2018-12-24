@@ -1,27 +1,15 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
 import DashboardContext from '../Dashboard/DashboardContext';
+import LayoutContent from './LayoutContent';
 
 class Layout extends PureComponent {
-  static propTypes = {
-    target: PropTypes.string,
-    children: PropTypes.node,
-  }
-
-  static defaultProps = {
-    target: undefined,
-    children: undefined,
-  }
-
   render() {
-    const { target, children } = this.props;
     return (
       <DashboardContext.Consumer>
         { (context = {}) => {
-          const { layouts, screenWidth } = context;
-          const layout = layouts ? Object.keys(layouts).find(key => screenWidth >= layouts[key]) : undefined;
-          return layout === target ? children : undefined;
+          const { layouts } = context;
+          return (<LayoutContent {...this.props} layouts={layouts} />);
         }}
       </DashboardContext.Consumer>
     );
