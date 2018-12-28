@@ -29,43 +29,43 @@
   .dashli-theme-dark .dashli-dashboard-wrapper {
     width: calc(100% + 10px);
     margin-left: -5px; }
-  .dashli-theme-dark .dashli-flex-text {
+  .dashli-theme-dark .flex-text-value {
     display: flex;
     flex-grow: 1; }
-    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-icon {
+    .dashli-theme-dark .flex-text-value .icon {
       display: flex;
       margin-right: 10px; }
-    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-values {
+    .dashli-theme-dark .flex-text-value .values {
       display: flex;
       flex-direction: column;
       flex-grow: 1; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-values .dashli-flex-text-value {
+      .dashli-theme-dark .flex-text-value .values .value {
         display: flex;
         font-size: 0px;
         font-weight: bold;
         flex-grow: 1;
         white-space: nowrap; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-values .dashli-flex-text-additional-value {
+      .dashli-theme-dark .flex-text-value .values .additional-value {
         display: flex;
         font-size: 0px;
         flex-grow: 1;
         white-space: nowrap; }
-    .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference {
+    .dashli-theme-dark .flex-text-value .reference {
       position: absolute;
       top: 0;
       left: -10000px;
       display: flex; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-icon {
+      .dashli-theme-dark .flex-text-value .reference .icon {
         font-size: 40px;
         line-height: 40px; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-value {
+      .dashli-theme-dark .flex-text-value .reference .values .value {
         font-size: 40px;
         line-height: 40px;
         align-items: flex-end; }
-        .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-value .dashli-flex-text-unit {
+        .dashli-theme-dark .flex-text-value .reference .values .value .unit {
           font-size: 20px;
           line-height: 20px; }
-      .dashli-theme-dark .dashli-flex-text .dashli-flex-text-reference .dashli-flex-text-values .dashli-flex-text-additional-value {
+      .dashli-theme-dark .flex-text-value .reference .values .additional-value {
         font-size: 20px;
         line-height: 20px; }
   .dashli-theme-dark .dashli-tooltip {
@@ -194,7 +194,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1; }
-    .dashli-theme-dark .dashli-area-chart .dashli-flex-text {
+    .dashli-theme-dark .dashli-area-chart .flex-text-value {
       flex-grow: 1;
       height: 0;
       margin-bottom: 10px;
@@ -246,7 +246,7 @@
     flex-direction: column;
     flex-grow: 1;
     margin: 15px; }
-    .dashli-theme-dark .dashli-bubble-world-map .dashli-flex-text {
+    .dashli-theme-dark .dashli-bubble-world-map .flex-text-value {
       flex-grow: 1;
       height: 0; }
     .dashli-theme-dark .dashli-bubble-world-map .dashli-bubble-world-map-visual {
@@ -366,11 +366,11 @@
       position: absolute;
       margin: auto;
       flex-grow: 1; }
-      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info .dashli-flex-text-value {
+      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info .value {
         height: 0;
         flex-grow: 1;
         justify-content: center; }
-      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info .dashli-flex-text-additional-value {
+      .dashli-theme-dark .dashli-gauge-chart .dashli-gauge-chart-info .additional-value {
         height: 0;
         flex-grow: 1;
         justify-content: center; }

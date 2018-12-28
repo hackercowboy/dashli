@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import * as d3 from 'd3';
 
-import FlexText from '../../components/FlexText';
+import FlexTextValue from '../../components/FlexTextValue';
 
 class AreaChart extends PureComponent {
   static propTypes = {
@@ -79,7 +79,7 @@ class AreaChart extends PureComponent {
   render() {
     return (
       <div className="dashli-area-chart">
-        <FlexText {...this.props} verticalAlign="bottom" horizontalAlign="right" />
+        <FlexTextValue {...this.props} verticalAlign="bottom" horizontalAlign="right" />
         <div className="dashli-area-chart-visual" ref={this.createAreaChart} />
       </div>
     );

@@ -1,15 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import FlexText from '.';
+import FlexTextValue from '.';
 
-describe('<FlexText/>', () => {
+describe('<FlexTextValue/>', () => {
   it('renders without crashing', () => {
-    mount(<FlexText />);
+    mount(<FlexTextValue />);
   });
 
   it('should update font size', () => {
-    const wrapper = mount(<FlexText value="5000" />);
+    const wrapper = mount(<FlexTextValue value="5000" />);
     wrapper.instance().updateFontSize(undefined);
     wrapper.instance().updateFontSize({
       querySelector: () => ({
@@ -26,7 +26,7 @@ describe('<FlexText/>', () => {
       alignItems: 'center', fontSize: '16px', justifyContent: 'center', lineHeight: '16px',
     };
 
-    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual(expectedStyle);
+    expect(wrapper.find('.value').at(0).props().style).toEqual(expectedStyle);
 
     wrapper.instance().updateFontSize({
       querySelector: () => ({
@@ -42,29 +42,29 @@ describe('<FlexText/>', () => {
     expectedStyle = {
       alignItems: 'center', fontSize: '24px', justifyContent: 'center', lineHeight: '24px',
     };
-    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual(expectedStyle);
+    expect(wrapper.find('.value').at(0).props().style).toEqual(expectedStyle);
   });
 
   it('should not render additional value if not set', () => {
-    const wrapper = mount(<FlexText value="5000" />);
-    expect(wrapper.find('.dashli-flex-text-additional-value').length).toBe(0);
+    const wrapper = mount(<FlexTextValue value="5000" />);
+    expect(wrapper.find('.additional-value').length).toBe(0);
   });
 
   it('should render additional value if set', () => {
-    const wrapper = mount(<FlexText value="5000" additionalValue="Test" />);
-    expect(wrapper.find('.dashli-flex-text-additional-value').length).toBe(2);
+    const wrapper = mount(<FlexTextValue value="5000" additionalValue="Test" />);
+    expect(wrapper.find('.additional-value').length).toBe(2);
   });
 
   it('should render icon if set', () => {
-    const wrapper = mount(<FlexText value="5000" icon="icon icon-test" />);
+    const wrapper = mount(<FlexTextValue value="5000" icon="icon icon-test" />);
     expect(wrapper.find('.icon.icon-test').length).toBe(2);
     wrapper.setProps({ additionalValue: 'Test' });
     expect(wrapper.find('.icon.icon-test').length).toBe(2);
   });
 
   it('should vertical align top', () => {
-    const wrapper = mount(<FlexText value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="top" />);
-    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({
+    const wrapper = mount(<FlexTextValue value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="top" />);
+    expect(wrapper.find('.value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       lineHeight: 'NaNpx',
       justifyContent: 'center',
@@ -72,7 +72,7 @@ describe('<FlexText/>', () => {
       flexGrow: 0,
     });
 
-    expect(wrapper.find('.dashli-flex-text-additional-value').at(0).props().style).toEqual({
+    expect(wrapper.find('.additional-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       justifyContent: 'center',
       alignItems: 'flex-start',
@@ -80,15 +80,15 @@ describe('<FlexText/>', () => {
   });
 
   it('should vertical align bottom', () => {
-    const wrapper = mount(<FlexText value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="bottom" />);
-    expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({
+    const wrapper = mount(<FlexTextValue value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="bottom" />);
+    expect(wrapper.find('.value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       lineHeight: 'NaNpx',
       justifyContent: 'center',
       alignItems: 'flex-end',
     });
 
-    expect(wrapper.find('.dashli-flex-text-additional-value').at(0).props().style).toEqual({
+    expect(wrapper.find('.additional-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       flexGrow: 0,
       justifyContent: 'center',

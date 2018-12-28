@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import * as d3 from 'd3';
 
-import FlexText from '../../components/FlexText';
+import FlexTextValue from '../../components/FlexTextValue';
 
 class GaugeChart extends PureComponent {
   static propTypes = {
@@ -99,7 +99,7 @@ class GaugeChart extends PureComponent {
       <div className="dashli-gauge-chart">
         <div className="dashli-gauge-chart-visual" ref={this.createGaugeChart} />
         <div className="dashli-gauge-chart-info" style={infoStyle}>
-          <FlexText {...this.props} style={{ width: infoWidth, height: infoHeight }} />
+          <FlexTextValue {...this.props} style={{ width: infoWidth, height: infoHeight }} />
         </div>
       </div>
     );
