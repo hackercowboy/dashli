@@ -9,7 +9,18 @@ import Value from '../../widgets/Value';
 
 describe('<Widget/>', () => {
   it('renders without crashing', () => {
-    mount(<Widget />);
+    const wrapper = mount(<Widget />);
+    wrapper.find('WidgetContent').instance().componentWillUnmount();
+  });
+
+  it('should handle screen resizing', () => {
+    const clock = sinon.useFakeTimers();
+    const wrapper = mount(<Widget />).find('WidgetContent');
+    expect(wrapper.state().resizing).toBeFalsy();
+    wrapper.instance().handleScreenResizing();
+    expect(wrapper.state().resizing).toBeTruthy();
+    clock.tick(1000);
+    expect(wrapper.state().resizing).toBeFalsy();
   });
 
   it('should not render title if it is undefined', () => {
@@ -52,5 +63,14 @@ describe('<Widget/>', () => {
     expect(wrapper.find('.dashli-widget-title').length).toBe(1);
     expect(wrapper.find('.dashli-widget-content').length).toBe(1);
     expect(wrapper.find('.dashli-widget-updated').length).toBe(0);
+  });
+
+  it('should render tooltip if given', () => {
+    const wrapper = mount(
+      <DashboardContext.Provider>
+        <Widget component={Value} status="success" title="Test" updated={new Date()} tooltip={<div>Tooltip</div>} />
+      </DashboardContext.Provider>,
+    );
+    expect(wrapper.find('Tooltip').length).toEqual(1);
   });
 });

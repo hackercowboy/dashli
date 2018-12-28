@@ -64,10 +64,11 @@ class Tooltip extends PureComponent {
   }
 
   updatePosition() {
+    /* istanbul ignore next */
     if (this.button) {
       const top = this.button.getBoundingClientRect().top + 35;
       const width = Math.min(window.innerWidth, 375) - 60;
-      const left = window.innerWidth < 376 ? 15 : Math.max(15, this.button.getBoundingClientRect().left - width);
+      const left = window.innerWidth < 376 ? /* istanbul ignore next */ 15 : Math.max(15, this.button.getBoundingClientRect().left - width);
       this.setState({
         top,
         width,

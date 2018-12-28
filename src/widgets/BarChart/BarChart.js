@@ -20,6 +20,7 @@ class BarChart extends PureComponent {
   }
 
   handleContainer(element) {
+    /* istanbul ignore next */
     if (element) {
       this.setState({ height: element.offsetHeight, width: element.offsetWidth });
     }

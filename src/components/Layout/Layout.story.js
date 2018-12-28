@@ -11,65 +11,94 @@ import Layout from '.';
 export default () => (
   <Story title="Layout">
     <Dashboard theme="light">
-      <Layout target="tv">
+      <Layout target="xl">
         <Row height="300px">
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
-          <Widget title="TV" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
+          <Widget title="XL" status="neutral" />
         </Row>
       </Layout>
-      <Layout target="desktop">
+      <Layout target="lg">
         <Row height="calc(50vh - 30px)">
-          <Widget title="Desktop" status="neutral" />
-          <Widget title="Desktop" status="neutral" />
-          <Widget title="Desktop" status="neutral" />
-          <Widget title="Desktop" status="neutral" />
+          <Widget title="LG" status="neutral" />
+          <Widget title="LG" status="neutral" />
+          <Widget title="LG" status="neutral" />
+          <Widget title="LG" status="neutral" />
         </Row>
         <Row height="calc(50vh - 30px)">
-          <Widget title="Desktop" status="neutral" />
-          <Widget title="Desktop" status="neutral" />
-          <Widget title="Desktop" status="neutral" />
-          <Widget title="Desktop" status="neutral" />
+          <Widget title="LG" status="neutral" />
+          <Widget title="LG" status="neutral" />
+          <Widget title="LG" status="neutral" />
+          <Widget title="LG" status="neutral" />
         </Row>
       </Layout>
-      <Layout target="tablet">
+      <Layout target="md">
         <Row height="calc(33vh - 19px)">
-          <Widget title="Tablet" status="neutral" />
-          <Widget title="Tablet" status="neutral" />
-          <Widget title="Tablet" status="neutral" />
+          <Widget title="MD" status="neutral" />
+          <Widget title="MD" status="neutral" />
+          <Widget title="MD" status="neutral" />
         </Row>
         <Row height="calc(33vh - 19px)">
-          <Widget title="Tablet" status="neutral" />
-          <Widget title="Tablet" status="neutral" />
-          <Widget title="Tablet" status="neutral" />
+          <Widget title="MD" status="neutral" />
+          <Widget title="MD" status="neutral" />
+          <Widget title="MD" status="neutral" />
         </Row>
         <Row height="calc(34vh - 20px)">
-          <Widget title="Tablet" status="neutral" />
-          <Widget title="Tablet" status="neutral" />
-          <Widget title="Tablet" status="neutral" />
+          <Widget title="MD" status="neutral" />
+          <Widget title="MD" status="neutral" />
+          <Widget title="MD" status="neutral" />
         </Row>
       </Layout>
-      <Layout target="phone">
+      <Layout target="sm">
         <Row height="300px">
-          <Widget title="Phone" status="neutral" />
-          <Widget title="Phone" status="neutral" />
+          <Widget title="SM" status="neutral" />
+          <Widget title="SM" status="neutral" />
         </Row>
         <Row height="300px">
-          <Widget title="Phone" status="neutral" />
-          <Widget title="Phone" status="neutral" />
+          <Widget title="SM" status="neutral" />
+          <Widget title="SM" status="neutral" />
         </Row>
         <Row height="300px">
-          <Widget title="Phone" status="neutral" />
-          <Widget title="Phone" status="neutral" />
+          <Widget title="SM" status="neutral" />
+          <Widget title="SM" status="neutral" />
         </Row>
         <Row height="300px">
-          <Widget title="Phone" status="neutral" />
-          <Widget title="Phone" status="neutral" />
+          <Widget title="SM" status="neutral" />
+          <Widget title="SM" status="neutral" />
+        </Row>
+      </Layout>
+      <Layout target="xs">
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
+        </Row>
+        <Row height="300px">
+          <Widget title="XS" status="neutral" />
         </Row>
       </Layout>
     </Dashboard>

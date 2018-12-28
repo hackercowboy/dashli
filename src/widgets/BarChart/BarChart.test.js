@@ -9,13 +9,13 @@ describe('<BarChart/>', () => {
     expect(wrapper.find('.dashli-bar-chart').length).toEqual(1);
   });
 
-  it('should render a nice donut chart', () => {
+  it('should render a nice bar chart', () => {
     const values = [
       { label: 'Foo', value: 678 },
       { label: 'Bar', value: 843 },
     ];
     const wrapper = mount(<BarChart values={values} />);
-    wrapper.setState({ size: 500 });
+    wrapper.setState({ height: 500, width: 1000 });
     wrapper.setProps({
       values: [
         { label: 'Foo', value: 278 },
@@ -23,5 +23,6 @@ describe('<BarChart/>', () => {
       ],
     });
     expect(wrapper.find('.dashli-bar-chart').length).toEqual(1);
+    expect(wrapper.find('.dashli-bar-chart-item-value').length).toEqual(2);
   });
 });

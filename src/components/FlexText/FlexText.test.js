@@ -55,8 +55,15 @@ describe('<FlexText/>', () => {
     expect(wrapper.find('.dashli-flex-text-additional-value').length).toBe(2);
   });
 
+  it('should render icon if set', () => {
+    const wrapper = mount(<FlexText value="5000" icon="icon icon-test" />);
+    expect(wrapper.find('.icon.icon-test').length).toBe(2);
+    wrapper.setProps({ additionalValue: 'Test' });
+    expect(wrapper.find('.icon.icon-test').length).toBe(2);
+  });
+
   it('should vertical align top', () => {
-    const wrapper = mount(<FlexText value="5000" additionalValue="Test" verticalAlign="top" />);
+    const wrapper = mount(<FlexText value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="top" />);
     expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       lineHeight: 'NaNpx',
@@ -72,8 +79,8 @@ describe('<FlexText/>', () => {
     });
   });
 
-  it('should vertical align top', () => {
-    const wrapper = mount(<FlexText value="5000" additionalValue="Test" verticalAlign="bottom" />);
+  it('should vertical align bottom', () => {
+    const wrapper = mount(<FlexText value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="bottom" />);
     expect(wrapper.find('.dashli-flex-text-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       lineHeight: 'NaNpx',
