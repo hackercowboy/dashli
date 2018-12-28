@@ -52,7 +52,7 @@ class FlexTextValue extends PureComponent {
   updateFontSize(container) {
     if (container) {
       const { additionalValue } = this.props;
-      const reference = container.querySelector('.reference');
+      const reference = container.querySelector('.dashli-flex-text-value-reference');
       this.container = container;
       const heightFactor = container.offsetHeight / (additionalValue ? 60 : 40);
       const widthFactor = container.offsetWidth / reference.offsetWidth;
@@ -155,40 +155,40 @@ class FlexTextValue extends PureComponent {
     } = this.props;
     const { iconSize, fontSize, secondFontSize } = this.state;
     return (
-      <div className="flex-text-value" style={style} ref={this.updateFontSize}>
+      <div className="dashli-flex-text-value" style={style} ref={this.updateFontSize}>
         { icon && iconSize ? (
-          <div className="icon" style={this.iconStyle()}>
+          <div className="dashli-flex-text-value-icon" style={this.iconStyle()}>
             <i className={icon} />
           </div>
         ) : undefined }
-        <div className="values">
+        <div className="dashli-flex-text-value-values">
           { fontSize ? (
-            <div className="value" style={this.valueStyle()}>
+            <div className="dashli-flex-text-value-value" style={this.valueStyle()}>
               <div>
                 <span>{value}</span>
-                <span className="unit" style={{ fontSize: secondFontSize, lineHeight: secondFontSize }}>{unit}</span>
+                <span className="dashli-flex-text-value-unit" style={{ fontSize: secondFontSize, lineHeight: secondFontSize }}>{unit}</span>
               </div>
             </div>
           ) : undefined }
           { additionalValue && secondFontSize ? (
-            <div className="additional-value" style={this.additionalValueStyle()}>{additionalValue}</div>
+            <div className="dashli-flex-text-value-additional-value" style={this.additionalValueStyle()}>{additionalValue}</div>
           ) : undefined }
         </div>
-        <div className="reference">
+        <div className="dashli-flex-text-value-reference">
           { icon ? (
-            <div className="icon">
+            <div className="dashli-flex-text-value-icon">
               <i className={icon} />
             </div>
           ) : undefined }
-          <div className="values">
-            <div className="value">
+          <div className="dashli-flex-text-value-values">
+            <div className="dashli-flex-text-value-value">
               <div>
                 <span>{value}</span>
-                <span className="unit">{unit}</span>
+                <span className="dashli-flex-text-value-unit">{unit}</span>
               </div>
             </div>
             { additionalValue ? (
-              <div className="additional-value">{additionalValue}</div>
+              <div className="dashli-flex-text-value-additional-value">{additionalValue}</div>
             ) : undefined }
           </div>
         </div>

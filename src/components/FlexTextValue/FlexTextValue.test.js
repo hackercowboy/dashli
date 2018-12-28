@@ -26,7 +26,7 @@ describe('<FlexTextValue/>', () => {
       alignItems: 'center', fontSize: '16px', justifyContent: 'center', lineHeight: '16px',
     };
 
-    expect(wrapper.find('.value').at(0).props().style).toEqual(expectedStyle);
+    expect(wrapper.find('.dashli-flex-text-value-value').at(0).props().style).toEqual(expectedStyle);
 
     wrapper.instance().updateFontSize({
       querySelector: () => ({
@@ -42,17 +42,17 @@ describe('<FlexTextValue/>', () => {
     expectedStyle = {
       alignItems: 'center', fontSize: '24px', justifyContent: 'center', lineHeight: '24px',
     };
-    expect(wrapper.find('.value').at(0).props().style).toEqual(expectedStyle);
+    expect(wrapper.find('.dashli-flex-text-value-value').at(0).props().style).toEqual(expectedStyle);
   });
 
   it('should not render additional value if not set', () => {
     const wrapper = mount(<FlexTextValue value="5000" />);
-    expect(wrapper.find('.additional-value').length).toBe(0);
+    expect(wrapper.find('.dashli-flex-text-value-additional-value').length).toBe(0);
   });
 
   it('should render additional value if set', () => {
     const wrapper = mount(<FlexTextValue value="5000" additionalValue="Test" />);
-    expect(wrapper.find('.additional-value').length).toBe(2);
+    expect(wrapper.find('.dashli-flex-text-value-additional-value').length).toBe(2);
   });
 
   it('should render icon if set', () => {
@@ -64,7 +64,7 @@ describe('<FlexTextValue/>', () => {
 
   it('should vertical align top', () => {
     const wrapper = mount(<FlexTextValue value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="top" />);
-    expect(wrapper.find('.value').at(0).props().style).toEqual({
+    expect(wrapper.find('.dashli-flex-text-value-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       lineHeight: 'NaNpx',
       justifyContent: 'center',
@@ -72,7 +72,7 @@ describe('<FlexTextValue/>', () => {
       flexGrow: 0,
     });
 
-    expect(wrapper.find('.additional-value').at(0).props().style).toEqual({
+    expect(wrapper.find('.dashli-flex-text-value-additional-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       justifyContent: 'center',
       alignItems: 'flex-start',
@@ -81,14 +81,14 @@ describe('<FlexTextValue/>', () => {
 
   it('should vertical align bottom', () => {
     const wrapper = mount(<FlexTextValue value="5000" additionalValue="Test" icon="icon icon-test" verticalAlign="bottom" />);
-    expect(wrapper.find('.value').at(0).props().style).toEqual({
+    expect(wrapper.find('.dashli-flex-text-value-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       lineHeight: 'NaNpx',
       justifyContent: 'center',
       alignItems: 'flex-end',
     });
 
-    expect(wrapper.find('.additional-value').at(0).props().style).toEqual({
+    expect(wrapper.find('.dashli-flex-text-value-additional-value').at(0).props().style).toEqual({
       fontSize: 'NaNpx',
       flexGrow: 0,
       justifyContent: 'center',
