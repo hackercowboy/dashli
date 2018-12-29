@@ -274,6 +274,35 @@
   .dashli-theme-dark .dashli-bubble-world-map-active-dot-success, .dashli-theme-dark .dashli-bubble-world-map-active-circle-success {
     fill: #008b7d;
     stroke: #008b7d; }
+  .dashli-theme-dark .dashli-column-chart {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 0;
+    margin: 30px 15px;
+    padding: 10px 0;
+    justify-content: space-between; }
+    .dashli-theme-dark .dashli-column-chart .dashli-column-chart-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .dashli-theme-dark .dashli-column-chart .dashli-column-chart-item .dashli-column-chart-item-value {
+        white-space: nowrap;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 5px;
+        height: 0;
+        font-size: 24px; }
+      .dashli-theme-dark .dashli-column-chart .dashli-column-chart-item .dashli-column-chart-item-visual {
+        background: rgba(255, 255, 255, 0.3); }
+      .dashli-theme-dark .dashli-column-chart .dashli-column-chart-item .dashli-column-chart-item-label {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        padding-top: 5px;
+        font-size: 18px; }
   .dashli-theme-dark .dashli-donut-chart {
     display: flex;
     flex-direction: column;
