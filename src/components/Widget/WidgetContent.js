@@ -9,6 +9,7 @@ class WidgetContent extends PureComponent {
   static propTypes = {
     status: PropTypes.string,
     title: PropTypes.string,
+    className: PropTypes.string,
     tooltip: PropTypes.node,
     component: PropTypes.func,
     updated: PropTypes.instanceOf(Date),
@@ -18,6 +19,7 @@ class WidgetContent extends PureComponent {
   static defaultProps = {
     status: undefined,
     title: undefined,
+    className: undefined,
     tooltip: undefined,
     updated: undefined,
     component: undefined,
@@ -60,6 +62,7 @@ class WidgetContent extends PureComponent {
 
   render() {
     const {
+      className,
       title,
       tooltip,
       component,
@@ -76,7 +79,7 @@ class WidgetContent extends PureComponent {
           /* eslint-disable react/destructuring-assignment */
           const status = resizing ? undefined : this.props.status;
           return (
-            <div className={`dashli-widget dashli-widget-${status}`} style={{ flex: weight }}>
+            <div className={`dashli-widget dashli-widget-${status}${className ? ` ${className}` : ''}`} style={{ flex: weight }}>
               { title ? <div className="dashli-widget-title">{title}</div> : undefined }
               <div className="dashli-widget-content" ref={this.handleContentRef}>
                 { component && status && initialized ? React.createElement(component, this.props) : undefined }

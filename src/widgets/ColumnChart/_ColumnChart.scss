@@ -3,36 +3,60 @@
   flex-direction: row;
   flex-grow: 1;
   height: 0;
-  margin: 30px 15px;
+  margin: 55px 15px 25px;
   padding: 10px 0;
   justify-content: space-between;
+}
 
-  .dashli-column-chart-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.dashli-column-chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .dashli-column-chart-item-value {
-      white-space: nowrap; 
-      flex-grow: 1;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 5px;
-      height: 0;
-      font-size: 24px;
-    }
+.dashli-column-chart-item-value {
+  white-space: nowrap; 
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  height: 0;
+  font-size: 24px;
+}
 
-    .dashli-column-chart-item-visual {
-      background: rgba(white, 0.3);
-    }
-    
-    .dashli-column-chart-item-label {
-       white-space: nowrap; 
-       overflow: hidden;
-       text-overflow: ellipsis;
-       text-align: center;
-       padding-top: 5px;
-       font-size: 18px;
-    }
-  }
+.dashli-column-chart-item-visual-neutral {
+  background: rgba($light-color, 0.3);
+}
+
+.dashli-column-chart-item-visual-danger {
+  background: $bg-danger;
+}
+
+.dashli-column-chart-item-visual-danger {
+  background: $bg-danger;
+}
+
+.dashli-column-chart-item-visual-danger {
+  background: $bg-danger;
+}
+
+.dashli-column-chart-item-visual-warning {
+  background: $bg-warning;
+}
+
+.dashli-column-chart-item-visual-info {
+  background: $bg-info;
+}
+
+.dashli-column-chart-item-visual-success {
+  background: $bg-success;
+}
+
+.dashli-column-chart-item-label {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 18px;
 }

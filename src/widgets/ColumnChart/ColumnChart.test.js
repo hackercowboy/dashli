@@ -11,7 +11,7 @@ describe('<ColumnChart/>', () => {
 
   it('should render a nice column chart', () => {
     const values = [
-      { label: 'Foo', value: 678 },
+      { label: 'Foo', value: 678, status: 'danger' },
       { label: 'Bar', value: 843 },
     ];
     const wrapper = mount(<ColumnChart values={values} />);

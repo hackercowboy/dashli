@@ -57,6 +57,7 @@ function (_PureComponent) {
   _createClass(BarChart, [{
     key: "handleContainer",
     value: function handleContainer(element) {
+      /* istanbul ignore next */
       if (element) {
         this.setState({
           height: element.offsetHeight,
@@ -85,8 +86,7 @@ function (_PureComponent) {
         height: height / values.length,
         fontSize: fontSize,
         lineHeight: fontSize,
-        margin: "".concat(Math.floor(itemHeight * 0.1), "px 0"),
-        padding: "0 ".concat(itemPadding, "px")
+        margin: "".concat(Math.floor(itemHeight * 0.1), "px 0")
       };
       return _react.default.createElement("div", {
         className: "dashli-bar-chart",
@@ -119,7 +119,7 @@ _defineProperty(BarChart, "propTypes", {
 });
 
 _defineProperty(BarChart, "defaultProps", {
-  values: undefined
+  values: []
 });
 
 var _default = BarChart;

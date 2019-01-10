@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _FlexText = _interopRequireDefault(require("./FlexText"));
+var _FlexTextValue = _interopRequireDefault(require("./FlexTextValue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _default = _FlexText.default;
+var _default = _FlexTextValue.default;
 exports.default = _default;

@@ -43,17 +43,17 @@ var ALIGN_MAPPING = {
   right: 'flex-end'
 };
 
-var FlexText =
+var FlexTextValue =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(FlexText, _PureComponent);
+  _inherits(FlexTextValue, _PureComponent);
 
-  function FlexText() {
+  function FlexTextValue() {
     var _this;
 
-    _classCallCheck(this, FlexText);
+    _classCallCheck(this, FlexTextValue);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(FlexText).call(this));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FlexTextValue).call(this));
     _this.state = {
       iconSize: undefined,
       fontSize: undefined,
@@ -66,7 +66,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  _createClass(FlexText, [{
+  _createClass(FlexTextValue, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       this.updateFontSize(this.container);
@@ -76,7 +76,7 @@ function (_PureComponent) {
     value: function updateFontSize(container) {
       if (container) {
         var additionalValue = this.props.additionalValue;
-        var reference = container.querySelector('.dashli-flex-text-reference');
+        var reference = container.querySelector('.dashli-flex-text-value-reference');
         this.container = container;
         var heightFactor = container.offsetHeight / (additionalValue ? 60 : 40);
         var widthFactor = container.offsetWidth / reference.offsetWidth;
@@ -194,50 +194,50 @@ function (_PureComponent) {
           fontSize = _this$state3.fontSize,
           secondFontSize = _this$state3.secondFontSize;
       return _react.default.createElement("div", {
-        className: "dashli-flex-text",
+        className: "dashli-flex-text-value",
         style: style,
         ref: this.updateFontSize
       }, icon && iconSize ? _react.default.createElement("div", {
-        className: "dashli-flex-text-icon",
+        className: "dashli-flex-text-value-icon",
         style: this.iconStyle()
       }, _react.default.createElement("i", {
         className: icon
       })) : undefined, _react.default.createElement("div", {
-        className: "dashli-flex-text-values"
+        className: "dashli-flex-text-value-values"
       }, fontSize ? _react.default.createElement("div", {
-        className: "dashli-flex-text-value",
+        className: "dashli-flex-text-value-value",
         style: this.valueStyle()
       }, _react.default.createElement("div", null, _react.default.createElement("span", null, value), _react.default.createElement("span", {
-        className: "dashli-flex-text-unit",
+        className: "dashli-flex-text-value-unit",
         style: {
           fontSize: secondFontSize,
           lineHeight: secondFontSize
         }
       }, unit))) : undefined, additionalValue && secondFontSize ? _react.default.createElement("div", {
-        className: "dashli-flex-text-additional-value",
+        className: "dashli-flex-text-value-additional-value",
         style: this.additionalValueStyle()
       }, additionalValue) : undefined), _react.default.createElement("div", {
-        className: "dashli-flex-text-reference"
+        className: "dashli-flex-text-value-reference"
       }, icon ? _react.default.createElement("div", {
-        className: "dashli-flex-text-icon"
+        className: "dashli-flex-text-value-icon"
       }, _react.default.createElement("i", {
         className: icon
       })) : undefined, _react.default.createElement("div", {
-        className: "dashli-flex-text-values"
+        className: "dashli-flex-text-value-values"
       }, _react.default.createElement("div", {
-        className: "dashli-flex-text-value"
+        className: "dashli-flex-text-value-value"
       }, _react.default.createElement("div", null, _react.default.createElement("span", null, value), _react.default.createElement("span", {
-        className: "dashli-flex-text-unit"
+        className: "dashli-flex-text-value-unit"
       }, unit))), additionalValue ? _react.default.createElement("div", {
-        className: "dashli-flex-text-additional-value"
+        className: "dashli-flex-text-value-additional-value"
       }, additionalValue) : undefined)));
     }
   }]);
 
-  return FlexText;
+  return FlexTextValue;
 }(_react.PureComponent);
 
-_defineProperty(FlexText, "propTypes", {
+_defineProperty(FlexTextValue, "propTypes", {
   value: _propTypes.default.string,
   icon: _propTypes.default.string,
   unit: _propTypes.default.string,
@@ -249,7 +249,7 @@ _defineProperty(FlexText, "propTypes", {
   horizontalAlign: _propTypes.default.string
 });
 
-_defineProperty(FlexText, "defaultProps", {
+_defineProperty(FlexTextValue, "defaultProps", {
   value: undefined,
   icon: undefined,
   unit: undefined,
@@ -259,5 +259,5 @@ _defineProperty(FlexText, "defaultProps", {
   horizontalAlign: 'center'
 });
 
-var _default = FlexText;
+var _default = FlexTextValue;
 exports.default = _default;

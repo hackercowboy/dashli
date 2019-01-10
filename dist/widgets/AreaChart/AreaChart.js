@@ -11,7 +11,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var d3 = _interopRequireWildcard(require("d3"));
 
-var _FlexText = _interopRequireDefault(require("../../components/FlexText"));
+var _FlexTextValue = _interopRequireDefault(require("../../components/FlexTextValue"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -129,7 +129,7 @@ function (_PureComponent) {
     value: function render() {
       return _react.default.createElement("div", {
         className: "dashli-area-chart"
-      }, _react.default.createElement(_FlexText.default, _extends({}, this.props, {
+      }, _react.default.createElement(_FlexTextValue.default, _extends({}, this.props, {
         verticalAlign: "bottom",
         horizontalAlign: "right"
       })), _react.default.createElement("div", {

@@ -21,6 +21,12 @@ Object.defineProperty(exports, "BubbleWorldMap", {
     return _BubbleWorldMap.default;
   }
 });
+Object.defineProperty(exports, "ColumnChart", {
+  enumerable: true,
+  get: function get() {
+    return _ColumnChart.default;
+  }
+});
 Object.defineProperty(exports, "DonutChart", {
   enumerable: true,
   get: function get() {
@@ -51,6 +57,8 @@ var _AreaChart = _interopRequireDefault(require("./AreaChart"));
 var _BarChart = _interopRequireDefault(require("./BarChart"));
 
 var _BubbleWorldMap = _interopRequireDefault(require("./BubbleWorldMap"));
+
+var _ColumnChart = _interopRequireDefault(require("./ColumnChart"));
 
 var _DonutChart = _interopRequireDefault(require("./DonutChart"));
 

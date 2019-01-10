@@ -15,7 +15,7 @@ describe('<Widget/>', () => {
 
   it('should handle screen resizing', () => {
     const clock = sinon.useFakeTimers();
-    const wrapper = mount(<Widget />).find('WidgetContent');
+    const wrapper = mount(<Widget className="widget-test" />).find('WidgetContent');
     expect(wrapper.state().resizing).toBeFalsy();
     wrapper.instance().handleScreenResizing();
     expect(wrapper.state().resizing).toBeTruthy();

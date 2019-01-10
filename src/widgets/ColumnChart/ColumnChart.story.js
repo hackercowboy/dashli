@@ -12,6 +12,14 @@ import {
 
 import ColumnChart from './ColumnChart';
 
+const statuses = [
+  'danger',
+  'warning',
+  'info',
+  'success',
+  'neutral',
+];
+
 class ColumnChartStory extends Component {
   constructor() {
     super();
@@ -35,6 +43,7 @@ class ColumnChartStory extends Component {
       values.push({
         label: faker.address.country(),
         value: Math.floor(Math.random() * 50),
+        status: statuses[Math.floor(Math.random() * (statuses.length - 1))],
       });
     }
     return values;

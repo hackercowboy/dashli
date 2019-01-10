@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _FlexText = _interopRequireDefault(require("../../components/FlexText"));
+var _FlexTextValue = _interopRequireDefault(require("../../components/FlexTextValue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -49,7 +49,7 @@ function (_PureComponent) {
     value: function render() {
       return _react.default.createElement("div", {
         className: "dashli-value"
-      }, _react.default.createElement(_FlexText.default, _extends({}, this.props, {
+      }, _react.default.createElement(_FlexTextValue.default, _extends({}, this.props, {
         horizontalAlign: "center",
         verticalAlign: "center"
       })));

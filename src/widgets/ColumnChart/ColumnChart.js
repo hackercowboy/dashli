@@ -5,6 +5,7 @@ class ColumnChart extends PureComponent {
   static propTypes = {
     values: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
+      status: PropTypes.string,
       value: PropTypes.number,
     })),
   }
@@ -46,7 +47,10 @@ class ColumnChart extends PureComponent {
             style={{ width: itemWidth }}
           >
             <div className="dashli-column-chart-item-value">{value.value}</div>
-            <div className="dashli-column-chart-item-visual" style={{ height: (value.value / total * factor * height * 0.7), width: itemWidth }} />
+            <div
+              className={`dashli-column-chart-item-visual dashli-column-chart-item-visual-${value.status ? value.status : 'neutral'}`}
+              style={{ height: (value.value / total * factor * height * 0.7), width: itemWidth }}
+            />
             <div className="dashli-column-chart-item-label" style={{ width: itemWidth }}>{value.label}</div>
           </div>
         )) : undefined }

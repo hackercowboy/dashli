@@ -102,6 +102,7 @@ function (_PureComponent) {
       var _this3 = this;
 
       var _this$props = this.props,
+          className = _this$props.className,
           title = _this$props.title,
           tooltip = _this$props.tooltip,
           component = _this$props.component,
@@ -117,7 +118,7 @@ function (_PureComponent) {
 
         var status = resizing ? undefined : _this3.props.status;
         return _react.default.createElement("div", {
-          className: "dashli-widget dashli-widget-".concat(status),
+          className: "dashli-widget dashli-widget-".concat(status).concat(className ? " ".concat(className) : ''),
           style: {
             flex: weight
           }
@@ -144,6 +145,7 @@ function (_PureComponent) {
 _defineProperty(WidgetContent, "propTypes", {
   status: _propTypes.default.string,
   title: _propTypes.default.string,
+  className: _propTypes.default.string,
   tooltip: _propTypes.default.node,
   component: _propTypes.default.func,
   updated: _propTypes.default.instanceOf(Date),
@@ -153,6 +155,7 @@ _defineProperty(WidgetContent, "propTypes", {
 _defineProperty(WidgetContent, "defaultProps", {
   status: undefined,
   title: undefined,
+  className: undefined,
   tooltip: undefined,
   updated: undefined,
   component: undefined,

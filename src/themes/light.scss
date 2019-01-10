@@ -64,5 +64,11 @@
     animation: pulse-light 1.5s infinite ease-in-out;
   }
 
+  .dashli-widget-neutral {
+    .dashli-column-chart-item-visual-neutral {
+      background: rgba($dark-color, 0.3);
+    } 
+  }
+
   @import 'styles';
 }

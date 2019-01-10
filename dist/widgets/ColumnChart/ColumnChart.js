@@ -33,138 +33,94 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Tooltip =
+var ColumnChart =
 /*#__PURE__*/
 function (_PureComponent) {
-  _inherits(Tooltip, _PureComponent);
+  _inherits(ColumnChart, _PureComponent);
 
-  function Tooltip() {
+  function ColumnChart() {
     var _this;
 
-    _classCallCheck(this, Tooltip);
+    _classCallCheck(this, ColumnChart);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Tooltip).call(this));
-    _this.toggleTooltip = _this.toggleTooltip.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleButton = _this.handleButton.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleMouseDown = _this.handleMouseDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleScrollAndResize = _this.handleScrollAndResize.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.updatePosition = _this.updatePosition.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    document.addEventListener('mousedown', _this.handleMouseDown);
-    window.addEventListener('scroll', _this.handleScrollAndResize);
-    window.addEventListener('resize', _this.handleScrollAndResize);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ColumnChart).call(this));
+    _this.handleContainer = _this.handleContainer.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.state = {
-      visible: false
+      height: undefined,
+      width: undefined
     };
     return _this;
   }
 
-  _createClass(Tooltip, [{
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      window.removeEventListener('resize', this.handleScrollAndResize);
-      window.removeEventListener('scroll', this.handleScrollAndResize);
-      document.removeEventListener('mousedown', this.handleMouseDown);
-    }
-  }, {
-    key: "toggleTooltip",
-    value: function toggleTooltip(e) {
-      var visible = this.state.visible;
-      e.stopPropagation();
-
-      if (visible) {
-        this.setState({
-          visible: false
-        });
-      } else {
-        this.updatePosition();
-      }
-    }
-  }, {
-    key: "handleButton",
-    value: function handleButton(button) {
-      this.button = button;
-    }
-  }, {
-    key: "handleContent",
-    value: function handleContent(content) {
-      this.content = content;
-    }
-  }, {
-    key: "handleMouseDown",
-    value: function handleMouseDown(e) {
-      var visible = this.state.visible;
-
-      if (visible && e.target !== this.button) {
-        this.setState({
-          visible: false
-        });
-      }
-    }
-  }, {
-    key: "handleScrollAndResize",
-    value: function handleScrollAndResize() {
-      var visible = this.state.visible;
-
-      if (visible) {
-        this.updatePosition();
-      }
-    }
-  }, {
-    key: "updatePosition",
-    value: function updatePosition() {
+  _createClass(ColumnChart, [{
+    key: "handleContainer",
+    value: function handleContainer(element) {
       /* istanbul ignore next */
-      if (this.button) {
-        var top = this.button.getBoundingClientRect().top + 35;
-        var width = Math.min(window.innerWidth, 375) - 60;
-        var left = window.innerWidth < 376 ?
-        /* istanbul ignore next */
-        15 : Math.max(15, this.button.getBoundingClientRect().left - width);
+      if (element) {
         this.setState({
-          top: top,
-          width: width,
-          left: left,
-          visible: true
+          height: element.offsetHeight,
+          width: element.offsetWidth
         });
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var children = this.props.children;
+      var values = this.props.values;
       var _this$state = this.state,
-          visible = _this$state.visible,
-          top = _this$state.top,
-          left = _this$state.left,
+          height = _this$state.height,
           width = _this$state.width;
+      var total = values.reduce(function (count, value) {
+        return count + value.value;
+      }, 0);
+      var max = values.reduce(function (current, value) {
+        return Math.max(current, value.value);
+      }, 0);
+      var factor = 1 / (max / total);
+      var itemWidth = width / values.length * 0.9;
       return _react.default.createElement("div", {
-        className: "dashli-tooltip"
-      }, _react.default.createElement("button", {
-        type: "button",
-        onClick: this.toggleTooltip,
-        ref: this.handleButton
-      }, "i"), visible ? _react.default.createElement("div", {
-        className: "dashli-tooltip-content",
-        style: {
-          top: top,
-          left: left,
-          width: width
-        }
-      }, children) : null, visible ? _react.default.createElement("div", {
-        className: "dashli-tooltip-arrow"
-      }) : null);
+        className: "dashli-column-chart",
+        ref: this.handleContainer
+      }, width ? values.map(function (value, index) {
+        return _react.default.createElement("div", {
+          /* eslint-disable react/no-array-index-key */
+          key: index,
+          className: "dashli-column-chart-item dashli-column-chart-item-".concat(index),
+          style: {
+            width: itemWidth
+          }
+        }, _react.default.createElement("div", {
+          className: "dashli-column-chart-item-value"
+        }, value.value), _react.default.createElement("div", {
+          className: "dashli-column-chart-item-visual dashli-column-chart-item-visual-".concat(value.status ? value.status : 'neutral'),
+          style: {
+            height: value.value / total * factor * height * 0.7,
+            width: itemWidth
+          }
+        }), _react.default.createElement("div", {
+          className: "dashli-column-chart-item-label",
+          style: {
+            width: itemWidth
+          }
+        }, value.label));
+      }) : undefined);
     }
   }]);
 
-  return Tooltip;
+  return ColumnChart;
 }(_react.PureComponent);
 
-_defineProperty(Tooltip, "propTypes", {
-  children: _propTypes.default.node
+_defineProperty(ColumnChart, "propTypes", {
+  values: _propTypes.default.arrayOf(_propTypes.default.shape({
+    label: _propTypes.default.string,
+    status: _propTypes.default.string,
+    value: _propTypes.default.number
+  }))
 });
 
-_defineProperty(Tooltip, "defaultProps", {
-  children: undefined
+_defineProperty(ColumnChart, "defaultProps", {
+  values: []
 });
 
-var _default = Tooltip;
+var _default = ColumnChart;
 exports.default = _default;

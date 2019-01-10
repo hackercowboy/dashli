@@ -51,6 +51,12 @@ Object.defineProperty(exports, "BubbleWorldMap", {
     return _widgets.BubbleWorldMap;
   }
 });
+Object.defineProperty(exports, "ColumnChart", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.ColumnChart;
+  }
+});
 Object.defineProperty(exports, "DonutChart", {
   enumerable: true,
   get: function get() {

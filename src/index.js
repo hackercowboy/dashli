@@ -10,6 +10,7 @@ export {
   AreaChart,
   BarChart,
   BubbleWorldMap,
+  ColumnChart,
   DonutChart,
   GaugeChart,
   Image,

@@ -14,6 +14,9 @@
   color: #222;
   animation: pulse-light 1.5s infinite ease-in-out; }
 
+.dashli-theme-light .dashli-widget-neutral .dashli-column-chart-item-visual-neutral {
+  background: rgba(34, 34, 34, 0.3); }
+
 .dashli-theme-light .dashli-column {
   display: flex;
   flex-direction: column;
@@ -261,15 +264,20 @@
   height: 0;
   margin: 30px 15px;
   padding: 10px 0; }
-  .dashli-theme-light .dashli-bar-chart .dashli-bar-chart-item {
-    display: flex;
-    flex-direction: row;
-    background: rgba(255, 255, 255, 0.3);
-    align-items: center; }
-    .dashli-theme-light .dashli-bar-chart .dashli-bar-chart-item .dashli-bar-chart-item-label {
-      white-space: nowrap;
-      flex-grow: 1;
-      padding-right: 20px; }
+
+.dashli-theme-light .dashli-bar-chart-item {
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.3);
+  align-items: center; }
+
+.dashli-theme-light .dashli-bar-chart-item-label {
+  white-space: nowrap;
+  padding: 0 10px; }
+
+.dashli-theme-light .dashli-bar-chart-item-value {
+  position: absolute;
+  right: 20px; }
 
 .dashli-theme-light .dashli-bubble-world-map {
   display: flex;
@@ -317,30 +325,52 @@
   flex-direction: row;
   flex-grow: 1;
   height: 0;
-  margin: 30px 15px;
+  margin: 55px 15px 25px;
   padding: 10px 0;
   justify-content: space-between; }
-  .dashli-theme-light .dashli-column-chart .dashli-column-chart-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .dashli-theme-light .dashli-column-chart .dashli-column-chart-item .dashli-column-chart-item-value {
-      white-space: nowrap;
-      flex-grow: 1;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 5px;
-      height: 0;
-      font-size: 24px; }
-    .dashli-theme-light .dashli-column-chart .dashli-column-chart-item .dashli-column-chart-item-visual {
-      background: rgba(255, 255, 255, 0.3); }
-    .dashli-theme-light .dashli-column-chart .dashli-column-chart-item .dashli-column-chart-item-label {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-align: center;
-      padding-top: 5px;
-      font-size: 18px; }
+
+.dashli-theme-light .dashli-column-chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.dashli-theme-light .dashli-column-chart-item-value {
+  white-space: nowrap;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 5px;
+  height: 0;
+  font-size: 24px; }
+
+.dashli-theme-light .dashli-column-chart-item-visual-neutral {
+  background: rgba(255, 255, 255, 0.3); }
+
+.dashli-theme-light .dashli-column-chart-item-visual-danger {
+  background: #f2483f; }
+
+.dashli-theme-light .dashli-column-chart-item-visual-danger {
+  background: #f2483f; }
+
+.dashli-theme-light .dashli-column-chart-item-visual-danger {
+  background: #f2483f; }
+
+.dashli-theme-light .dashli-column-chart-item-visual-warning {
+  background: #fec22e; }
+
+.dashli-theme-light .dashli-column-chart-item-visual-info {
+  background: #17a8f1; }
+
+.dashli-theme-light .dashli-column-chart-item-visual-success {
+  background: #70C250; }
+
+.dashli-theme-light .dashli-column-chart-item-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 18px; }
 
 .dashli-theme-light .dashli-donut-chart {
   display: flex;
@@ -443,6 +473,64 @@
       height: 0;
       flex-grow: 1;
       justify-content: center; }
+
+.dashli-theme-light .dashli-icon-chart {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 0;
+  margin: 35px 15px 25px;
+  padding: 10px 0;
+  justify-content: space-between; }
+
+.dashli-theme-light .dashli-icon-chart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+
+.dashli-theme-light .dashli-icon-chart-item-value {
+  white-space: nowrap;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 15px;
+  height: 0;
+  font-size: 24px; }
+
+.dashli-theme-light .dashli-icon-chart-item-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 26px;
+  padding-top: 10px;
+  font-weight: 600; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual-danger > .dashli-icon-chart-item-icon {
+  color: #f2483f; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual-danger > .dashli-icon-chart-item-icon {
+  color: #f2483f; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual-danger > .dashli-icon-chart-item-icon {
+  color: #f2483f; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual-warning > .dashli-icon-chart-item-icon {
+  color: #fec22e; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual-info > .dashli-icon-chart-item-icon {
+  color: #17a8f1; }
+
+.dashli-theme-light .dashli-icon-chart-item-visual-success > .dashli-icon-chart-item-icon {
+  color: #70C250; }
 
 .dashli-theme-light .dashli-image {
   flex-grow: 1;

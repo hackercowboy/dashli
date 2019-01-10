@@ -69,7 +69,7 @@ function (_PureComponent) {
       var layout = layouts ? Object.keys(layouts).find(function (key) {
         return window.innerWidth >= layouts[key];
       }) : undefined;
-      var visible = target.split(',').map(function (t) {
+      var visible = target && target.split(',').map(function (t) {
         return t.trim();
       }).find(function (t) {
         return t === layout;

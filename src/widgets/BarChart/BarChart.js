@@ -42,8 +42,7 @@ class BarChart extends PureComponent {
       height: height / values.length,
       fontSize,
       lineHeight: fontSize,
-      margin: `${Math.floor(itemHeight * 0.1)}px 0`,
-      padding: `0 ${itemPadding}px`,
+      margin: `${Math.floor(itemHeight * 0.1)}px 0`
     };
 
     return (
