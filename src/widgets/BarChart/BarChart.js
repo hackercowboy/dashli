@@ -42,7 +42,7 @@ class BarChart extends PureComponent {
       height: height / values.length,
       fontSize,
       lineHeight: fontSize,
-      margin: `${Math.floor(itemHeight * 0.1)}px 0`
+      margin: `${Math.floor(itemHeight * 0.1)}px 0`,
     };
 
     return (
@@ -52,7 +52,7 @@ class BarChart extends PureComponent {
             /* eslint-disable react/no-array-index-key */
             key={index}
             className={`dashli-bar-chart-item dashli-bar-chart-item-${index}`}
-            style={{ ...style, width: `${(value.value / total * factor * width) - itemPadding * 2}px` }}
+            style={{ ...style, width: `${Math.max(0, Math.round((value.value / total * factor * width) - itemPadding * 2))}px` }}
           >
             <div className="dashli-bar-chart-item-label">{value.label}</div>
             <div className="dashli-bar-chart-item-value">{value.value}</div>

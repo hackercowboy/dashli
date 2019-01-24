@@ -150,7 +150,7 @@ function (_PureComponent) {
             }), _react.default.createElement("div", {
               className: "dashli-donut-chart-legend-text",
               style: {
-                fontSize: Math.floor(valueHeight * 0.75),
+                fontSize: Math.floor(valueHeight * 0.65),
                 lineHeight: "".concat(valueHeight, "px")
               }
             }, value.label))

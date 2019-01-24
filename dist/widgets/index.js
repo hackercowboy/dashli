@@ -39,6 +39,12 @@ Object.defineProperty(exports, "GaugeChart", {
     return _GaugeChart.default;
   }
 });
+Object.defineProperty(exports, "IconChart", {
+  enumerable: true,
+  get: function get() {
+    return _IconChart.default;
+  }
+});
 Object.defineProperty(exports, "Image", {
   enumerable: true,
   get: function get() {
@@ -63,6 +69,8 @@ var _ColumnChart = _interopRequireDefault(require("./ColumnChart"));
 var _DonutChart = _interopRequireDefault(require("./DonutChart"));
 
 var _GaugeChart = _interopRequireDefault(require("./GaugeChart"));
+
+var _IconChart = _interopRequireDefault(require("./IconChart"));
 
 var _Image = _interopRequireDefault(require("./Image"));
 

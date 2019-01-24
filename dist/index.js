@@ -69,6 +69,12 @@ Object.defineProperty(exports, "GaugeChart", {
     return _widgets.GaugeChart;
   }
 });
+Object.defineProperty(exports, "IconChart", {
+  enumerable: true,
+  get: function get() {
+    return _widgets.IconChart;
+  }
+});
 Object.defineProperty(exports, "Image", {
   enumerable: true,
   get: function get() {

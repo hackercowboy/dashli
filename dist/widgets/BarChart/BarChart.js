@@ -97,7 +97,7 @@ function (_PureComponent) {
           key: index,
           className: "dashli-bar-chart-item dashli-bar-chart-item-".concat(index),
           style: _objectSpread({}, style, {
-            width: "".concat(value.value / total * factor * width - itemPadding * 2, "px")
+            width: "".concat(Math.max(0, Math.round(value.value / total * factor * width - itemPadding * 2)), "px")
           })
         }, _react.default.createElement("div", {
           className: "dashli-bar-chart-item-label"

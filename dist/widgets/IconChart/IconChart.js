@@ -85,7 +85,7 @@ function (_PureComponent) {
       }, _react.default.createElement("i", {
         className: value.icon,
         style: {
-          fontSize: Math.max(15, value.value / total * factor * totalHeight * 0.6)
+          fontSize: Math.max(25, value.value / total * factor * totalHeight * 0.6)
         }
       }))), _react.default.createElement("div", {
         className: "dashli-icon-chart-item-label",

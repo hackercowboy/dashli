@@ -18,7 +18,12 @@ describe('<IconChart/>', () => {
     wrapper.setState({ height: 500, width: 1000 });
     wrapper.setProps({
       values: [
-        { label: 'Foo', icon: 'male', value: 278, status: 'danger' },
+        {
+          label: 'Foo',
+          icon: 'male',
+          value: 278,
+          status: 'danger',
+        },
         { label: 'Bar', icon: 'female', value: 8943 },
       ],
     });

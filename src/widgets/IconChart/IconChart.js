@@ -40,7 +40,7 @@ class IconChart extends PureComponent {
           style={{ width: itemWidth }}
         >
           <div className="dashli-icon-chart-item-value">{value.value}</div>
-          <div className="dashli-icon-chart-item-icon"><i className={value.icon} style={{ fontSize: Math.max(15, (value.value / total * factor * totalHeight * 0.6)) }} /></div>
+          <div className="dashli-icon-chart-item-icon"><i className={value.icon} style={{ fontSize: Math.max(25, (value.value / total * factor * totalHeight * 0.6)) }} /></div>
         </div>
         <div className="dashli-icon-chart-item-label" style={{ width: itemWidth }}>{value.label}</div>
       </div>

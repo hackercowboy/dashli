@@ -96,7 +96,7 @@ class DonutChart extends PureComponent {
                 className={`dashli-donut-chart-legend-color dashli-donut-chart-legend-color-${index}`}
                 style={{ width: Math.floor(valueHeight * 0.9), height: Math.floor(valueHeight * 0.9) }}
               />
-              <div className="dashli-donut-chart-legend-text" style={{ fontSize: Math.floor(valueHeight * 0.75), lineHeight: `${valueHeight}px` }}>{value.label}</div>
+              <div className="dashli-donut-chart-legend-text" style={{ fontSize: Math.floor(valueHeight * 0.65), lineHeight: `${valueHeight}px` }}>{value.label}</div>
             </li>
           ))}
         </ul>

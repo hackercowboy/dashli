@@ -13,6 +13,7 @@ export {
   ColumnChart,
   DonutChart,
   GaugeChart,
+  IconChart,
   Image,
   Value,
 } from './widgets';
