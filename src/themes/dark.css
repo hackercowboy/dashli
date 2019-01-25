@@ -42,7 +42,7 @@
       .dashli-theme-dark .dashli-flex-text-value .dashli-flex-text-value-values .dashli-flex-text-value-value {
         display: flex;
         font-size: 0px;
-        font-weight: bold;
+        font-weight: 600;
         flex-grow: 1;
         white-space: nowrap; }
       .dashli-theme-dark .dashli-flex-text-value .dashli-flex-text-value-values .dashli-flex-text-value-additional-value {
@@ -448,9 +448,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
-    padding-top: 5px;
     font-size: 26px;
     padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: 600; }
   .dashli-theme-dark .dashli-icon-chart-item-visual-danger > .dashli-icon-chart-item-icon {
     color: #e61a58; }

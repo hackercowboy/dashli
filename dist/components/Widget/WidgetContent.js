@@ -75,12 +75,16 @@ function (_PureComponent) {
     }
   }, {
     key: "handleScreenResizing",
-    value: function handleScreenResizing() {
-      this.setState({
-        resizing: true
-      });
-      clearTimeout(this.screenResizeTimeout);
-      this.screenResizeTimeout = setTimeout(this.handleScreenResized, 500);
+    value: function handleScreenResizing(event) {
+      if (this.innerWidth !== event.target.innerWidth || this.innerHeight !== event.target.innerHeight) {
+        this.innerWidth = event.target.innerWidth;
+        this.innerHeight = event.target.innerHeight;
+        this.setState({
+          resizing: true
+        });
+        clearTimeout(this.screenResizeTimeout);
+        this.screenResizeTimeout = setTimeout(this.handleScreenResized, 500);
+      }
     }
   }, {
     key: "handleContentRef",
