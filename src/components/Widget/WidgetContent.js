@@ -45,9 +45,8 @@ class WidgetContent extends PureComponent {
   }
 
   handleScreenResizing(event) {
-    if (this.innerWidth !== event.target.innerWidth || this.innerHeight !== event.target.innerHeight) {
+    if (this.innerWidth !== event.target.innerWidth) {
       this.innerWidth = event.target.innerWidth;
-      this.innerHeight = event.target.innerHeight;
       this.setState({ resizing: true });
       clearTimeout(this.screenResizeTimeout);
       this.screenResizeTimeout = setTimeout(this.handleScreenResized, 500);
