@@ -69,7 +69,7 @@ function (_PureComponent) {
         _this2.arcs.push(_this2.g.append('path').datum({
           startAngle: currentAngle,
           endAngle: value + currentAngle
-        }).attr('d', _this2.arc).attr('class', "dashli-donut-chart-value dashli-donut-chart-value-".concat(index)));
+        }).attr('d', _this2.arc).attr('class', "dashli-donut-chart-value dashli-donut-chart-value-".concat(index)).style('fill', values[index].color));
 
         currentAngle += value;
       });
@@ -89,7 +89,7 @@ function (_PureComponent) {
       }, 0);
       return values.map(function (value) {
         return value.value / total * 2 * Math.PI;
-      }).sort().reverse();
+      }).reverse();
     }
   }, {
     key: "createDonutChart",
@@ -115,7 +115,7 @@ function (_PureComponent) {
           _this3.arcs.push(_this3.g.append('path').datum({
             startAngle: currentAngle,
             endAngle: value + currentAngle
-          }).attr('d', _this3.arc).attr('class', "dashli-donut-chart-value dashli-donut-chart-value-".concat(index)));
+          }).attr('d', _this3.arc).attr('class', "dashli-donut-chart-value dashli-donut-chart-value-".concat(index)).style('fill', values[index].color));
 
           currentAngle += value;
         });
@@ -134,9 +134,7 @@ function (_PureComponent) {
 
       if (values && size) {
         var valueHeight = Math.min(Math.floor(size * 0.5 / values.length * 0.8), Math.floor(size * 0.5 / 5 * 0.8));
-        return _react.default.createElement("ul", null, values.sort(function (a, b) {
-          return b.value - a.value;
-        }).map(function (value, index) {
+        return _react.default.createElement("ul", null, values.map(function (value, index) {
           return (
             /* eslint-disable react/no-array-index-key */
             _react.default.createElement("li", {
@@ -193,6 +191,7 @@ function (_PureComponent) {
 _defineProperty(DonutChart, "propTypes", {
   values: _propTypes.default.arrayOf(_propTypes.default.shape({
     label: _propTypes.default.string,
+    color: _propTypes.default.string,
     value: _propTypes.default.number
   }))
 });
