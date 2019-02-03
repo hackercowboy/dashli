@@ -17,7 +17,11 @@ describe('<Widget/>', () => {
     const clock = sinon.useFakeTimers();
     const wrapper = mount(<Widget className="widget-test" />).find('WidgetContent');
     expect(wrapper.state().resizing).toBeFalsy();
-    wrapper.instance().handleScreenResizing();
+    wrapper.instance().handleScreenResizing({
+      target: {
+        innerWidth: 3432,
+      },
+    });
     expect(wrapper.state().resizing).toBeTruthy();
     clock.tick(1000);
     expect(wrapper.state().resizing).toBeFalsy();

@@ -6,6 +6,7 @@ class DonutChart extends PureComponent {
   static propTypes = {
     values: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
+      color: PropTypes.string,
       value: PropTypes.number,
     })),
   }
@@ -31,7 +32,8 @@ class DonutChart extends PureComponent {
       this.arcs.push(this.g.append('path')
         .datum({ startAngle: currentAngle, endAngle: value + currentAngle })
         .attr('d', this.arc)
-        .attr('class', `dashli-donut-chart-value dashli-donut-chart-value-${index}`));
+        .attr('class', `dashli-donut-chart-value dashli-donut-chart-value-${index}`)
+        .style('fill', values[index].color));
       currentAngle += value;
     });
   }
@@ -44,7 +46,7 @@ class DonutChart extends PureComponent {
 
   convertValues(values) {
     const total = values.reduce((count, value) => count + value.value, 0);
-    return values.map(value => value.value / total * 2 * Math.PI).sort().reverse();
+    return values.map(value => value.value / total * 2 * Math.PI).reverse();
   }
 
   createDonutChart(element) {
@@ -74,7 +76,8 @@ class DonutChart extends PureComponent {
         this.arcs.push(this.g.append('path')
           .datum({ startAngle: currentAngle, endAngle: value + currentAngle })
           .attr('d', this.arc)
-          .attr('class', `dashli-donut-chart-value dashli-donut-chart-value-${index}`));
+          .attr('class', `dashli-donut-chart-value dashli-donut-chart-value-${index}`)
+          .style('fill', values[index].color));
         currentAngle += value;
       });
 
@@ -89,7 +92,7 @@ class DonutChart extends PureComponent {
       const valueHeight = Math.min(Math.floor(size * 0.5 / values.length * 0.8), Math.floor(size * 0.5 / 5 * 0.8));
       return (
         <ul>
-          {values.sort((a, b) => b.value - a.value).map((value, index) => (
+          {values.map((value, index) => (
             /* eslint-disable react/no-array-index-key */
             <li key={index}>
               <div
