@@ -143,7 +143,8 @@ function (_PureComponent) {
               className: "dashli-donut-chart-legend-color dashli-donut-chart-legend-color-".concat(index),
               style: {
                 width: Math.floor(valueHeight * 0.9),
-                height: Math.floor(valueHeight * 0.9)
+                height: Math.floor(valueHeight * 0.9),
+                backgroundColor: value.color
               }
             }), _react.default.createElement("div", {
               className: "dashli-donut-chart-legend-text",
