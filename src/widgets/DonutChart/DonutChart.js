@@ -46,7 +46,7 @@ class DonutChart extends PureComponent {
 
   convertValues(values) {
     const total = values.reduce((count, value) => count + value.value, 0);
-    return values.map(value => value.value / total * 2 * Math.PI).reverse();
+    return values.map(value => value.value / total * 2 * Math.PI);
   }
 
   createDonutChart(element) {

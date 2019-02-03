@@ -89,7 +89,7 @@ function (_PureComponent) {
       }, 0);
       return values.map(function (value) {
         return value.value / total * 2 * Math.PI;
-      }).reverse();
+      });
     }
   }, {
     key: "createDonutChart",
